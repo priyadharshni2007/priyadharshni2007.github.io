@@ -568,7 +568,7 @@
             role="tab"
             aria-selected="false"
           >
-            Week Zero <span class="text-xs opacity-75 font-normal">(Orientation)</span>
+            Week 00 <span class="text-xs opacity-75 font-normal">(Orientation)</span>
           </button>
           <button 
             onclick="filterProtoPhase(1)" 
@@ -823,13 +823,13 @@
     // =========================================================================
     const protoSemWeeks = [];
 
-    // Week Zero (Orientation & Immersion)
+    // Week 00 (Orientation & Immersion)
     protoSemWeeks.push({
       weekNumber: 0,
       padWeek: "00",
-      title: "WEEK ZERO",
+      title: "WEEK 00",
       phase: 0,
-      phaseName: "Week Zero (Orientation)",
+      phaseName: "Week 00 (Orientation)",
       phaseTag: "ORIENTATION & IMMERSION",
       slug: "week-00",
       status: "Immersion & Onboarding Complete",
@@ -947,7 +947,7 @@
       } else if (phase === 0 || phase === '0') {
         const filtered = protoSemWeeks.filter(w => w.phase === 0);
         renderWeekCards(filtered);
-        if (counterBadge) counterBadge.textContent = "Showing Week Zero (Orientation & Immersion)";
+        if (counterBadge) counterBadge.textContent = "Showing Week 00 (Orientation & Immersion)";
       } else {
         const filtered = protoSemWeeks.filter(w => w.phase === parseInt(phase));
         renderWeekCards(filtered);
@@ -961,7 +961,7 @@
       if (!week) return;
 
       if (week.weekNumber === 0) {
-        document.getElementById("modal-phase-tag").textContent = "WEEK ZERO • ORIENTATION & IMMERSION";
+        document.getElementById("modal-phase-tag").textContent = "WEEK 00 • ORIENTATION & IMMERSION";
         document.getElementById("modal-status-text").textContent = "Orientation & Immersion Complete";
         document.getElementById("modal-status-badge").textContent = "Status: Immersion Milestone Recorded";
       } else {
