@@ -741,9 +741,9 @@
 
   </main>
 
-  <!-- REUSABLE WEEK MODAL DIALOG (Future Story / Blog Empty State) -->
+  <!-- REUSABLE WEEK MODAL DIALOG -->
   <div id="week-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" onclick="closeWeekModal(event)">
-    <div class="glass-panel max-w-lg w-full rounded-2xl p-6 sm:p-8 space-y-6 border border-emerald-400/40 relative shadow-2xl" onclick="event.stopPropagation()">
+    <div class="glass-panel max-w-2xl w-full rounded-2xl p-6 sm:p-8 space-y-6 border border-emerald-400/40 relative shadow-2xl max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
       <!-- Close button -->
       <button onclick="closeWeekModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
         <i class="fa-solid fa-xmark"></i>
@@ -751,30 +751,44 @@
 
       <div class="flex items-center gap-3">
         <span id="modal-phase-tag" class="text-xs font-mono px-3 py-1 rounded-md bg-emerald-950 border border-emerald-500/30 text-emerald-400 font-semibold">
-          PHASE 01
+          WEEK 00 • ORIENTATION & IMMERSION
         </span>
-        <span class="text-xs text-slate-400 font-mono">• 20-Week Innovation Log</span>
+        <span class="text-xs text-slate-400 font-mono">• ProtoSem Innovation Journey</span>
       </div>
 
       <div class="space-y-2">
-        <h3 id="modal-week-title" class="text-2xl font-bold text-white tracking-tight">
-          WEEK 01
+        <h3 id="modal-week-title" class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+          ProtoSem – 0th Week Reflection
         </h3>
         <p id="modal-status-subtitle" class="text-emerald-400 font-medium text-xs sm:text-sm flex items-center gap-1.5">
-          <i class="fa-solid fa-pen-nib"></i> <span id="modal-status-text">Field Notes in Progress</span>
+          <i class="fa-solid fa-book-open"></i> <span id="modal-status-text">Published Reflection</span>
         </p>
       </div>
 
-      <div class="p-4 rounded-xl bg-slate-950/80 border border-emerald-500/20 space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed font-mono">
-        <p class="text-slate-400">// Story & Journal Entry</p>
-        <p id="modal-journal-note">This chapter will document field observations, technical explorations, prototyping milestones, and key reflections from this week.</p>
-        <p id="modal-status-badge" class="text-emerald-400 font-semibold pt-1">Status: Coming Soon</p>
+      <!-- Highlights / Tags -->
+      <div id="modal-highlights-container" class="flex flex-wrap gap-2 pt-1">
+        <!-- Injected via JS -->
+      </div>
+
+      <!-- Journal Entry Body -->
+      <div class="p-5 sm:p-6 rounded-xl bg-slate-950/90 border border-emerald-500/30 space-y-3 font-sans shadow-inner">
+        <div class="text-xs text-slate-400 font-mono flex items-center justify-between border-b border-slate-800/80 pb-2.5">
+          <span class="flex items-center gap-1.5 text-emerald-400">
+            <i class="fa-solid fa-pen-nib text-xs"></i> Weekly Story & Reflection
+          </span>
+          <span id="modal-status-badge" class="text-emerald-300 font-mono font-semibold px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-500/30">
+            Status: Published
+          </span>
+        </div>
+        <div id="modal-journal-note" class="text-slate-200 text-sm sm:text-base leading-relaxed space-y-3 pt-1">
+          <!-- Full Reflection Injected via JS -->
+        </div>
       </div>
 
       <div class="flex items-center justify-between pt-2">
-        <span id="modal-route-path" class="text-xs font-mono text-slate-500">/protosem/week-01</span>
-        <button onclick="closeWeekModal()" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all">
-          Close Preview
+        <span id="modal-route-path" class="text-xs font-mono text-slate-500">/protosem/week-00</span>
+        <button onclick="closeWeekModal()" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all shadow-md shadow-emerald-500/20">
+          Close Story
         </button>
       </div>
     </div>
@@ -819,22 +833,31 @@
     setTimeout(typeTerminal, 400);
 
     // =========================================================================
-    // PROTOSEM DATA-DRIVEN ARCHITECTURE (WEEK ZERO + 20 WEEKS)
+    // PROTOSEM DATA-DRIVEN ARCHITECTURE (WEEK 00 + 20 WEEKS)
     // =========================================================================
     const protoSemWeeks = [];
 
-    // Week 00 (Orientation & Immersion)
+    // Week 00 (Orientation & Immersion Reflection)
     protoSemWeeks.push({
       weekNumber: 0,
       padWeek: "00",
-      title: "WEEK 00",
+      title: "ProtoSem – 0th Week Reflection",
+      cardTitle: "WEEK 00",
+      cardSubtitle: "0th Week Reflection",
       phase: 0,
       phaseName: "Week 00 (Orientation)",
-      phaseTag: "ORIENTATION & IMMERSION",
+      phaseTag: "WEEK 00 • IMMERSION",
       slug: "week-00",
-      status: "Immersion & Onboarding Complete",
-      badge: "Foundation & Setup",
-      journalNote: "Orientation, team formation, problem statement immersion, and foundational setup in the PRICE ProtoSem innovation lab.",
+      status: "Reflection Published",
+      badge: "Published",
+      isPublished: true,
+      highlights: [
+        "ProtoSem Launch @ KCLAS x RAI",
+        "Personality Test: Consul",
+        "ZenPencil: 'Us Against the World'",
+        "The Marshmallow Challenge"
+      ],
+      journalNote: "The 0th week of ProtoSem began with the ProtoSem Launch at Kumaraguru College of Liberal Arts and Science (KCLAS), in association with RAI. The launch introduced us to the program and gave us an idea about the learning experiences ahead. We participated in several interesting sessions and activities. In the personality test, I got “Consul”, which helped me understand my personality, strengths, and how I interact with others. I also selected the ZenPencil story “Us Against the World” because I found it relatable and meaningful. The Marshmallow Challenge was a fun team activity that taught me the importance of teamwork, communication, creativity, and problem-solving. Overall, the 0th week was a memorable and engaging experience that helped me learn more about myself, work with others, and start my ProtoSem journey with a positive mindset.",
       isZero: true
     });
 
@@ -857,12 +880,16 @@
         weekNumber: i,
         padWeek: padWeek,
         title: `WEEK ${padWeek}`,
+        cardTitle: `WEEK ${padWeek}`,
+        cardSubtitle: "Field Notes in Progress",
         phase: phase,
         phaseName: phaseName,
         phaseTag: `PHASE 0${phase}`,
         slug: `week-${padWeek}`,
         status: "Field Notes in Progress",
         badge: "Coming Soon",
+        isPublished: false,
+        highlights: [],
         journalNote: "This chapter will document field observations, technical explorations, prototyping milestones, and key reflections from this week.",
         isZero: false
       });
@@ -875,7 +902,7 @@
 
       container.innerHTML = weeksToRender.map(w => `
         <div 
-          class="week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isZero ? 'border-emerald-400/40 bg-emerald-950/25 ring-1 ring-emerald-500/20' : ''}"
+          class="week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isPublished ? 'border-emerald-400/50 bg-emerald-950/30 ring-1 ring-emerald-500/30 shadow-lg shadow-emerald-500/5' : ''}"
           onclick="openWeekModal(${w.weekNumber})"
           tabindex="0"
           role="button"
@@ -884,10 +911,10 @@
         >
           <!-- Top Row: Phase Tag & Number Badge -->
           <div class="flex items-center justify-between">
-            <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full ${w.isZero ? 'bg-emerald-500/20 border border-emerald-400/50 text-emerald-300' : 'bg-emerald-950/80 border border-emerald-500/30 text-emerald-400'}">
+            <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full ${w.isPublished ? 'bg-emerald-500/20 border border-emerald-400/50 text-emerald-300' : 'bg-emerald-950/80 border border-emerald-500/30 text-emerald-400'}">
               ${w.phaseTag}
             </span>
-            <div class="week-number-badge w-8 h-8 rounded-xl ${w.isZero ? 'bg-emerald-950 border border-emerald-400/50 text-emerald-300' : 'bg-slate-900/80 border border-emerald-500/20 text-slate-300'} font-mono text-xs font-bold flex items-center justify-center transition-all">
+            <div class="week-number-badge w-8 h-8 rounded-xl ${w.isPublished ? 'bg-emerald-950 border border-emerald-400/50 text-emerald-300 shadow-sm' : 'bg-slate-900/80 border border-emerald-500/20 text-slate-300'} font-mono text-xs font-bold flex items-center justify-center transition-all">
               ${w.padWeek}
             </div>
           </div>
@@ -895,22 +922,22 @@
           <!-- Middle: Week Title & Status -->
           <div class="space-y-1.5 py-1">
             <h4 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
-              <span>${w.title}</span>
-              ${w.isZero ? '<span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Foundation</span>' : ''}
+              <span>${w.cardTitle}</span>
+              ${w.isPublished ? '<span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Story Ready</span>' : ''}
             </h4>
             <p class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full ${w.isZero ? 'bg-emerald-400' : 'bg-emerald-400/60'}"></span>
-              <span>${w.isZero ? 'IMMERSION & ONBOARDING' : 'FIELD NOTES IN PROGRESS'}</span>
+              <span class="w-1.5 h-1.5 rounded-full ${w.isPublished ? 'bg-emerald-400 animate-pulse' : 'bg-emerald-400/60'}"></span>
+              <span class="${w.isPublished ? 'text-emerald-300 font-semibold' : ''}">${w.isPublished ? 'REFLECTION PUBLISHED' : 'FIELD NOTES IN PROGRESS'}</span>
             </p>
           </div>
 
           <!-- Bottom: Action Indicator & Arrow -->
           <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-            <span class="text-[11px] font-mono text-emerald-400/90 group-hover:text-emerald-300">
-              ${w.isZero ? 'Immersion Log' : 'Future Story'}
+            <span class="text-[11px] font-mono ${w.isPublished ? 'text-emerald-300 font-semibold' : 'text-emerald-400/90'} group-hover:text-emerald-300">
+              ${w.isPublished ? 'Read Story' : 'Future Story'}
             </span>
             <div class="week-arrow flex items-center gap-1 text-slate-500 group-hover:text-emerald-400 transition-all font-semibold">
-              <span class="text-[11px]">Read</span>
+              <span class="text-[11px]">${w.isPublished ? 'Read' : 'Preview'}</span>
               <i class="fa-solid fa-arrow-right text-[11px]"></i>
             </div>
           </div>
@@ -962,15 +989,37 @@
 
       if (week.weekNumber === 0) {
         document.getElementById("modal-phase-tag").textContent = "WEEK 00 • ORIENTATION & IMMERSION";
-        document.getElementById("modal-status-text").textContent = "Orientation & Immersion Complete";
-        document.getElementById("modal-status-badge").textContent = "Status: Immersion Milestone Recorded";
+        document.getElementById("modal-status-text").textContent = "Published Reflection • Launch & Immersion";
+        document.getElementById("modal-status-badge").textContent = "Status: Published Story";
       } else {
         document.getElementById("modal-phase-tag").textContent = `PHASE 0${week.phase} • WEEKS 0${(week.phase-1)*5+1}–${week.phase*5 < 10 ? '0' + week.phase*5 : week.phase*5}`;
         document.getElementById("modal-status-text").textContent = "Field Notes in Progress";
         document.getElementById("modal-status-badge").textContent = "Status: Coming Soon";
       }
       document.getElementById("modal-week-title").textContent = week.title;
-      document.getElementById("modal-journal-note").textContent = week.journalNote;
+      
+      // Render highlights chips
+      const highlightsContainer = document.getElementById("modal-highlights-container");
+      if (highlightsContainer) {
+        if (week.highlights && week.highlights.length > 0) {
+          highlightsContainer.classList.remove("hidden");
+          highlightsContainer.innerHTML = week.highlights.map(h => `
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-950/80 border border-emerald-500/30 text-emerald-300 text-xs font-medium">
+              <i class="fa-solid fa-check text-[10px] text-emerald-400"></i> ${h}
+            </span>
+          `).join("");
+        } else {
+          highlightsContainer.classList.add("hidden");
+          highlightsContainer.innerHTML = "";
+        }
+      }
+
+      // Render note / text
+      const noteContainer = document.getElementById("modal-journal-note");
+      if (noteContainer) {
+        noteContainer.innerHTML = `<p class="leading-relaxed">${week.journalNote}</p>`;
+      }
+
       document.getElementById("modal-route-path").textContent = `/protosem/${week.slug}`;
       
       const modal = document.getElementById("week-modal");
