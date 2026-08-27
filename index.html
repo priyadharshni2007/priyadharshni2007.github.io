@@ -520,8 +520,10 @@
           <div class="flex items-center gap-3">
             <span class="text-xs font-mono font-semibold text-slate-400 uppercase">Progression Rail:</span>
             <div class="hidden md:flex items-center gap-2 font-mono text-xs text-emerald-400">
-              <span class="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40">01</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40 text-emerald-300 font-bold">00</span>
               <span class="text-emerald-600 font-bold">━━━━</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">01</span>
+              <span class="text-emerald-800 font-bold">━━━━</span>
               <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">05</span>
               <span class="text-emerald-800 font-bold">━━━━</span>
               <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">10</span>
@@ -545,7 +547,7 @@
             <i class="fa-solid fa-filter text-emerald-400"></i> Filter by Phase:
           </span>
           <span id="phase-counter-badge" class="text-xs font-mono text-emerald-400 px-2.5 py-1 rounded-md bg-emerald-950/60 border border-emerald-500/20">
-            Showing all 20 weeks
+            Showing all weeks (Week 00–20)
           </span>
         </div>
 
@@ -557,7 +559,16 @@
             role="tab"
             aria-selected="true"
           >
-            All Weeks (01–20)
+            All Weeks (00–20)
+          </button>
+          <button 
+            onclick="filterProtoPhase(0)" 
+            id="tab-0"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+            role="tab"
+            aria-selected="false"
+          >
+            Week Zero <span class="text-xs opacity-75 font-normal">(Orientation)</span>
           </button>
           <button 
             onclick="filterProtoPhase(1)" 
@@ -749,15 +760,15 @@
         <h3 id="modal-week-title" class="text-2xl font-bold text-white tracking-tight">
           WEEK 01
         </h3>
-        <p class="text-emerald-400 font-medium text-xs sm:text-sm flex items-center gap-1.5">
-          <i class="fa-solid fa-pen-nib"></i> Field Notes in Progress
+        <p id="modal-status-subtitle" class="text-emerald-400 font-medium text-xs sm:text-sm flex items-center gap-1.5">
+          <i class="fa-solid fa-pen-nib"></i> <span id="modal-status-text">Field Notes in Progress</span>
         </p>
       </div>
 
       <div class="p-4 rounded-xl bg-slate-950/80 border border-emerald-500/20 space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed font-mono">
         <p class="text-slate-400">// Story & Journal Entry</p>
-        <p>This chapter will document field observations, technical explorations, prototyping milestones, and key reflections from this week.</p>
-        <p class="text-emerald-400 font-semibold pt-1">Status: Coming Soon</p>
+        <p id="modal-journal-note">This chapter will document field observations, technical explorations, prototyping milestones, and key reflections from this week.</p>
+        <p id="modal-status-badge" class="text-emerald-400 font-semibold pt-1">Status: Coming Soon</p>
       </div>
 
       <div class="flex items-center justify-between pt-2">
@@ -808,9 +819,25 @@
     setTimeout(typeTerminal, 400);
 
     // =========================================================================
-    // PROTOSEM 20-WEEK DATA-DRIVEN ARCHITECTURE
+    // PROTOSEM DATA-DRIVEN ARCHITECTURE (WEEK ZERO + 20 WEEKS)
     // =========================================================================
     const protoSemWeeks = [];
+
+    // Week Zero (Orientation & Immersion)
+    protoSemWeeks.push({
+      weekNumber: 0,
+      padWeek: "00",
+      title: "WEEK ZERO",
+      phase: 0,
+      phaseName: "Week Zero (Orientation)",
+      phaseTag: "ORIENTATION & IMMERSION",
+      slug: "week-00",
+      status: "Immersion & Onboarding Complete",
+      badge: "Foundation & Setup",
+      journalNote: "Orientation, team formation, problem statement immersion, and foundational setup in the PRICE ProtoSem innovation lab.",
+      isZero: true
+    });
+
     for (let i = 1; i <= 20; i++) {
       const padWeek = i < 10 ? `0${i}` : `${i}`;
       let phase = 1;
@@ -832,9 +859,12 @@
         title: `WEEK ${padWeek}`,
         phase: phase,
         phaseName: phaseName,
+        phaseTag: `PHASE 0${phase}`,
         slug: `week-${padWeek}`,
         status: "Field Notes in Progress",
-        badge: "Coming Soon"
+        badge: "Coming Soon",
+        journalNote: "This chapter will document field observations, technical explorations, prototyping milestones, and key reflections from this week.",
+        isZero: false
       });
     }
 
@@ -845,7 +875,7 @@
 
       container.innerHTML = weeksToRender.map(w => `
         <div 
-          class="week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4"
+          class="week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isZero ? 'border-emerald-400/40 bg-emerald-950/25 ring-1 ring-emerald-500/20' : ''}"
           onclick="openWeekModal(${w.weekNumber})"
           tabindex="0"
           role="button"
@@ -854,10 +884,10 @@
         >
           <!-- Top Row: Phase Tag & Number Badge -->
           <div class="flex items-center justify-between">
-            <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-400">
-              PHASE 0${w.phase}
+            <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full ${w.isZero ? 'bg-emerald-500/20 border border-emerald-400/50 text-emerald-300' : 'bg-emerald-950/80 border border-emerald-500/30 text-emerald-400'}">
+              ${w.phaseTag}
             </span>
-            <div class="week-number-badge w-8 h-8 rounded-xl bg-slate-900/80 border border-emerald-500/20 text-slate-300 font-mono text-xs font-bold flex items-center justify-center transition-all">
+            <div class="week-number-badge w-8 h-8 rounded-xl ${w.isZero ? 'bg-emerald-950 border border-emerald-400/50 text-emerald-300' : 'bg-slate-900/80 border border-emerald-500/20 text-slate-300'} font-mono text-xs font-bold flex items-center justify-center transition-all">
               ${w.padWeek}
             </div>
           </div>
@@ -866,17 +896,18 @@
           <div class="space-y-1.5 py-1">
             <h4 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
               <span>${w.title}</span>
+              ${w.isZero ? '<span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Foundation</span>' : ''}
             </h4>
             <p class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400/60"></span>
-              <span>FIELD NOTES IN PROGRESS</span>
+              <span class="w-1.5 h-1.5 rounded-full ${w.isZero ? 'bg-emerald-400' : 'bg-emerald-400/60'}"></span>
+              <span>${w.isZero ? 'IMMERSION & ONBOARDING' : 'FIELD NOTES IN PROGRESS'}</span>
             </p>
           </div>
 
           <!-- Bottom: Action Indicator & Arrow -->
           <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
             <span class="text-[11px] font-mono text-emerald-400/90 group-hover:text-emerald-300">
-              Future Story
+              ${w.isZero ? 'Immersion Log' : 'Future Story'}
             </span>
             <div class="week-arrow flex items-center gap-1 text-slate-500 group-hover:text-emerald-400 transition-all font-semibold">
               <span class="text-[11px]">Read</span>
@@ -887,7 +918,7 @@
       `).join("");
     }
 
-    // Initial render of all 20 weeks
+    // Initial render of all weeks
     renderWeekCards(protoSemWeeks);
 
     // Phase Filter Functionality
@@ -912,7 +943,11 @@
       const counterBadge = document.getElementById("phase-counter-badge");
       if (phase === 'all') {
         renderWeekCards(protoSemWeeks);
-        if (counterBadge) counterBadge.textContent = "Showing all 20 weeks";
+        if (counterBadge) counterBadge.textContent = "Showing all weeks (Week 00–20)";
+      } else if (phase === 0 || phase === '0') {
+        const filtered = protoSemWeeks.filter(w => w.phase === 0);
+        renderWeekCards(filtered);
+        if (counterBadge) counterBadge.textContent = "Showing Week Zero (Orientation & Immersion)";
       } else {
         const filtered = protoSemWeeks.filter(w => w.phase === parseInt(phase));
         renderWeekCards(filtered);
@@ -925,8 +960,17 @@
       const week = protoSemWeeks.find(w => w.weekNumber === weekNum);
       if (!week) return;
 
-      document.getElementById("modal-phase-tag").textContent = `PHASE 0${week.phase} • WEEKS 0${(week.phase-1)*5+1}–${week.phase*5 < 10 ? '0' + week.phase*5 : week.phase*5}`;
+      if (week.weekNumber === 0) {
+        document.getElementById("modal-phase-tag").textContent = "WEEK ZERO • ORIENTATION & IMMERSION";
+        document.getElementById("modal-status-text").textContent = "Orientation & Immersion Complete";
+        document.getElementById("modal-status-badge").textContent = "Status: Immersion Milestone Recorded";
+      } else {
+        document.getElementById("modal-phase-tag").textContent = `PHASE 0${week.phase} • WEEKS 0${(week.phase-1)*5+1}–${week.phase*5 < 10 ? '0' + week.phase*5 : week.phase*5}`;
+        document.getElementById("modal-status-text").textContent = "Field Notes in Progress";
+        document.getElementById("modal-status-badge").textContent = "Status: Coming Soon";
+      }
       document.getElementById("modal-week-title").textContent = week.title;
+      document.getElementById("modal-journal-note").textContent = week.journalNote;
       document.getElementById("modal-route-path").textContent = `/protosem/${week.slug}`;
       
       const modal = document.getElementById("week-modal");
