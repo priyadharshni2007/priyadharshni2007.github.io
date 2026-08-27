@@ -770,6 +770,17 @@
         <!-- Injected via JS -->
       </div>
 
+      <!-- Modal Event Image Showcase -->
+      <div id="modal-image-wrapper" class="hidden rounded-xl overflow-hidden border border-emerald-500/30 bg-slate-950 shadow-xl">
+        <img id="modal-image" src="" alt="ProtoSem Week Photo" class="w-full max-h-80 object-cover">
+        <div class="px-4 py-2.5 bg-slate-900/95 border-t border-emerald-500/20 text-xs font-mono text-slate-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+          <span id="modal-image-caption" class="flex items-center gap-1.5 text-emerald-300">
+            <i class="fa-solid fa-camera text-emerald-400"></i> ProtoSem Launch Inauguration
+          </span>
+          <span class="text-slate-400 text-[11px] font-sans">Sarabhai Kalam Theater, KCT Campus</span>
+        </div>
+      </div>
+
       <!-- Journal Entry Body -->
       <div class="p-5 sm:p-6 rounded-xl bg-slate-950/90 border border-emerald-500/30 space-y-3 font-sans shadow-inner">
         <div class="text-xs text-slate-400 font-mono flex items-center justify-between border-b border-slate-800/80 pb-2.5">
@@ -851,6 +862,8 @@
       status: "Reflection Published",
       badge: "Published",
       isPublished: true,
+      image: "assets/protosem-week-00.jpg",
+      imageCaption: "ProtoSem Launch & Inauguration @ Sarabhai Kalam Theater, KCT Campus",
       highlights: [
         "ProtoSem Launch @ KCLAS x RAI",
         "Personality Test: Consul",
@@ -918,6 +931,17 @@
               ${w.padWeek}
             </div>
           </div>
+
+          ${w.image ? `
+            <!-- Photo Preview Thumbnail -->
+            <div class="relative w-full h-36 rounded-xl overflow-hidden border border-emerald-500/30 bg-slate-950">
+              <img src="${w.image}" alt="${w.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-2 left-2 text-[10px] font-mono text-emerald-300 bg-slate-950/90 px-2 py-0.5 rounded border border-emerald-500/30 flex items-center gap-1">
+                <i class="fa-solid fa-camera text-[9px] text-emerald-400"></i> Inauguration
+              </div>
+            </div>
+          ` : ''}
 
           <!-- Middle: Week Title & Status -->
           <div class="space-y-1.5 py-1">
@@ -1011,6 +1035,24 @@
         } else {
           highlightsContainer.classList.add("hidden");
           highlightsContainer.innerHTML = "";
+        }
+      }
+
+      // Render image if present
+      const imageWrapper = document.getElementById("modal-image-wrapper");
+      const modalImage = document.getElementById("modal-image");
+      const modalCaption = document.getElementById("modal-image-caption");
+      if (imageWrapper && modalImage) {
+        if (week.image) {
+          modalImage.src = week.image;
+          modalImage.alt = week.title;
+          if (modalCaption && week.imageCaption) {
+            modalCaption.innerHTML = `<i class="fa-solid fa-camera text-emerald-400"></i> ${week.imageCaption}`;
+          }
+          imageWrapper.classList.remove("hidden");
+        } else {
+          imageWrapper.classList.add("hidden");
+          modalImage.src = "";
         }
       }
 
