@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>S. Priyadharshni | HR & Management Portfolio</title>
-  <meta name="description" content="Portfolio of S. Priyadharshni - BBA Student specializing in Human Resources, Organizational Management, and Workplace Collaboration.">
+  <title>S. Priyadharshni | HR, Management & Innovation Portfolio</title>
+  <meta name="description" content="Portfolio of S. Priyadharshni - BBA Student & Innovation Engineer Trainee at PRICE ProtoSem, specializing in Human Resources, Intelligent Commerce, and Management.">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -76,6 +76,33 @@
       box-shadow: 0 12px 30px -5px rgba(16, 185, 129, 0.15);
     }
 
+    /* Week Card Glass Special */
+    .week-card {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(16, 185, 129, 0.14);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .week-card:hover {
+      background: rgba(6, 78, 59, 0.25);
+      border-color: rgba(52, 211, 153, 0.5);
+      transform: translateY(-4px) scale(1.015);
+      box-shadow: 0 14px 28px -6px rgba(16, 185, 129, 0.2);
+    }
+
+    .week-card:hover .week-arrow {
+      transform: translateX(4px);
+      color: #34d399;
+    }
+
+    .week-card:hover .week-number-badge {
+      background: rgba(16, 185, 129, 0.25);
+      color: #34d399;
+      border-color: rgba(52, 211, 153, 0.5);
+    }
+
     /* Ambient background glows */
     .ambient-glow-1 {
       position: absolute;
@@ -91,11 +118,23 @@
 
     .ambient-glow-2 {
       position: absolute;
-      top: 50%;
+      top: 45%;
       right: 10%;
       width: 500px;
       height: 500px;
       background: radial-gradient(circle, rgba(5, 150, 105, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ambient-glow-3 {
+      position: absolute;
+      top: 75%;
+      left: 10%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
       filter: blur(60px);
       pointer-events: none;
       z-index: 0;
@@ -125,6 +164,12 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #34d399;
     }
+
+    /* Modal Backdrop */
+    .modal-backdrop {
+      background: rgba(6, 11, 19, 0.85);
+      backdrop-filter: blur(8px);
+    }
   </style>
 </head>
 <body class="relative min-h-screen selection:bg-emerald-500 selection:text-black">
@@ -132,6 +177,7 @@
   <!-- Ambient Background Gradients -->
   <div class="ambient-glow-1"></div>
   <div class="ambient-glow-2"></div>
+  <div class="ambient-glow-3"></div>
 
   <!-- Navigation Bar -->
   <header class="sticky top-0 z-50 px-4 sm:px-8 py-4">
@@ -146,9 +192,12 @@
       </a>
 
       <!-- Desktop Links -->
-      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
         <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
         <a href="#experience" class="hover:text-emerald-400 transition-colors">Experience</a>
+        <a href="#protosem" class="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> ProtoSem
+        </a>
         <a href="#education" class="hover:text-emerald-400 transition-colors">Education</a>
         <a href="#skills" class="hover:text-emerald-400 transition-colors">Skills</a>
         <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
@@ -165,7 +214,7 @@
   </header>
 
   <!-- Main Container -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-8 pt-8 pb-20 space-y-24 relative z-10">
+  <main class="max-w-6xl mx-auto px-4 sm:px-8 pt-8 pb-20 space-y-28 relative z-10">
 
     <!-- HERO SECTION: Terminal Aesthetic -->
     <section class="pt-6 sm:pt-12" data-aos="fade-down" data-aos-duration="1000">
@@ -175,7 +224,7 @@
         <div class="lg:col-span-5 space-y-6 text-left">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Available for HR & Management Roles
+            Available for HR & Innovation Roles
           </div>
 
           <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
@@ -186,7 +235,7 @@
           </h1>
 
           <p class="text-slate-300 text-base leading-relaxed">
-            Motivated BBA student aspiring to build an impactful career in <strong class="text-emerald-300 font-semibold">Human Resources and Organizational Management</strong>. Focused on workplace communication, talent coordination, and team excellence.
+            Motivated BBA student and <strong class="text-emerald-300 font-semibold">Innovation Engineer Trainee</strong> at PRICE ProtoSem. Passionate about Human Resources, Organizational Management, and solving retail & commerce challenges through intelligent systems.
           </p>
 
           <!-- Contact & Action Badges -->
@@ -238,12 +287,12 @@
               
               <div class="pl-4 text-slate-300 font-mono space-y-1.5 leading-relaxed border-l-2 border-emerald-500/30">
                 <p><span class="text-emerald-400">"candidate"</span>: <span class="text-teal-200">"S. Priyadharshni"</span>,</p>
-                <p><span class="text-emerald-400">"role_focus"</span>: <span class="text-teal-200">"Human Resources & Management"</span>,</p>
-                <p><span class="text-emerald-400">"education"</span>: <span class="text-teal-200">"Kumaraguru College of Liberal Arts and Science"</span>,</p>
-                <p><span class="text-emerald-400">"degree"</span>: <span class="text-teal-200">"Bachelor of Business Administration (2025-2028)"</span>,</p>
+                <p><span class="text-emerald-400">"programme"</span>: <span class="text-teal-200">"PRICE ProtoSem (20-Week Innovation)"</span>,</p>
+                <p><span class="text-emerald-400">"role"</span>: <span class="text-teal-200">"Innovation Engineer Trainee"</span>,</p>
+                <p><span class="text-emerald-400">"education"</span>: <span class="text-teal-200">"Kumaraguru College of Liberal Arts & Science"</span>,</p>
                 <p><span class="text-emerald-400">"internship"</span>: <span class="text-teal-200">"Summer Intern @ V Thangavel and Sons Pvt. Ltd."</span>,</p>
-                <p><span class="text-emerald-400">"core_strengths"</span>: [<span class="text-emerald-300">"Workplace Communication"</span>, <span class="text-emerald-300">"Team Collaboration"</span>, <span class="text-emerald-300">"Operations"</span>],</p>
-                <p><span class="text-emerald-400">"status"</span>: <span class="text-emerald-400 font-bold">"Ready to Learn & Contribute"</span></p>
+                <p><span class="text-emerald-400">"domains"</span>: [<span class="text-emerald-300">"HR & Management"</span>, <span class="text-emerald-300">"Intelligent Commerce"</span>, <span class="text-emerald-300">"Prototyping"</span>],</p>
+                <p><span class="text-emerald-400">"status"</span>: <span class="text-emerald-400 font-bold">"Ready to Learn, Explore & Build"</span></p>
               </div>
 
               <div class="flex items-center gap-2 text-emerald-400 pt-2">
@@ -258,7 +307,7 @@
               <span class="text-emerald-400 flex items-center gap-1.5">
                 <i class="fa-solid fa-circle-check text-[10px]"></i> 100% Profile Complete
               </span>
-              <span class="text-slate-400">UTF-8 • HR Management</span>
+              <span class="text-slate-400">UTF-8 • ProtoSem & HR</span>
             </div>
           </div>
         </div>
@@ -285,12 +334,12 @@
             >
             <div>
               <h3 class="text-xl font-bold text-white">S. Priyadharshni</h3>
-              <p class="text-emerald-400 text-sm font-medium">BBA Student (2nd Year) • Aspiring HR Specialist</p>
+              <p class="text-emerald-400 text-sm font-medium">BBA Student (2nd Year) • Aspiring HR & Innovation Specialist</p>
             </div>
           </div>
 
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed pt-2">
-            I am a motivated and proactive Bachelor of Business Administration (BBA) student at <strong class="text-white">Kumaraguru College of Liberal Arts and Science</strong>. With an enthusiastic mindset and practical exposure gained through corporate summer internship, I am committed to advancing my expertise in human resource management, employee engagement, and business operations.
+            I am a motivated and proactive Bachelor of Business Administration (BBA) student at <strong class="text-white">Kumaraguru College of Liberal Arts and Science</strong>. With an enthusiastic mindset and practical exposure gained through corporate summer internship and hands-on innovation training, I am committed to advancing my expertise in human resource management, employee engagement, and business operations.
           </p>
 
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
@@ -300,7 +349,7 @@
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3">
             <div class="p-3 rounded-xl bg-slate-900/60 border border-emerald-500/10">
               <span class="text-xs text-slate-400 block">Focus</span>
-              <span class="text-sm font-semibold text-emerald-300">Human Resources</span>
+              <span class="text-sm font-semibold text-emerald-300">Human Resources & Ops</span>
             </div>
             <div class="p-3 rounded-xl bg-slate-900/60 border border-emerald-500/10">
               <span class="text-xs text-slate-400 block">Languages</span>
@@ -388,6 +437,172 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- SECTION: PROTOSEM (20-WEEK INDUSTRY-INTEGRATED INNOVATION JOURNEY) -->
+    <!-- ========================================================================= -->
+    <section id="protosem" class="space-y-10 scroll-mt-24" data-aos="fade-up" data-aos-duration="900">
+      
+      <!-- Section Label & Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-emerald-500/20 pb-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">
+            <i class="fa-solid fa-compass text-emerald-400"></i> PROTOSEM
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            PRICE ProtoSem
+          </h2>
+          <p class="text-emerald-400 font-semibold text-base sm:text-lg pt-1">
+            Innovation Engineer Trainee <span class="text-slate-400 font-normal">| 20-Week Industry-Integrated Innovation Programme</span>
+          </p>
+        </div>
+
+        <div class="flex items-center gap-2 text-xs font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 px-4 py-2 rounded-xl self-start md:self-auto">
+          <i class="fa-solid fa-layer-group"></i>
+          <span>1 PROGRAMME • 4 PHASES • 20 WEEKS</span>
+        </div>
+      </div>
+
+      <!-- Programme Description & Purpose Glassmorphism Card -->
+      <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-6 border border-emerald-500/30 relative overflow-hidden">
+        <!-- Subtle background watermark badge -->
+        <div class="absolute -right-8 -bottom-8 text-emerald-500/5 text-9xl font-black select-none pointer-events-none">
+          20W
+        </div>
+
+        <div class="space-y-4 max-w-4xl relative z-10">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+            <i class="fa-solid fa-lightbulb text-emerald-400"></i>
+            Programme Overview & Objectives
+          </h3>
+          <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
+            Selected for a 20-week industry-integrated innovation programme focused on solving real-world retail and commerce challenges through AI, analytics, intelligent systems, IoT, prototyping, and entrepreneurship.
+          </p>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Working with industry problem statements to explore, develop, and validate practical technology solutions beyond conventional classroom learning.
+          </p>
+        </div>
+
+        <!-- DOMAIN / FOCUS TAGS (Programme Disciplines) -->
+        <div class="pt-4 border-t border-slate-800 space-y-3">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 block font-mono">
+            Programme Focus Areas & Core Disciplines
+          </span>
+          <div class="flex flex-wrap gap-2.5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-emerald-500/25 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all">
+              <i class="fa-solid fa-cart-shopping text-emerald-400"></i>
+              Phygital Retail & Intelligent Commerce
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-emerald-500/25 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all">
+              <i class="fa-solid fa-brain text-emerald-400"></i>
+              AI & Analytics
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-emerald-500/25 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all">
+              <i class="fa-solid fa-microchip text-emerald-400"></i>
+              Intelligent Systems & IoT
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-emerald-500/25 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all">
+              <i class="fa-solid fa-cubes text-emerald-400"></i>
+              Prototyping
+            </div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-emerald-500/25 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all">
+              <i class="fa-solid fa-rocket text-emerald-400"></i>
+              Entrepreneurship
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISUAL PROGRESSION TIMELINE INDICATOR -->
+      <div class="glass-panel rounded-2xl p-5 border border-emerald-500/20">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-mono font-semibold text-slate-400 uppercase">Progression Rail:</span>
+            <div class="hidden md:flex items-center gap-2 font-mono text-xs text-emerald-400">
+              <span class="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40">01</span>
+              <span class="text-emerald-600 font-bold">━━━━</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">05</span>
+              <span class="text-emerald-800 font-bold">━━━━</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">10</span>
+              <span class="text-emerald-800 font-bold">━━━━</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">15</span>
+              <span class="text-emerald-800 font-bold">━━━━</span>
+              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">20</span>
+            </div>
+          </div>
+          <div class="text-xs text-slate-400 flex items-center gap-2">
+            <i class="fa-regular fa-clock text-emerald-400"></i>
+            <span>Interactive Programme Log & Future Blog Archive</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE NAVIGATION (Filter Buttons) -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+            <i class="fa-solid fa-filter text-emerald-400"></i> Filter by Phase:
+          </span>
+          <span id="phase-counter-badge" class="text-xs font-mono text-emerald-400 px-2.5 py-1 rounded-md bg-emerald-950/60 border border-emerald-500/20">
+            Showing all 20 weeks
+          </span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 p-1.5 glass-panel rounded-2xl border border-emerald-500/20" role="tablist">
+          <button 
+            onclick="filterProtoPhase('all')" 
+            id="tab-all"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20"
+            role="tab"
+            aria-selected="true"
+          >
+            All Weeks (01–20)
+          </button>
+          <button 
+            onclick="filterProtoPhase(1)" 
+            id="tab-1"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+            role="tab"
+            aria-selected="false"
+          >
+            Phase 01 <span class="text-xs opacity-75 font-normal">(W01–05)</span>
+          </button>
+          <button 
+            onclick="filterProtoPhase(2)" 
+            id="tab-2"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+            role="tab"
+            aria-selected="false"
+          >
+            Phase 02 <span class="text-xs opacity-75 font-normal">(W06–10)</span>
+          </button>
+          <button 
+            onclick="filterProtoPhase(3)" 
+            id="tab-3"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+            role="tab"
+            aria-selected="false"
+          >
+            Phase 03 <span class="text-xs opacity-75 font-normal">(W11–15)</span>
+          </button>
+          <button 
+            onclick="filterProtoPhase(4)" 
+            id="tab-4"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+            role="tab"
+            aria-selected="false"
+          >
+            Phase 04 <span class="text-xs opacity-75 font-normal">(W16–20)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 20-WEEK JOURNEY GRID / TIMELINE CONTAINER (Dynamically Rendered for Data-Driven Architecture) -->
+      <div id="protosem-cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
+        <!-- Week cards generated by JS below -->
+      </div>
+
     </section>
 
     <!-- SECTION: EDUCATION -->
@@ -515,6 +730,45 @@
 
   </main>
 
+  <!-- REUSABLE WEEK MODAL DIALOG (Future Story / Blog Empty State) -->
+  <div id="week-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" onclick="closeWeekModal(event)">
+    <div class="glass-panel max-w-lg w-full rounded-2xl p-6 sm:p-8 space-y-6 border border-emerald-400/40 relative shadow-2xl" onclick="event.stopPropagation()">
+      <!-- Close button -->
+      <button onclick="closeWeekModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center gap-3">
+        <span id="modal-phase-tag" class="text-xs font-mono px-3 py-1 rounded-md bg-emerald-950 border border-emerald-500/30 text-emerald-400 font-semibold">
+          PHASE 01
+        </span>
+        <span class="text-xs text-slate-400 font-mono">• 20-Week Innovation Log</span>
+      </div>
+
+      <div class="space-y-2">
+        <h3 id="modal-week-title" class="text-2xl font-bold text-white tracking-tight">
+          WEEK 01
+        </h3>
+        <p class="text-emerald-400 font-medium text-xs sm:text-sm flex items-center gap-1.5">
+          <i class="fa-solid fa-pen-nib"></i> Field Notes in Progress
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl bg-slate-950/80 border border-emerald-500/20 space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed font-mono">
+        <p class="text-slate-400">// Story & Journal Entry</p>
+        <p>This chapter will document field observations, technical explorations, prototyping milestones, and key reflections from this week.</p>
+        <p class="text-emerald-400 font-semibold pt-1">Status: Coming Soon</p>
+      </div>
+
+      <div class="flex items-center justify-between pt-2">
+        <span id="modal-route-path" class="text-xs font-mono text-slate-500">/protosem/week-01</span>
+        <button onclick="closeWeekModal()" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all">
+          Close Preview
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="border-t border-slate-800/80 py-8 px-4 sm:px-8 text-center text-xs text-slate-500">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -551,9 +805,145 @@
         setTimeout(typeTerminal, 60);
       }
     }
-
-    // Start typing after initial load
     setTimeout(typeTerminal, 400);
+
+    // =========================================================================
+    // PROTOSEM 20-WEEK DATA-DRIVEN ARCHITECTURE
+    // =========================================================================
+    const protoSemWeeks = [];
+    for (let i = 1; i <= 20; i++) {
+      const padWeek = i < 10 ? `0${i}` : `${i}`;
+      let phase = 1;
+      let phaseName = "Phase 01";
+      if (i > 15) {
+        phase = 4;
+        phaseName = "Phase 04";
+      } else if (i > 10) {
+        phase = 3;
+        phaseName = "Phase 03";
+      } else if (i > 5) {
+        phase = 2;
+        phaseName = "Phase 02";
+      }
+
+      protoSemWeeks.push({
+        weekNumber: i,
+        padWeek: padWeek,
+        title: `WEEK ${padWeek}`,
+        phase: phase,
+        phaseName: phaseName,
+        slug: `week-${padWeek}`,
+        status: "Field Notes in Progress",
+        badge: "Coming Soon"
+      });
+    }
+
+    // Render Week Cards into Container
+    function renderWeekCards(weeksToRender) {
+      const container = document.getElementById("protosem-cards-container");
+      if (!container) return;
+
+      container.innerHTML = weeksToRender.map(w => `
+        <div 
+          class="week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4"
+          onclick="openWeekModal(${w.weekNumber})"
+          tabindex="0"
+          role="button"
+          aria-label="View ${w.title} story details"
+          onkeydown="if(event.key==='Enter'||event.key===' '){openWeekModal(${w.weekNumber});}"
+        >
+          <!-- Top Row: Phase Tag & Number Badge -->
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-emerald-400">
+              PHASE 0${w.phase}
+            </span>
+            <div class="week-number-badge w-8 h-8 rounded-xl bg-slate-900/80 border border-emerald-500/20 text-slate-300 font-mono text-xs font-bold flex items-center justify-center transition-all">
+              ${w.padWeek}
+            </div>
+          </div>
+
+          <!-- Middle: Week Title & Status -->
+          <div class="space-y-1.5 py-1">
+            <h4 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
+              <span>${w.title}</span>
+            </h4>
+            <p class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400/60"></span>
+              <span>FIELD NOTES IN PROGRESS</span>
+            </p>
+          </div>
+
+          <!-- Bottom: Action Indicator & Arrow -->
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+            <span class="text-[11px] font-mono text-emerald-400/90 group-hover:text-emerald-300">
+              Future Story
+            </span>
+            <div class="week-arrow flex items-center gap-1 text-slate-500 group-hover:text-emerald-400 transition-all font-semibold">
+              <span class="text-[11px]">Read</span>
+              <i class="fa-solid fa-arrow-right text-[11px]"></i>
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // Initial render of all 20 weeks
+    renderWeekCards(protoSemWeeks);
+
+    // Phase Filter Functionality
+    function filterProtoPhase(phase) {
+      // Update Tab Styles
+      const buttons = document.querySelectorAll('.phase-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-emerald-500', 'text-slate-950', 'shadow-md', 'shadow-emerald-500/20');
+        btn.classList.add('text-slate-300');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      const activeBtnId = phase === 'all' ? 'tab-all' : `tab-${phase}`;
+      const activeBtn = document.getElementById(activeBtnId);
+      if (activeBtn) {
+        activeBtn.classList.remove('text-slate-300');
+        activeBtn.classList.add('bg-emerald-500', 'text-slate-950', 'shadow-md', 'shadow-emerald-500/20');
+        activeBtn.setAttribute('aria-selected', 'true');
+      }
+
+      // Filter & Render Cards
+      const counterBadge = document.getElementById("phase-counter-badge");
+      if (phase === 'all') {
+        renderWeekCards(protoSemWeeks);
+        if (counterBadge) counterBadge.textContent = "Showing all 20 weeks";
+      } else {
+        const filtered = protoSemWeeks.filter(w => w.phase === parseInt(phase));
+        renderWeekCards(filtered);
+        if (counterBadge) counterBadge.textContent = `Showing Phase 0${phase} (5 weeks)`;
+      }
+    }
+
+    // Modal Interaction
+    function openWeekModal(weekNum) {
+      const week = protoSemWeeks.find(w => w.weekNumber === weekNum);
+      if (!week) return;
+
+      document.getElementById("modal-phase-tag").textContent = `PHASE 0${week.phase} • WEEKS 0${(week.phase-1)*5+1}–${week.phase*5 < 10 ? '0' + week.phase*5 : week.phase*5}`;
+      document.getElementById("modal-week-title").textContent = week.title;
+      document.getElementById("modal-route-path").textContent = `/protosem/${week.slug}`;
+      
+      const modal = document.getElementById("week-modal");
+      modal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeWeekModal(e) {
+      const modal = document.getElementById("week-modal");
+      modal.classList.add("hidden");
+      document.body.style.overflow = "auto";
+    }
+
+    // Close on Escape key
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeWeekModal();
+    });
   </script>
 </body>
 </html>
