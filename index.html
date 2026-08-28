@@ -15,11 +15,11 @@
         extend: {
           colors: {
             brand: {
-              50: '#f0fdf4',
-              100: '#dcfce7',
-              200: '#bbf7d0',
-              300: '#86efac',
-              400: '#4ade80',
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
               500: '#10b981',
               600: '#059669',
               700: '#047857',
@@ -27,16 +27,38 @@
               900: '#064e3b',
               950: '#022c22',
             },
-            slate: {
-              850: '#111827',
-              900: '#0f172a',
-              950: '#090d16',
+            dark: {
+              950: '#030712',
+              900: '#080e1a',
+              850: '#0d1527',
+              800: '#131e36',
+              700: '#1e2d4d',
             }
           },
           fontFamily: {
             sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
             display: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
             mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+          },
+          animation: {
+            'float-slow': 'float 8s ease-in-out infinite',
+            'float-delayed': 'float 9s ease-in-out 3s infinite',
+            'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+            'shimmer': 'shimmer 2.5s linear infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) scale(1)' },
+              '50%': { transform: 'translateY(-14px) scale(1.03)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+              '50%': { opacity: '0.8', transform: 'scale(1.08)' },
+            },
+            shimmer: {
+              '0%': { backgroundPosition: '-200% 0' },
+              '100%': { backgroundPosition: '200% 0' },
+            }
           }
         }
       }
@@ -46,7 +68,7 @@
   <!-- Google Fonts: Plus Jakarta Sans & Outfit & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -61,51 +83,113 @@
     
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #080c14;
+      background-color: #030712;
       color: #f1f5f9;
       overflow-x: hidden;
       selection-background-color: #10b981;
       selection-color: #000000;
     }
+
+    /* Ambient Cyber Grid Matrix Overlay */
+    .cyber-grid {
+      background-image: 
+        radial-gradient(rgba(16, 185, 129, 0.12) 1px, transparent 1px),
+        radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 1px);
+      background-size: 36px 36px, 72px 72px;
+      background-position: 0 0, 18px 18px;
+    }
     
-    /* Refined Executive Glass Surfaces */
-    .glass-surface {
-      background: rgba(15, 23, 42, 0.68);
+    /* Glowing Ambient Atmospheric Orbs */
+    .glow-orb-1 {
+      position: absolute;
+      top: -100px;
+      left: 10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.16) 0%, rgba(6, 78, 59, 0.08) 45%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-orb-2 {
+      position: absolute;
+      top: 35%;
+      right: 5%;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.14) 0%, rgba(16, 185, 129, 0.06) 50%, transparent 70%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-orb-3 {
+      position: absolute;
+      top: 70%;
+      left: 5%;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(14, 165, 233, 0.05) 50%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Top Reading Progress Bar */
+    #progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #10b981, #06b6d4, #3b82f6, #10b981);
+      background-size: 200% 100%;
+      animation: shimmer 3s linear infinite;
+      z-index: 100;
+      transition: width 0.1s ease-out;
+    }
+    
+    /* Ultra-Attractive Glassmorphism Card System */
+    .glass-card {
+      background: rgba(13, 21, 39, 0.72);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-    }
-
-    .glass-surface-hover {
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: 0 14px 35px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
-    .glass-surface-hover:hover {
-      background: rgba(30, 41, 59, 0.7);
-      border-color: rgba(16, 185, 129, 0.35);
-      transform: translateY(-3px);
-      box-shadow: 0 16px 36px -10px rgba(16, 185, 129, 0.12);
+    .glass-card-hover {
+      background: rgba(13, 21, 39, 0.68);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Executive Week Card */
+    .glass-card-hover:hover {
+      background: rgba(19, 30, 54, 0.85);
+      border-color: rgba(16, 185, 129, 0.45);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px -12px rgba(16, 185, 129, 0.22), 0 0 25px -5px rgba(6, 182, 212, 0.15), inset 0 1px 0 0 rgba(52, 211, 153, 0.3);
+    }
+
+    /* Interactive Week Timeline Card */
     .week-card {
-      background: rgba(15, 23, 42, 0.72);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      background: rgba(13, 21, 39, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
     .week-card:hover {
-      background: rgba(17, 24, 39, 0.85);
-      border-color: rgba(16, 185, 129, 0.4);
-      transform: translateY(-4px);
-      box-shadow: 0 18px 38px -12px rgba(16, 185, 129, 0.16);
+      background: rgba(19, 30, 54, 0.9);
+      border-color: rgba(52, 211, 153, 0.45);
+      transform: translateY(-5px);
+      box-shadow: 0 22px 45px -15px rgba(16, 185, 129, 0.25), inset 0 1px 0 0 rgba(52, 211, 153, 0.3);
     }
 
     .week-card:hover .week-arrow {
@@ -114,16 +198,30 @@
     }
 
     .week-card:hover .week-number-badge {
-      background: rgba(16, 185, 129, 0.18);
+      background: rgba(16, 185, 129, 0.25);
       color: #34d399;
-      border-color: rgba(16, 185, 129, 0.4);
+      border-color: rgba(52, 211, 153, 0.5);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
     }
 
-    /* Subtle Architectural Background Mesh */
-    .bg-mesh-radial {
-      background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
-                  radial-gradient(circle at 100% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
-                  radial-gradient(circle at 0% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+    /* Iridescent Gradient Text */
+    .text-gradient-primary {
+      background: linear-gradient(135deg, #ffffff 0%, #d1fae5 50%, #6ee7b7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-accent {
+      background: linear-gradient(135deg, #34d399 0%, #2dd4bf 50%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Glowing Pill Badges */
+    .glow-pill {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 182, 212, 0.1) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.25);
     }
 
     /* Custom Scrollbar */
@@ -131,12 +229,12 @@
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #080c14;
+      background: #030712;
     }
     ::-webkit-scrollbar-thumb {
       background: #1e293b;
       border-radius: 4px;
-      border: 2px solid #080c14;
+      border: 2px solid #030712;
     }
     ::-webkit-scrollbar-thumb:hover {
       background: #10b981;
@@ -144,26 +242,35 @@
 
     /* Modal Backdrop */
     .modal-backdrop {
-      background: rgba(5, 8, 15, 0.88);
-      backdrop-filter: blur(12px);
+      background: rgba(3, 7, 18, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
   </style>
 </head>
-<body class="relative min-h-screen bg-mesh-radial selection:bg-emerald-500 selection:text-slate-950 font-sans">
+<body class="relative min-h-screen cyber-grid selection:bg-emerald-500 selection:text-slate-950 font-sans">
 
-  <!-- Navigation Bar -->
+  <!-- Top Scroll Progress Bar -->
+  <div id="progress-bar" style="width: 0%;"></div>
+
+  <!-- Ambient Background Glowing Orbs -->
+  <div class="glow-orb-1"></div>
+  <div class="glow-orb-2"></div>
+  <div class="glow-orb-3"></div>
+
+  <!-- Floating Navigation Bar -->
   <header class="sticky top-0 z-50 px-4 sm:px-8 py-4">
-    <nav class="max-w-6xl mx-auto glass-surface rounded-2xl sm:rounded-full px-6 py-3.5 flex items-center justify-between transition-all border border-slate-700/40 shadow-xl">
+    <nav class="max-w-6xl mx-auto glass-card rounded-2xl sm:rounded-full px-6 py-3.5 flex items-center justify-between transition-all border border-slate-700/60 shadow-2xl">
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600 to-teal-400 text-slate-950 flex items-center justify-center font-bold text-sm shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-500 via-teal-400 to-cyan-400 text-slate-950 flex items-center justify-center font-black text-sm shadow-lg shadow-emerald-500/25 group-hover:scale-110 transition-transform duration-300">
           SP
         </div>
         <div>
-          <span class="font-bold text-base tracking-tight text-white group-hover:text-emerald-400 transition-colors block">
+          <span class="font-bold text-base tracking-tight text-white group-hover:text-emerald-300 transition-colors block">
             S. Priyadharshni
           </span>
-          <span class="text-[11px] text-slate-400 font-medium block">
-            BBA & HR Trainee
+          <span class="text-[11px] text-emerald-400/90 font-medium block">
+            BBA & Innovation Trainee
           </span>
         </div>
       </a>
@@ -172,8 +279,8 @@
       <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
         <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
         <a href="#experience" class="hover:text-emerald-400 transition-colors">Experience</a>
-        <a href="#protosem" class="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> ProtoSem
+        <a href="#protosem" class="text-emerald-300 font-semibold hover:text-emerald-200 transition-colors flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 shadow-sm shadow-emerald-500/10">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> ProtoSem
         </a>
         <a href="#education" class="hover:text-emerald-400 transition-colors">Education</a>
         <a href="#skills" class="hover:text-emerald-400 transition-colors">Competencies</a>
@@ -182,8 +289,8 @@
 
       <!-- Action Button -->
       <div class="flex items-center gap-3">
-        <a href="resume.html" target="_blank" class="flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-xl sm:rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all transform hover:scale-105 shadow-md shadow-emerald-500/20">
-          <i class="fa-solid fa-file-lines"></i>
+        <a href="resume.html" target="_blank" class="flex items-center gap-2 text-xs font-extrabold px-4 sm:px-5 py-2.5 rounded-xl sm:rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-slate-950 transition-all transform hover:scale-105 shadow-lg shadow-emerald-500/30">
+          <i class="fa-solid fa-file-arrow-down text-sm"></i>
           <span>ATS Resume</span>
         </a>
       </div>
@@ -191,51 +298,51 @@
   </header>
 
   <!-- Main Container -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-8 pt-8 pb-24 space-y-28 relative z-10">
+  <main class="max-w-6xl mx-auto px-4 sm:px-8 pt-6 pb-24 space-y-32 relative z-10">
 
-    <!-- HERO SECTION: Executive Summary & Candidate Overview -->
-    <section class="pt-6 sm:pt-10" data-aos="fade-up" data-aos-duration="900">
+    <!-- HERO SECTION: Showstopping Executive Profile & Candidate Overview -->
+    <section class="pt-6 sm:pt-12" data-aos="fade-up" data-aos-duration="1000">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- Left: Executive Profile Intro -->
         <div class="lg:col-span-6 space-y-6 text-left">
           
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-950/70 border border-emerald-500/30 text-emerald-300 text-xs font-semibold uppercase tracking-wider shadow-sm">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full glow-pill text-emerald-300 text-xs font-semibold uppercase tracking-wider">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Available for HR & Management Roles</span>
+            <span>Available for HR & Management Opportunities</span>
           </div>
 
-          <div class="space-y-2">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight font-display">
+          <div class="space-y-3">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-gradient-primary leading-none">
               S. Priyadharshni
             </h1>
-            <p class="text-xl sm:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-slate-200">
+            <p class="text-xl sm:text-2xl font-bold text-gradient-accent">
               BBA Scholar & Innovation Engineer Trainee
             </p>
           </div>
 
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Bachelor of Business Administration (BBA) scholar at <strong class="text-white font-semibold">Kumaraguru College of Liberal Arts and Science</strong> and Innovation Engineer Trainee at <strong class="text-emerald-400 font-semibold">PRICE ProtoSem</strong>. Dedicated to advancing human resources, organizational leadership, and modern retail commerce through people-first strategy and intelligent systems.
+            Bachelor of Business Administration (BBA) scholar at <strong class="text-white font-semibold">Kumaraguru College of Liberal Arts and Science</strong> and Innovation Engineer Trainee at <strong class="text-emerald-300 font-semibold">PRICE ProtoSem</strong>. Dedicated to advancing human resources, organizational leadership, and modern retail commerce through people-first strategy and intelligent systems.
           </p>
 
           <!-- Contact & Action Badges -->
-          <div class="flex flex-wrap items-center gap-3 pt-1">
-            <a href="mailto:priyadharnish552@gmail.com" class="px-5 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs sm:text-sm hover:bg-emerald-400 transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20 transform hover:-translate-y-0.5">
-              <i class="fa-regular fa-envelope text-sm"></i>
+          <div class="flex flex-wrap items-center gap-3.5 pt-2">
+            <a href="mailto:priyadharnish552@gmail.com" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold text-xs sm:text-sm transition-all flex items-center gap-2.5 shadow-xl shadow-emerald-500/25 transform hover:-translate-y-1">
+              <i class="fa-regular fa-envelope text-base"></i>
               Get in Touch
             </a>
-            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl glass-surface text-slate-200 font-semibold text-xs sm:text-sm hover:text-emerald-400 hover:border-emerald-500/40 transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl glass-card-hover text-white font-bold text-xs sm:text-sm hover:text-emerald-300 hover:border-emerald-500/50 transition-all flex items-center gap-2.5 transform hover:-translate-y-1">
               <i class="fa-brands fa-linkedin text-emerald-400 text-base"></i>
               LinkedIn Profile
             </a>
-            <a href="resume.html" target="_blank" class="px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/60 text-slate-300 hover:text-white hover:border-slate-500 text-xs sm:text-sm font-semibold transition-all flex items-center gap-2">
+            <a href="resume.html" target="_blank" class="px-4 py-3 rounded-2xl bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-white hover:border-slate-500 text-xs sm:text-sm font-semibold transition-all flex items-center gap-2">
               <i class="fa-solid fa-arrow-down-to-bracket text-xs text-emerald-400"></i>
               Resume
             </a>
           </div>
 
           <!-- Quick Verified Badges -->
-          <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-2 border-t border-slate-800/80">
+          <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-3 border-t border-slate-800/80">
             <span class="flex items-center gap-1.5">
               <i class="fa-solid fa-location-dot text-emerald-400"></i> Erode, Tamil Nadu
             </span>
@@ -250,80 +357,92 @@
           </div>
         </div>
 
-        <!-- Right: Executive Credentials & Profile Dashboard Card -->
+        <!-- Right: Showstopping Executive Holographic Profile Card -->
         <div class="lg:col-span-6" data-aos="fade-left" data-aos-duration="1000">
-          <div class="glass-surface rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-700/50 shadow-2xl relative overflow-hidden">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-emerald-500/30 shadow-2xl relative overflow-hidden group">
             
+            <!-- Top Subtle Shimmer Highlight Line -->
+            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-80"></div>
+
             <!-- Card Header: Profile Monogram & Verified Status -->
-            <div class="flex items-center justify-between border-b border-slate-800 pb-5">
-              <div class="flex items-center gap-3.5">
-                <div class="w-12 h-12 rounded-2xl bg-slate-900 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl font-bold shadow-inner">
-                  <i class="fa-solid fa-briefcase"></i>
+            <div class="flex items-center justify-between border-b border-slate-800/80 pb-5">
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-cyan-400 text-slate-950 flex items-center justify-center font-black text-xl shadow-lg shadow-emerald-500/25">
+                    SP
+                  </div>
+                  <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-slate-950 shadow-sm animate-pulse"></span>
                 </div>
                 <div>
-                  <h3 class="text-lg font-bold text-white tracking-tight">Executive Candidate Profile</h3>
-                  <p class="text-xs text-slate-400">Verified Academic & Professional Record</p>
+                  <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight font-display">Executive Candidate Profile</h3>
+                  <p class="text-xs text-emerald-400/90 font-medium">BBA Scholar & Innovation Trainee</p>
                 </div>
               </div>
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold font-mono">
-                <i class="fa-solid fa-check-double text-[10px]"></i> Active
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 text-xs font-bold font-mono shadow-sm">
+                <i class="fa-solid fa-circle-check text-[11px] text-emerald-400"></i> Active
               </span>
             </div>
 
-            <!-- Key Metrics Grid -->
+            <!-- Key Metrics 4-Tile Grid -->
             <div class="grid grid-cols-2 gap-3.5">
-              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1">
-                <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Innovation Enrolment</span>
+              <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-1">
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Innovation Enrolment</span>
                 <span class="text-base font-bold text-white block">PRICE ProtoSem</span>
-                <span class="text-xs text-emerald-400 font-medium">20-Week Programme</span>
+                <span class="text-xs text-emerald-300 font-semibold flex items-center gap-1">
+                  <i class="fa-solid fa-bolt text-[10px]"></i> 20-Week Programme
+                </span>
               </div>
 
-              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1">
-                <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Corporate Experience</span>
+              <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-1">
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Corporate Experience</span>
                 <span class="text-base font-bold text-white block">Summer Intern</span>
-                <span class="text-xs text-emerald-400 font-medium">V Thangavel & Sons</span>
+                <span class="text-xs text-teal-300 font-semibold flex items-center gap-1">
+                  <i class="fa-solid fa-building text-[10px]"></i> V Thangavel & Sons
+                </span>
               </div>
 
-              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1">
-                <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Primary Focus</span>
+              <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-1">
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Core Domain Focus</span>
                 <span class="text-base font-bold text-white block">Human Resources</span>
                 <span class="text-xs text-slate-300 font-medium">Talent & Operations</span>
               </div>
 
-              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1">
-                <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Personality Profile</span>
+              <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-1">
+                <span class="text-[10px] font-mono text-slate-400 uppercase tracking-wider block">Personality Profile</span>
                 <span class="text-base font-bold text-white block">Consul (ESFJ-T)</span>
-                <span class="text-xs text-teal-300 font-medium">Collaborative Leadership</span>
+                <span class="text-xs text-cyan-300 font-semibold flex items-center gap-1">
+                  <i class="fa-solid fa-users text-[10px]"></i> People Leadership
+                </span>
               </div>
             </div>
 
             <!-- Core Pillar Tags -->
             <div class="space-y-2 pt-1">
               <span class="text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider block">
-                Core Domains of Practice
+                Key Professional Competencies
               </span>
               <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700/60 text-slate-300 text-xs font-medium">
-                  <i class="fa-solid fa-users text-emerald-400 mr-1 text-[11px]"></i> HR Principles
+                <span class="px-3 py-1 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-xs font-semibold hover:border-emerald-400 transition-colors">
+                  <i class="fa-solid fa-users text-emerald-400 mr-1 text-[11px]"></i> HR Strategy
                 </span>
-                <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700/60 text-slate-300 text-xs font-medium">
-                  <i class="fa-solid fa-cart-shopping text-emerald-400 mr-1 text-[11px]"></i> Phygital Commerce
+                <span class="px-3 py-1 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-xs font-semibold hover:border-emerald-400 transition-colors">
+                  <i class="fa-solid fa-cart-shopping text-teal-400 mr-1 text-[11px]"></i> Phygital Retail
                 </span>
-                <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700/60 text-slate-300 text-xs font-medium">
-                  <i class="fa-solid fa-comments text-emerald-400 mr-1 text-[11px]"></i> Communication
+                <span class="px-3 py-1 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-xs font-semibold hover:border-emerald-400 transition-colors">
+                  <i class="fa-solid fa-comments text-cyan-400 mr-1 text-[11px]"></i> Business Communication
                 </span>
-                <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700/60 text-slate-300 text-xs font-medium">
-                  <i class="fa-solid fa-diagram-project text-emerald-400 mr-1 text-[11px]"></i> Prototyping
+                <span class="px-3 py-1 rounded-xl bg-slate-900/90 border border-slate-800 text-slate-200 text-xs font-semibold hover:border-emerald-400 transition-colors">
+                  <i class="fa-solid fa-cubes text-emerald-400 mr-1 text-[11px]"></i> Prototyping
                 </span>
               </div>
             </div>
 
             <!-- Card Footer Indicator -->
             <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-              <span class="flex items-center gap-1.5 text-emerald-400 font-medium">
-                <i class="fa-solid fa-shield-halved text-xs"></i> Verified Academic Standing
+              <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                <i class="fa-solid fa-shield-halved text-xs"></i> Verified Academic Record
               </span>
-              <span class="font-mono text-[11px] text-slate-500">KCLAS & ProtoSem</span>
+              <span class="font-mono text-[11px] text-slate-400">Kumaraguru College & ProtoSem</span>
             </div>
 
           </div>
@@ -335,7 +454,7 @@
     <!-- SECTION: ABOUT & STRATEGIC VISION -->
     <section id="about" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-1 bg-emerald-500 rounded-full"></div>
+        <div class="w-8 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full"></div>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           About & Career Vision
         </h2>
@@ -343,13 +462,13 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Main Bio Card -->
-        <div class="md:col-span-2 glass-surface-hover rounded-3xl p-6 sm:p-8 space-y-5">
+        <div class="md:col-span-2 glass-card-hover rounded-3xl p-6 sm:p-8 space-y-5">
           <div class="flex items-center gap-4">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-700 to-teal-500 text-slate-950 flex items-center justify-center font-bold text-2xl shadow-lg flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 text-slate-950 flex items-center justify-center font-black text-2xl shadow-lg shadow-emerald-500/20 flex-shrink-0">
               SP
             </div>
             <div>
-              <h3 class="text-xl font-bold text-white">S. Priyadharshni</h3>
+              <h3 class="text-xl font-bold text-white font-display">S. Priyadharshni</h3>
               <p class="text-emerald-400 text-sm font-semibold">BBA Scholar • Aspiring Human Resources Specialist</p>
             </div>
           </div>
@@ -362,16 +481,16 @@
             I thrive in dynamic team environments where clear communication, empathy, and organized management drive high team productivity and mutual organizational growth.
           </p>
 
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 pt-2">
+            <div class="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800/90">
               <span class="text-[11px] text-slate-400 font-mono block">Primary Domain</span>
               <span class="text-sm font-bold text-emerald-300">Human Resources</span>
             </div>
-            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+            <div class="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800/90">
               <span class="text-[11px] text-slate-400 font-mono block">Languages</span>
               <span class="text-sm font-bold text-emerald-300">English & Tamil</span>
             </div>
-            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 col-span-2 sm:col-span-1">
+            <div class="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800/90 col-span-2 sm:col-span-1">
               <span class="text-[11px] text-slate-400 font-mono block">Location</span>
               <span class="text-sm font-bold text-emerald-300">Erode, Tamil Nadu</span>
             </div>
@@ -379,20 +498,20 @@
         </div>
 
         <!-- Career Objective Highlight -->
-        <div class="glass-surface-hover rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <div class="glass-card-hover rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
           <div class="space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-sm">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-sm">
               <i class="fa-solid fa-bullseye"></i>
             </div>
             <h3 class="text-xl font-bold text-white font-display">Career Objective</h3>
-            <blockquote class="text-slate-300 text-xs sm:text-sm leading-relaxed italic border-l-2 border-emerald-500/40 pl-3.5">
+            <blockquote class="text-slate-300 text-xs sm:text-sm leading-relaxed italic border-l-2 border-emerald-400/60 pl-3.5">
               "To contribute to organizational success by leveraging strong interpersonal skills, proactive communication, and modern HR practices while continuously building professional mastery."
             </blockquote>
           </div>
 
-          <div class="pt-4 border-t border-slate-800">
+          <div class="pt-4 border-t border-slate-800/80">
             <div class="flex items-center gap-2 text-xs text-emerald-400 font-semibold">
-              <i class="fa-solid fa-circle-check"></i>
+              <i class="fa-solid fa-circle-check text-sm"></i>
               <span>Open to Corporate Projects & Internships</span>
             </div>
           </div>
@@ -403,24 +522,24 @@
     <!-- SECTION: EXPERIENCE & INTERNSHIPS -->
     <section id="experience" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-1 bg-emerald-500 rounded-full"></div>
+        <div class="w-8 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full"></div>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           Work Experience & Internships
         </h2>
       </div>
 
-      <div class="glass-surface rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-700/50">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-700/60">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
           <div class="flex items-start sm:items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-slate-900 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl flex-shrink-0 shadow-inner">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-950 to-slate-900 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl flex-shrink-0 shadow-lg shadow-emerald-500/10">
               <i class="fa-solid fa-building-columns"></i>
             </div>
             <div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white">Summer Intern</h3>
+              <h3 class="text-xl sm:text-2xl font-bold text-white font-display">Summer Intern</h3>
               <p class="text-emerald-400 font-semibold text-sm sm:text-base">V Thangavel and Sons Pvt. Ltd.</p>
             </div>
           </div>
-          <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-950/70 border border-emerald-500/30 text-emerald-300 text-xs font-semibold self-start sm:self-auto font-mono">
+          <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-bold self-start sm:self-auto font-mono shadow-sm">
             <i class="fa-regular fa-calendar"></i> Summer Internship Completed
           </span>
         </div>
@@ -431,8 +550,8 @@
           </h4>
           
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/90 space-y-2.5">
-              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm">
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-2.5">
+              <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-base">
                 <i class="fa-solid fa-building"></i>
               </div>
               <h5 class="text-white text-sm font-bold">Corporate Exposure</h5>
@@ -441,8 +560,8 @@
               </p>
             </div>
 
-            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/90 space-y-2.5">
-              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm">
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-2.5">
+              <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-base">
                 <i class="fa-solid fa-comments"></i>
               </div>
               <h5 class="text-white text-sm font-bold">Workplace Communication</h5>
@@ -451,8 +570,8 @@
               </p>
             </div>
 
-            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/90 space-y-2.5">
-              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm">
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/40 transition-colors space-y-2.5">
+              <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center text-base">
                 <i class="fa-solid fa-award"></i>
               </div>
               <h5 class="text-white text-sm font-bold">Verified Deliverables</h5>
@@ -471,9 +590,9 @@
     <section id="protosem" class="space-y-8 scroll-mt-24" data-aos="fade-up" data-aos-duration="900">
       
       <!-- Section Label & Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800/80 pb-6">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 text-xs font-extrabold uppercase tracking-widest mb-3 shadow-sm">
             <i class="fa-solid fa-compass text-emerald-400"></i> PRICE PROTOSEM
           </div>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
@@ -484,17 +603,17 @@
           </p>
         </div>
 
-        <div class="flex items-center gap-2 text-xs font-mono text-emerald-300 bg-emerald-950/70 border border-emerald-500/30 px-4 py-2 rounded-xl self-start md:self-auto shadow-sm">
-          <i class="fa-solid fa-layer-group"></i>
+        <div class="flex items-center gap-2 text-xs font-mono text-emerald-300 bg-emerald-950/80 border border-emerald-500/40 px-4 py-2 rounded-2xl self-start md:self-auto shadow-md">
+          <i class="fa-solid fa-layer-group text-emerald-400"></i>
           <span>WEEK 00 + 4 PHASES (20 WEEKS)</span>
         </div>
       </div>
 
-      <!-- Programme Description & Purpose Glassmorphism Card -->
-      <div class="glass-surface rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-700/50 relative overflow-hidden">
+      <!-- Programme Description & Purpose Card -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-700/60 relative overflow-hidden">
         
         <div class="space-y-3 max-w-4xl relative z-10">
-          <h3 class="text-lg font-bold text-white flex items-center gap-2 font-display">
+          <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2.5 font-display">
             <i class="fa-solid fa-lightbulb text-emerald-400"></i>
             Programme Overview & Core Objectives
           </h3>
@@ -512,24 +631,24 @@
             Key Innovation Focus Areas
           </span>
           <div class="flex flex-wrap gap-2.5">
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/40 transition-all">
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/50 hover:bg-slate-850 transition-all">
               <i class="fa-solid fa-cart-shopping text-emerald-400"></i>
               Phygital Retail & Intelligent Commerce
             </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/40 transition-all">
-              <i class="fa-solid fa-brain text-emerald-400"></i>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/50 hover:bg-slate-850 transition-all">
+              <i class="fa-solid fa-brain text-teal-400"></i>
               AI & Analytics
             </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/40 transition-all">
-              <i class="fa-solid fa-microchip text-emerald-400"></i>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/50 hover:bg-slate-850 transition-all">
+              <i class="fa-solid fa-microchip text-cyan-400"></i>
               Intelligent Systems & IoT
             </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/40 transition-all">
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/50 hover:bg-slate-850 transition-all">
               <i class="fa-solid fa-cubes text-emerald-400"></i>
               Prototyping & Validation
             </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/40 transition-all">
-              <i class="fa-solid fa-rocket text-emerald-400"></i>
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/50 hover:bg-slate-850 transition-all">
+              <i class="fa-solid fa-rocket text-teal-400"></i>
               Entrepreneurship & Strategy
             </div>
           </div>
@@ -537,22 +656,22 @@
       </div>
 
       <!-- VISUAL PROGRESSION TIMELINE INDICATOR -->
-      <div class="glass-surface rounded-2xl p-4 sm:p-5 border border-slate-800">
+      <div class="glass-card rounded-2xl p-4 sm:p-5 border border-slate-800">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div class="flex items-center gap-3">
             <span class="text-xs font-mono font-semibold text-slate-400 uppercase">Milestone Rail:</span>
             <div class="hidden md:flex items-center gap-2 font-mono text-xs text-emerald-400">
-              <span class="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/50 text-emerald-300 font-bold">00</span>
-              <span class="text-emerald-700 font-bold">━━━━</span>
-              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">01</span>
+              <span class="px-2.5 py-0.5 rounded-lg bg-emerald-950 border border-emerald-500/60 text-emerald-300 font-bold shadow-sm shadow-emerald-500/30">00</span>
+              <span class="text-emerald-500 font-bold">━━━━</span>
+              <span class="px-2.5 py-0.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-400">01</span>
               <span class="text-slate-700 font-bold">━━━━</span>
-              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">05</span>
+              <span class="px-2.5 py-0.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-400">05</span>
               <span class="text-slate-700 font-bold">━━━━</span>
-              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">10</span>
+              <span class="px-2.5 py-0.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-400">10</span>
               <span class="text-slate-700 font-bold">━━━━</span>
-              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">15</span>
+              <span class="px-2.5 py-0.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-400">15</span>
               <span class="text-slate-700 font-bold">━━━━</span>
-              <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">20</span>
+              <span class="px-2.5 py-0.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-400">20</span>
             </div>
           </div>
           <div class="text-xs text-slate-400 flex items-center gap-2">
@@ -568,16 +687,16 @@
           <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
             <i class="fa-solid fa-filter text-emerald-400"></i> Filter Programme View:
           </span>
-          <span id="phase-counter-badge" class="text-xs font-mono text-emerald-400 px-3 py-1 rounded-lg bg-emerald-950/70 border border-emerald-500/30">
+          <span id="phase-counter-badge" class="text-xs font-mono text-emerald-400 px-3.5 py-1 rounded-xl bg-emerald-950/80 border border-emerald-500/40 shadow-sm">
             Showing all weeks (Week 00–20)
           </span>
         </div>
 
-        <div class="flex flex-wrap items-center gap-2 p-1.5 glass-surface rounded-2xl border border-slate-800" role="tablist">
+        <div class="flex flex-wrap items-center gap-2 p-1.5 glass-card rounded-2xl border border-slate-800" role="tablist">
           <button 
             onclick="filterProtoPhase('all')" 
             id="tab-all"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/25"
             role="tab"
             aria-selected="true"
           >
@@ -586,7 +705,7 @@
           <button 
             onclick="filterProtoPhase(0)" 
             id="tab-0"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all"
             role="tab"
             aria-selected="false"
           >
@@ -595,7 +714,7 @@
           <button 
             onclick="filterProtoPhase(1)" 
             id="tab-1"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all"
             role="tab"
             aria-selected="false"
           >
@@ -604,7 +723,7 @@
           <button 
             onclick="filterProtoPhase(2)" 
             id="tab-2"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all"
             role="tab"
             aria-selected="false"
           >
@@ -613,7 +732,7 @@
           <button 
             onclick="filterProtoPhase(3)" 
             id="tab-3"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all"
             role="tab"
             aria-selected="false"
           >
@@ -622,7 +741,7 @@
           <button 
             onclick="filterProtoPhase(4)" 
             id="tab-4"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/80 transition-all"
             role="tab"
             aria-selected="false"
           >
@@ -641,29 +760,29 @@
     <!-- SECTION: EDUCATION -->
     <section id="education" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-1 bg-emerald-500 rounded-full"></div>
+        <div class="w-8 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full"></div>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           Education
         </h2>
       </div>
 
-      <div class="glass-surface-hover rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div class="glass-card-hover rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div class="flex items-start gap-4">
-          <div class="w-14 h-14 rounded-2xl bg-slate-900 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl flex-shrink-0 shadow-inner">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-emerald-950 to-slate-900 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl flex-shrink-0 shadow-lg shadow-emerald-500/10">
             <i class="fa-solid fa-graduation-cap"></i>
           </div>
           <div class="space-y-1.5">
-            <h3 class="text-xl sm:text-2xl font-bold text-white">Bachelor of Business Administration (BBA)</h3>
+            <h3 class="text-xl sm:text-2xl font-bold text-white font-display">Bachelor of Business Administration (BBA)</h3>
             <p class="text-emerald-400 font-semibold text-sm sm:text-base">Kumaraguru College of Liberal Arts and Science</p>
             <p class="text-slate-400 text-xs sm:text-sm">Currently in 2nd Year • Focus on Human Resource Management & Business Studies</p>
           </div>
         </div>
 
         <div class="flex flex-col sm:items-end gap-2">
-          <span class="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-semibold text-xs font-mono">
+          <span class="px-4 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-400/40 text-emerald-300 font-bold text-xs font-mono shadow-sm">
             2025 – 2028 (Ongoing)
           </span>
-          <span class="text-slate-400 text-xs">Full-Time Undergraduate Scholar</span>
+          <span class="text-slate-400 text-xs font-medium">Full-Time Undergraduate Scholar</span>
         </div>
       </div>
     </section>
@@ -671,7 +790,7 @@
     <!-- SECTION: CORE COMPETENCIES -->
     <section id="skills" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-1 bg-emerald-500 rounded-full"></div>
+        <div class="w-8 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full"></div>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           Core Competencies & Expertise
         </h2>
@@ -679,9 +798,9 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Card 1 -->
-        <div class="glass-surface-hover rounded-3xl p-6 space-y-3.5 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-sm">
+        <div class="glass-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-users-gear"></i>
             </div>
             <h3 class="text-lg font-bold text-white font-display">Human Resources</h3>
@@ -689,13 +808,16 @@
               Talent acquisition basics, employee relations, workplace engagement, and organizational support.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-emerald-400 font-semibold pt-2 border-t border-slate-800">HR Strategy</span>
+          <span class="text-[11px] font-mono text-emerald-400 font-semibold pt-2.5 border-t border-slate-800 flex items-center justify-between">
+            <span>HR Strategy</span>
+            <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
+          </span>
         </div>
 
         <!-- Card 2 -->
-        <div class="glass-surface-hover rounded-3xl p-6 space-y-3.5 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-sm">
+        <div class="glass-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-teal-500/20 to-cyan-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-comments"></i>
             </div>
             <h3 class="text-lg font-bold text-white font-display">Communication</h3>
@@ -703,13 +825,16 @@
               Professional correspondence, presentation etiquette, active listening, and inter-departmental alignment.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-emerald-400 font-semibold pt-2 border-t border-slate-800">Business Correspondence</span>
+          <span class="text-[11px] font-mono text-teal-400 font-semibold pt-2.5 border-t border-slate-800 flex items-center justify-between">
+            <span>Business Correspondence</span>
+            <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
+          </span>
         </div>
 
         <!-- Card 3 -->
-        <div class="glass-surface-hover rounded-3xl p-6 space-y-3.5 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-sm">
+        <div class="glass-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-cyan-500/20 to-blue-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-handshake"></i>
             </div>
             <h3 class="text-lg font-bold text-white font-display">Team Dynamics</h3>
@@ -717,13 +842,16 @@
               Collaborative mindset, conflict resolution, active participation, and cross-functional leadership.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-emerald-400 font-semibold pt-2 border-t border-slate-800">Consul (ESFJ-T)</span>
+          <span class="text-[11px] font-mono text-cyan-400 font-semibold pt-2.5 border-t border-slate-800 flex items-center justify-between">
+            <span>Consul (ESFJ-T)</span>
+            <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
+          </span>
         </div>
 
         <!-- Card 4 -->
-        <div class="glass-surface-hover rounded-3xl p-6 space-y-3.5 flex flex-col justify-between">
-          <div class="space-y-3">
-            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-sm">
+        <div class="glass-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group">
+          <div class="space-y-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-500/20 to-emerald-700/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-chart-line"></i>
             </div>
             <h3 class="text-lg font-bold text-white font-display">Management</h3>
@@ -731,7 +859,10 @@
               Operational planning, task prioritization, structured time management, and execution discipline.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-emerald-400 font-semibold pt-2 border-t border-slate-800">Operations & Logistics</span>
+          <span class="text-[11px] font-mono text-emerald-400 font-semibold pt-2.5 border-t border-slate-800 flex items-center justify-between">
+            <span>Operations & Planning</span>
+            <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
+          </span>
         </div>
       </div>
     </section>
@@ -739,15 +870,15 @@
     <!-- SECTION: CONTACT & CONNECT -->
     <section id="contact" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-1 bg-emerald-500 rounded-full"></div>
+        <div class="w-8 h-1 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full"></div>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           Let's Connect
         </h2>
       </div>
 
-      <div class="glass-surface rounded-3xl p-8 sm:p-12 border border-slate-700/60 relative overflow-hidden text-center space-y-6">
+      <div class="glass-card rounded-3xl p-8 sm:p-12 border border-emerald-500/30 relative overflow-hidden text-center space-y-6 shadow-2xl">
         <div class="max-w-2xl mx-auto space-y-6">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-2xl shadow-sm">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-500/20 to-teal-500/20 border border-emerald-500/40 text-emerald-400 text-2xl shadow-lg shadow-emerald-500/20 animate-float-slow">
             <i class="fa-solid fa-paper-plane"></i>
           </div>
           
@@ -760,17 +891,17 @@
           </p>
 
           <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-            <a href="mailto:priyadharnish552@gmail.com" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl shadow-emerald-500/25">
+            <a href="mailto:priyadharnish552@gmail.com" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-extrabold text-sm transition-all transform hover:scale-105 flex items-center gap-2.5 shadow-xl shadow-emerald-500/30">
               <i class="fa-solid fa-envelope"></i>
               priyadharnish552@gmail.com
             </a>
 
-            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl glass-surface-hover text-white hover:text-emerald-400 hover:border-emerald-500/40 font-bold text-sm transition-all transform hover:scale-105 flex items-center gap-2">
+            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-2xl glass-card-hover text-white hover:text-emerald-300 font-bold text-sm transition-all transform hover:scale-105 flex items-center gap-2.5">
               <i class="fa-brands fa-linkedin text-emerald-400 text-base"></i>
               LinkedIn Profile
             </a>
 
-            <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold text-sm transition-all flex items-center gap-2">
+            <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold text-sm transition-all flex items-center gap-2.5">
               <i class="fa-solid fa-file-pdf text-emerald-400"></i>
               View ATS Resume
             </a>
@@ -783,14 +914,14 @@
 
   <!-- REUSABLE WEEK MODAL DIALOG (Executive Innovation Log Reader) -->
   <div id="week-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" onclick="closeWeekModal(event)">
-    <div class="glass-surface max-w-2xl w-full rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-700/60 relative shadow-2xl max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+    <div class="glass-card max-w-2xl w-full rounded-3xl p-6 sm:p-8 space-y-6 border border-emerald-500/40 relative shadow-2xl max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
       <!-- Close button -->
       <button onclick="closeWeekModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 flex items-center justify-center transition-colors">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
       <div class="flex items-center gap-3">
-        <span id="modal-phase-tag" class="text-xs font-mono px-3 py-1 rounded-md bg-emerald-950 border border-emerald-500/40 text-emerald-300 font-bold">
+        <span id="modal-phase-tag" class="text-xs font-mono px-3.5 py-1 rounded-lg bg-emerald-950 border border-emerald-500/50 text-emerald-300 font-bold shadow-sm">
           WEEK 00 • ORIENTATION & IMMERSION
         </span>
         <span class="text-xs text-slate-400 font-mono">• ProtoSem Innovation Journey</span>
@@ -813,10 +944,10 @@
       <!-- Journal Entry Body -->
       <div class="p-5 sm:p-6 rounded-2xl bg-slate-950/95 border border-slate-800 space-y-3 font-sans shadow-inner">
         <div class="text-xs text-slate-400 font-mono flex items-center justify-between border-b border-slate-800/80 pb-2.5">
-          <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+          <span class="flex items-center gap-1.5 text-emerald-400 font-bold">
             <i class="fa-solid fa-pen-nib text-xs"></i> Weekly Story & Reflection
           </span>
-          <span id="modal-status-badge" class="text-emerald-300 font-mono font-semibold px-2.5 py-0.5 rounded bg-emerald-950/80 border border-emerald-500/30">
+          <span id="modal-status-badge" class="text-emerald-300 font-mono font-bold px-2.5 py-0.5 rounded-lg bg-emerald-950/80 border border-emerald-500/40">
             Status: Published
           </span>
         </div>
@@ -832,7 +963,7 @@
 
       <div class="flex items-center justify-between pt-2">
         <span id="modal-route-path" class="text-xs font-mono text-slate-500">/protosem/week-00</span>
-        <button onclick="closeWeekModal()" class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition-all shadow-md shadow-emerald-500/20">
+        <button onclick="closeWeekModal()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 text-slate-950 font-bold text-xs transition-all shadow-lg shadow-emerald-500/25">
           Close Story
         </button>
       </div>
@@ -851,13 +982,24 @@
     </div>
   </footer>
 
-  <!-- AOS Script -->
+  <!-- AOS & Interactions Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
       once: true,
       duration: 800,
       easing: 'ease-out-cubic',
+    });
+
+    // Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.getElementById('progress-bar');
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
     });
 
     // =========================================================================
@@ -951,7 +1093,7 @@
 
         return `
         <div 
-          class="week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isPublished ? 'border-emerald-500/40 bg-slate-900/90 ring-1 ring-emerald-500/30 shadow-lg shadow-emerald-500/5' : ''}"
+          class="week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isPublished ? 'border-emerald-400/50 bg-slate-900/95 ring-1 ring-emerald-400/40 shadow-xl shadow-emerald-500/10' : ''}"
           onclick="openWeekModal(${w.weekNumber})"
           tabindex="0"
           role="button"
@@ -963,7 +1105,7 @@
             <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full ${w.isPublished ? 'bg-emerald-500/20 border border-emerald-400/50 text-emerald-300' : 'bg-slate-900 border border-slate-700 text-slate-400'}">
               ${w.phaseTag}
             </span>
-            <div class="week-number-badge w-8 h-8 rounded-xl ${w.isPublished ? 'bg-emerald-950 border border-emerald-400/50 text-emerald-300 shadow-sm' : 'bg-slate-900/80 border border-slate-700 text-slate-400'} font-mono text-xs font-bold flex items-center justify-center transition-all">
+            <div class="week-number-badge w-8 h-8 rounded-xl ${w.isPublished ? 'bg-emerald-950 border border-emerald-400/60 text-emerald-300 shadow-sm' : 'bg-slate-900/80 border border-slate-700 text-slate-400'} font-mono text-xs font-bold flex items-center justify-center transition-all">
               ${w.padWeek}
             </div>
           </div>
@@ -972,17 +1114,17 @@
           <div class="space-y-1.5 py-1">
             <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
               <span>${w.cardTitle}</span>
-              ${w.isPublished ? '<span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Story Ready</span>' : ''}
+              ${w.isPublished ? '<span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-400/40 shadow-sm">Story Ready</span>' : ''}
             </h4>
             <p class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
               <span class="w-1.5 h-1.5 rounded-full ${w.isPublished ? 'bg-emerald-400 animate-pulse' : 'bg-slate-600'}"></span>
-              <span class="${w.isPublished ? 'text-emerald-300 font-semibold' : ''}">${w.isPublished ? 'REFLECTION PUBLISHED' : 'FIELD NOTES IN PROGRESS'}</span>
+              <span class="${w.isPublished ? 'text-emerald-300 font-bold' : ''}">${w.isPublished ? 'REFLECTION PUBLISHED' : 'FIELD NOTES IN PROGRESS'}</span>
             </p>
           </div>
 
           ${mainImage ? `
             <!-- Photo Preview Dual/Single Thumbnail (At Bottom of Card Content) -->
-            <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-1.5 rounded-xl overflow-hidden border border-slate-700 bg-slate-950 p-1">
+            <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-1.5 rounded-xl overflow-hidden border border-slate-700/80 bg-slate-950 p-1">
               <div class="relative h-28 sm:h-32 rounded-lg overflow-hidden bg-slate-900">
                 <img src="${mainImage.src}" alt="${mainImage.caption || w.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
@@ -1004,7 +1146,7 @@
 
           <!-- Bottom: Action Indicator & Arrow -->
           <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-            <span class="text-[11px] font-mono ${w.isPublished ? 'text-emerald-300 font-semibold' : 'text-slate-400'} group-hover:text-emerald-300">
+            <span class="text-[11px] font-mono ${w.isPublished ? 'text-emerald-300 font-bold' : 'text-slate-400'} group-hover:text-emerald-300">
               ${w.isPublished ? 'Read Story' : 'Future Story'}
             </span>
             <div class="week-arrow flex items-center gap-1 text-slate-500 group-hover:text-emerald-400 transition-all font-semibold">
@@ -1025,16 +1167,16 @@
       // Update Tab Styles
       const buttons = document.querySelectorAll('.phase-btn');
       buttons.forEach(btn => {
-        btn.classList.remove('bg-emerald-500', 'text-slate-950', 'shadow-md', 'shadow-emerald-500/20');
-        btn.classList.add('text-slate-300');
+        btn.classList.remove('bg-emerald-500', 'text-slate-950', 'shadow-md', 'shadow-emerald-500/25', 'font-extrabold');
+        btn.classList.add('text-slate-300', 'font-semibold');
         btn.setAttribute('aria-selected', 'false');
       });
 
       const activeBtnId = phase === 'all' ? 'tab-all' : `tab-${phase}`;
       const activeBtn = document.getElementById(activeBtnId);
       if (activeBtn) {
-        activeBtn.classList.remove('text-slate-300');
-        activeBtn.classList.add('bg-emerald-500', 'text-slate-950', 'shadow-md', 'shadow-emerald-500/20');
+        activeBtn.classList.remove('text-slate-300', 'font-semibold');
+        activeBtn.classList.add('bg-emerald-500', 'text-slate-950', 'shadow-md', 'shadow-emerald-500/25', 'font-extrabold');
         activeBtn.setAttribute('aria-selected', 'true');
       }
 
@@ -1076,7 +1218,7 @@
         if (week.highlights && week.highlights.length > 0) {
           highlightsContainer.classList.remove("hidden");
           highlightsContainer.innerHTML = week.highlights.map(h => `
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-950/80 border border-emerald-500/30 text-emerald-300 text-xs font-medium">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">
               <i class="fa-solid fa-check text-[10px] text-emerald-400"></i> ${h}
             </span>
           `).join("");
@@ -1084,6 +1226,12 @@
           highlightsContainer.classList.add("hidden");
           highlightsContainer.innerHTML = "";
         }
+      }
+
+      // Render note / text
+      const noteContainer = document.getElementById("modal-journal-note");
+      if (noteContainer) {
+        noteContainer.innerHTML = `<p class="leading-relaxed">${week.journalNote}</p>`;
       }
 
       // Render gallery showcase (supporting single or multi-images)
@@ -1095,10 +1243,10 @@
           if (imageList.length === 1) {
             const img = imageList[0];
             galleryContainer.innerHTML = `
-              <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 shadow-xl">
+              <div class="rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow-xl">
                 <img src="${img.src}" alt="${img.alt || week.title}" class="w-full max-h-80 object-cover">
                 <div class="px-4 py-2.5 bg-slate-900/95 border-t border-slate-800 text-xs font-mono text-slate-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                  <span class="flex items-center gap-1.5 text-emerald-300">
+                  <span class="flex items-center gap-1.5 text-emerald-300 font-bold">
                     <i class="fa-solid fa-camera text-emerald-400"></i> ${img.caption}
                   </span>
                   <span class="text-slate-400 text-[11px] font-sans">${img.location || ''}</span>
@@ -1109,17 +1257,17 @@
             galleryContainer.innerHTML = `
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 ${imageList.map(img => `
-                  <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 shadow-xl flex flex-col justify-between group/img">
+                  <div class="rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-950 shadow-xl flex flex-col justify-between group/img">
                     <div class="h-48 sm:h-52 overflow-hidden bg-slate-900 relative">
                       <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500">
                       ${img.badge ? `
-                        <span class="absolute top-2.5 left-2.5 text-[10px] font-mono px-2 py-0.5 rounded bg-slate-950/85 text-emerald-300 border border-emerald-500/30 backdrop-blur-sm">
+                        <span class="absolute top-2.5 left-2.5 text-[10px] font-mono px-2 py-0.5 rounded-lg bg-slate-950/85 text-emerald-300 border border-emerald-500/40 backdrop-blur-sm shadow-sm">
                           ${img.badge}
                         </span>
                       ` : ''}
                     </div>
                     <div class="p-3 bg-slate-900/95 border-t border-slate-800 text-xs font-mono space-y-0.5">
-                      <div class="text-emerald-300 font-semibold text-xs flex items-center gap-1.5 truncate">
+                      <div class="text-emerald-300 font-bold text-xs flex items-center gap-1.5 truncate">
                         <i class="fa-solid fa-image text-emerald-400 text-[10px]"></i> ${img.caption}
                       </div>
                       <div class="text-slate-400 text-[11px] font-sans truncate">
@@ -1135,12 +1283,6 @@
           galleryContainer.classList.add("hidden");
           galleryContainer.innerHTML = "";
         }
-      }
-
-      // Render note / text
-      const noteContainer = document.getElementById("modal-journal-note");
-      if (noteContainer) {
-        noteContainer.innerHTML = `<p class="leading-relaxed">${week.journalNote}</p>`;
       }
 
       document.getElementById("modal-route-path").textContent = `/protosem/${week.slug}`;
