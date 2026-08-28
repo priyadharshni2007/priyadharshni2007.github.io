@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>S. Priyadharshni | HR, Management & Innovation Portfolio</title>
-  <meta name="description" content="Portfolio of S. Priyadharshni - BBA Student & Innovation Engineer Trainee at PRICE ProtoSem, specializing in Human Resources, Intelligent Commerce, and Management.">
+  <meta name="description" content="Professional portfolio of S. Priyadharshni - BBA Scholar & Innovation Engineer Trainee at PRICE ProtoSem. Focused on Human Resources, Business Management, and Intelligent Commerce.">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,8 +14,12 @@
       theme: {
         extend: {
           colors: {
-            emerald: {
-              400: '#34d399',
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
               500: '#10b981',
               600: '#059669',
               700: '#047857',
@@ -23,20 +27,26 @@
               900: '#064e3b',
               950: '#022c22',
             },
+            slate: {
+              850: '#111827',
+              900: '#0f172a',
+              950: '#090d16',
+            }
           },
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['Fira Code', 'Courier New', 'monospace'],
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+            display: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
           }
         }
       }
     }
   </script>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -45,51 +55,57 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #060b13;
-      color: #f1f5f9;
-      overflow-x: hidden;
+    :root {
+      color-scheme: dark;
     }
     
-    /* Glassmorphism Styles */
-    .glass-panel {
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #080c14;
+      color: #f1f5f9;
+      overflow-x: hidden;
+      selection-background-color: #10b981;
+      selection-color: #000000;
+    }
+    
+    /* Refined Executive Glass Surfaces */
+    .glass-surface {
+      background: rgba(15, 23, 42, 0.68);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .glass-surface-hover {
       background: rgba(15, 23, 42, 0.65);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(16, 185, 129, 0.15);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
-    .glass-panel-interactive {
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(16, 185, 129, 0.12);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .glass-panel-interactive:hover {
-      background: rgba(16, 185, 129, 0.08);
-      border-color: rgba(16, 185, 129, 0.4);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px -5px rgba(16, 185, 129, 0.15);
+    .glass-surface-hover:hover {
+      background: rgba(30, 41, 59, 0.7);
+      border-color: rgba(16, 185, 129, 0.35);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px -10px rgba(16, 185, 129, 0.12);
     }
 
-    /* Week Card Glass Special */
+    /* Executive Week Card */
     .week-card {
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(16, 185, 129, 0.14);
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
     .week-card:hover {
-      background: rgba(6, 78, 59, 0.25);
-      border-color: rgba(52, 211, 153, 0.5);
-      transform: translateY(-4px) scale(1.015);
-      box-shadow: 0 14px 28px -6px rgba(16, 185, 129, 0.2);
+      background: rgba(17, 24, 39, 0.85);
+      border-color: rgba(16, 185, 129, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px -12px rgba(16, 185, 129, 0.16);
     }
 
     .week-card:hover .week-arrow {
@@ -98,115 +114,76 @@
     }
 
     .week-card:hover .week-number-badge {
-      background: rgba(16, 185, 129, 0.25);
+      background: rgba(16, 185, 129, 0.18);
       color: #34d399;
-      border-color: rgba(52, 211, 153, 0.5);
+      border-color: rgba(16, 185, 129, 0.4);
     }
 
-    /* Ambient background glows */
-    .ambient-glow-1 {
-      position: absolute;
-      top: 10%;
-      left: 15%;
-      width: 450px;
-      height: 450px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
-      filter: blur(50px);
-      pointer-events: none;
-      z-index: 0;
+    /* Subtle Architectural Background Mesh */
+    .bg-mesh-radial {
+      background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 100% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
+                  radial-gradient(circle at 0% 80%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
     }
 
-    .ambient-glow-2 {
-      position: absolute;
-      top: 45%;
-      right: 10%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(5, 150, 105, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-      filter: blur(60px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .ambient-glow-3 {
-      position: absolute;
-      top: 75%;
-      left: 10%;
-      width: 450px;
-      height: 450px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
-      filter: blur(60px);
-      pointer-events: none;
-      z-index: 0;
-    }
-    
-    /* Terminal styling */
-    .terminal-header {
-      background: rgba(2, 44, 34, 0.7);
-      border-bottom: 1px solid rgba(16, 185, 129, 0.2);
-    }
-    
-    .terminal-body {
-      font-family: 'Fira Code', monospace;
-    }
-    
     /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #060b13;
+      background: #080c14;
     }
     ::-webkit-scrollbar-thumb {
-      background: #10b981;
+      background: #1e293b;
       border-radius: 4px;
+      border: 2px solid #080c14;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #34d399;
+      background: #10b981;
     }
 
     /* Modal Backdrop */
     .modal-backdrop {
-      background: rgba(6, 11, 19, 0.85);
-      backdrop-filter: blur(8px);
+      background: rgba(5, 8, 15, 0.88);
+      backdrop-filter: blur(12px);
     }
   </style>
 </head>
-<body class="relative min-h-screen selection:bg-emerald-500 selection:text-black">
-
-  <!-- Ambient Background Gradients -->
-  <div class="ambient-glow-1"></div>
-  <div class="ambient-glow-2"></div>
-  <div class="ambient-glow-3"></div>
+<body class="relative min-h-screen bg-mesh-radial selection:bg-emerald-500 selection:text-slate-950 font-sans">
 
   <!-- Navigation Bar -->
   <header class="sticky top-0 z-50 px-4 sm:px-8 py-4">
-    <nav class="max-w-6xl mx-auto glass-panel rounded-full px-6 py-3.5 flex items-center justify-between transition-all">
+    <nav class="max-w-6xl mx-auto glass-surface rounded-2xl sm:rounded-full px-6 py-3.5 flex items-center justify-between transition-all border border-slate-700/40 shadow-xl">
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-400 font-bold text-lg group-hover:scale-105 transition-transform">
+        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-emerald-600 to-teal-400 text-slate-950 flex items-center justify-center font-bold text-sm shadow-md shadow-emerald-500/20 group-hover:scale-105 transition-transform">
           SP
         </div>
-        <span class="font-bold text-lg tracking-tight text-white group-hover:text-emerald-400 transition-colors">
-          S. Priyadharshni
-        </span>
+        <div>
+          <span class="font-bold text-base tracking-tight text-white group-hover:text-emerald-400 transition-colors block">
+            S. Priyadharshni
+          </span>
+          <span class="text-[11px] text-slate-400 font-medium block">
+            BBA & HR Trainee
+          </span>
+        </div>
       </a>
 
       <!-- Desktop Links -->
       <div class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
         <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
         <a href="#experience" class="hover:text-emerald-400 transition-colors">Experience</a>
-        <a href="#protosem" class="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors flex items-center gap-1.5">
+        <a href="#protosem" class="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-500/30">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> ProtoSem
         </a>
         <a href="#education" class="hover:text-emerald-400 transition-colors">Education</a>
-        <a href="#skills" class="hover:text-emerald-400 transition-colors">Skills</a>
+        <a href="#skills" class="hover:text-emerald-400 transition-colors">Competencies</a>
         <a href="#contact" class="hover:text-emerald-400 transition-colors">Contact</a>
       </div>
 
       <!-- Action Button -->
       <div class="flex items-center gap-3">
-        <a href="resume.html" target="_blank" class="flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all transform hover:scale-105 shadow-lg shadow-emerald-500/20">
-          <i class="fa-solid fa-file-arrow-down"></i>
+        <a href="resume.html" target="_blank" class="flex items-center gap-2 text-xs font-bold px-4 py-2 rounded-xl sm:rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-all transform hover:scale-105 shadow-md shadow-emerald-500/20">
+          <i class="fa-solid fa-file-lines"></i>
           <span>ATS Resume</span>
         </a>
       </div>
@@ -214,170 +191,209 @@
   </header>
 
   <!-- Main Container -->
-  <main class="max-w-6xl mx-auto px-4 sm:px-8 pt-8 pb-20 space-y-28 relative z-10">
+  <main class="max-w-6xl mx-auto px-4 sm:px-8 pt-8 pb-24 space-y-28 relative z-10">
 
-    <!-- HERO SECTION: Terminal Aesthetic -->
-    <section class="pt-6 sm:pt-12" data-aos="fade-down" data-aos-duration="1000">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+    <!-- HERO SECTION: Executive Summary & Candidate Overview -->
+    <section class="pt-6 sm:pt-10" data-aos="fade-up" data-aos-duration="900">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        <!-- Left: Intro & Quick Bio -->
-        <div class="lg:col-span-5 space-y-6 text-left">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/60 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+        <!-- Left: Executive Profile Intro -->
+        <div class="lg:col-span-6 space-y-6 text-left">
+          
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-950/70 border border-emerald-500/30 text-emerald-300 text-xs font-semibold uppercase tracking-wider shadow-sm">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Available for HR & Innovation Roles
+            <span>Available for HR & Management Roles</span>
           </div>
 
-          <h1 class="text-4xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
-            Hi, I'm <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-200">
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight font-display">
               S. Priyadharshni
-            </span>
-          </h1>
+            </h1>
+            <p class="text-xl sm:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-teal-200 to-slate-200">
+              BBA Scholar & Innovation Engineer Trainee
+            </p>
+          </div>
 
-          <p class="text-slate-300 text-base leading-relaxed">
-            Motivated BBA student and <strong class="text-emerald-300 font-semibold">Innovation Engineer Trainee</strong> at PRICE ProtoSem. Passionate about Human Resources, Organizational Management, and solving retail & commerce challenges through intelligent systems.
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Bachelor of Business Administration (BBA) scholar at <strong class="text-white font-semibold">Kumaraguru College of Liberal Arts and Science</strong> and Innovation Engineer Trainee at <strong class="text-emerald-400 font-semibold">PRICE ProtoSem</strong>. Dedicated to advancing human resources, organizational leadership, and modern retail commerce through people-first strategy and intelligent systems.
           </p>
 
           <!-- Contact & Action Badges -->
-          <div class="flex flex-wrap items-center gap-3 pt-2">
-            <a href="mailto:priyadharnish552@gmail.com" class="px-5 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-semibold text-sm hover:bg-emerald-400 transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/25">
-              <i class="fa-regular fa-envelope"></i>
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <a href="mailto:priyadharnish552@gmail.com" class="px-5 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-bold text-xs sm:text-sm hover:bg-emerald-400 transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20 transform hover:-translate-y-0.5">
+              <i class="fa-regular fa-envelope text-sm"></i>
               Get in Touch
             </a>
-            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl glass-panel text-white font-medium text-sm hover:text-emerald-400 hover:border-emerald-500/40 transition-all flex items-center gap-2">
-              <i class="fa-brands fa-linkedin text-emerald-400"></i>
+            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl glass-surface text-slate-200 font-semibold text-xs sm:text-sm hover:text-emerald-400 hover:border-emerald-500/40 transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+              <i class="fa-brands fa-linkedin text-emerald-400 text-base"></i>
               LinkedIn Profile
+            </a>
+            <a href="resume.html" target="_blank" class="px-4 py-2.5 rounded-xl bg-slate-900/90 border border-slate-700/60 text-slate-300 hover:text-white hover:border-slate-500 text-xs sm:text-sm font-semibold transition-all flex items-center gap-2">
+              <i class="fa-solid fa-arrow-down-to-bracket text-xs text-emerald-400"></i>
+              Resume
             </a>
           </div>
 
-          <!-- Location & College Tag -->
-          <div class="flex items-center gap-4 text-xs text-slate-400 pt-2">
+          <!-- Quick Verified Badges -->
+          <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400 pt-2 border-t border-slate-800/80">
             <span class="flex items-center gap-1.5">
               <i class="fa-solid fa-location-dot text-emerald-400"></i> Erode, Tamil Nadu
             </span>
             <span>•</span>
             <span class="flex items-center gap-1.5">
-              <i class="fa-solid fa-graduation-cap text-emerald-400"></i> BBA 2nd Year
+              <i class="fa-solid fa-graduation-cap text-emerald-400"></i> BBA 2nd Year (2025–2028)
+            </span>
+            <span>•</span>
+            <span class="flex items-center gap-1.5">
+              <i class="fa-solid fa-id-badge text-emerald-400"></i> ESFJ-T (Consul)
             </span>
           </div>
         </div>
 
-        <!-- Right: Interactive Developer / Management Terminal Card -->
-        <div class="lg:col-span-7" data-aos="zoom-in" data-aos-duration="1000">
-          <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl border border-emerald-500/30">
-            <!-- Terminal Header -->
-            <div class="terminal-header px-4 py-3 flex items-center justify-between">
-              <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-                <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-                <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
+        <!-- Right: Executive Credentials & Profile Dashboard Card -->
+        <div class="lg:col-span-6" data-aos="fade-left" data-aos-duration="1000">
+          <div class="glass-surface rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-700/50 shadow-2xl relative overflow-hidden">
+            
+            <!-- Card Header: Profile Monogram & Verified Status -->
+            <div class="flex items-center justify-between border-b border-slate-800 pb-5">
+              <div class="flex items-center gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-slate-900 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl font-bold shadow-inner">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-white tracking-tight">Executive Candidate Profile</h3>
+                  <p class="text-xs text-slate-400">Verified Academic & Professional Record</p>
+                </div>
               </div>
-              <div class="text-xs font-mono text-emerald-300/80 flex items-center gap-1.5">
-                <i class="fa-solid fa-terminal text-[10px]"></i> priyadharshni@portfolio:~
-              </div>
-              <div class="text-[11px] font-mono text-slate-400">zsh</div>
-            </div>
-
-            <!-- Terminal Content -->
-            <div class="p-6 terminal-body text-xs sm:text-sm space-y-4 bg-slate-950/80">
-              <div class="flex items-center gap-2 text-emerald-400">
-                <span class="text-slate-500">$</span>
-                <span>cat candidate_profile.json</span>
-              </div>
-              
-              <div class="pl-4 text-slate-300 font-mono space-y-1.5 leading-relaxed border-l-2 border-emerald-500/30">
-                <p><span class="text-emerald-400">"candidate"</span>: <span class="text-teal-200">"S. Priyadharshni"</span>,</p>
-                <p><span class="text-emerald-400">"programme"</span>: <span class="text-teal-200">"PRICE ProtoSem (20-Week Innovation)"</span>,</p>
-                <p><span class="text-emerald-400">"role"</span>: <span class="text-teal-200">"Innovation Engineer Trainee"</span>,</p>
-                <p><span class="text-emerald-400">"education"</span>: <span class="text-teal-200">"Kumaraguru College of Liberal Arts & Science"</span>,</p>
-                <p><span class="text-emerald-400">"internship"</span>: <span class="text-teal-200">"Summer Intern @ V Thangavel and Sons Pvt. Ltd."</span>,</p>
-                <p><span class="text-emerald-400">"domains"</span>: [<span class="text-emerald-300">"HR & Management"</span>, <span class="text-emerald-300">"Intelligent Commerce"</span>, <span class="text-emerald-300">"Prototyping"</span>],</p>
-                <p><span class="text-emerald-400">"status"</span>: <span class="text-emerald-400 font-bold">"Ready to Learn, Explore & Build"</span></p>
-              </div>
-
-              <div class="flex items-center gap-2 text-emerald-400 pt-2">
-                <span class="text-slate-500">$</span>
-                <span id="typed-output" class="text-emerald-300"></span>
-                <span class="inline-block w-2 h-4 bg-emerald-400 animate-pulse"></span>
-              </div>
-            </div>
-
-            <!-- Terminal Footer Status -->
-            <div class="px-5 py-2.5 bg-emerald-950/40 border-t border-emerald-500/10 flex items-center justify-between text-xs text-slate-400 font-mono">
-              <span class="text-emerald-400 flex items-center gap-1.5">
-                <i class="fa-solid fa-circle-check text-[10px]"></i> 100% Profile Complete
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold font-mono">
+                <i class="fa-solid fa-check-double text-[10px]"></i> Active
               </span>
-              <span class="text-slate-400">UTF-8 • ProtoSem & HR</span>
             </div>
+
+            <!-- Key Metrics Grid -->
+            <div class="grid grid-cols-2 gap-3.5">
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1">
+                <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Innovation Enrolment</span>
+                <span class="text-base font-bold text-white block">PRICE ProtoSem</span>
+                <span class="text-xs text-emerald-400 font-medium">20-Week Programme</span>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1">
+                <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Corporate Experience</span>
+                <span class="text-base font-bold text-white block">Summer Intern</span>
+                <span class="text-xs text-emerald-400 font-medium">V Thangavel & Sons</span>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1">
+                <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Primary Focus</span>
+                <span class="text-base font-bold text-white block">Human Resources</span>
+                <span class="text-xs text-slate-300 font-medium">Talent & Operations</span>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-1">
+                <span class="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Personality Profile</span>
+                <span class="text-base font-bold text-white block">Consul (ESFJ-T)</span>
+                <span class="text-xs text-teal-300 font-medium">Collaborative Leadership</span>
+              </div>
+            </div>
+
+            <!-- Core Pillar Tags -->
+            <div class="space-y-2 pt-1">
+              <span class="text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider block">
+                Core Domains of Practice
+              </span>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700/60 text-slate-300 text-xs font-medium">
+                  <i class="fa-solid fa-users text-emerald-400 mr-1 text-[11px]"></i> HR Principles
+                </span>
+                <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700/60 text-slate-300 text-xs font-medium">
+                  <i class="fa-solid fa-cart-shopping text-emerald-400 mr-1 text-[11px]"></i> Phygital Commerce
+                </span>
+                <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700/60 text-slate-300 text-xs font-medium">
+                  <i class="fa-solid fa-comments text-emerald-400 mr-1 text-[11px]"></i> Communication
+                </span>
+                <span class="px-3 py-1 rounded-lg bg-slate-800/80 border border-slate-700/60 text-slate-300 text-xs font-medium">
+                  <i class="fa-solid fa-diagram-project text-emerald-400 mr-1 text-[11px]"></i> Prototyping
+                </span>
+              </div>
+            </div>
+
+            <!-- Card Footer Indicator -->
+            <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
+              <span class="flex items-center gap-1.5 text-emerald-400 font-medium">
+                <i class="fa-solid fa-shield-halved text-xs"></i> Verified Academic Standing
+              </span>
+              <span class="font-mono text-[11px] text-slate-500">KCLAS & ProtoSem</span>
+            </div>
+
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- SECTION: ABOUT & CAREER OBJECTIVE (Glassmorphism Cards) -->
+    <!-- SECTION: ABOUT & STRATEGIC VISION -->
     <section id="about" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
         <div class="w-8 h-1 bg-emerald-500 rounded-full"></div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">About & Vision</h2>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
+          About & Career Vision
+        </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Main Bio Card -->
-        <div class="md:col-span-2 glass-panel rounded-2xl p-6 sm:p-8 space-y-4">
+        <div class="md:col-span-2 glass-surface-hover rounded-3xl p-6 sm:p-8 space-y-5">
           <div class="flex items-center gap-4">
-            <!-- Profile Avatar Failsafe -->
-            <img 
-              src="https://ui-avatars.com/api/?name=Priyadharshni+S&background=064e3b&color=34d399&size=128&bold=true&font-size=0.4" 
-              alt="S. Priyadharshni Avatar" 
-              class="w-16 h-16 rounded-2xl border-2 border-emerald-400/40 shadow-lg object-cover"
-            >
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-700 to-teal-500 text-slate-950 flex items-center justify-center font-bold text-2xl shadow-lg flex-shrink-0">
+              SP
+            </div>
             <div>
               <h3 class="text-xl font-bold text-white">S. Priyadharshni</h3>
-              <p class="text-emerald-400 text-sm font-medium">BBA Student (2nd Year) • Aspiring HR & Innovation Specialist</p>
+              <p class="text-emerald-400 text-sm font-semibold">BBA Scholar • Aspiring Human Resources Specialist</p>
             </div>
           </div>
 
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed pt-2">
-            I am a motivated and proactive Bachelor of Business Administration (BBA) student at <strong class="text-white">Kumaraguru College of Liberal Arts and Science</strong>. With an enthusiastic mindset and practical exposure gained through corporate summer internship and hands-on innovation training, I am committed to advancing my expertise in human resource management, employee engagement, and business operations.
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            I am a motivated and proactive Bachelor of Business Administration (BBA) student at <strong class="text-white font-semibold">Kumaraguru College of Liberal Arts and Science</strong>. With an enthusiastic mindset and practical exposure gained through corporate summer internship and hands-on innovation training, I am committed to advancing my expertise in human resource management, employee engagement, and business operations.
           </p>
 
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            I thrive in dynamic team environments where clear communication, empathy, and organized management drive high team productivity and mutual growth.
+            I thrive in dynamic team environments where clear communication, empathy, and organized management drive high team productivity and mutual organizational growth.
           </p>
 
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3">
-            <div class="p-3 rounded-xl bg-slate-900/60 border border-emerald-500/10">
-              <span class="text-xs text-slate-400 block">Focus</span>
-              <span class="text-sm font-semibold text-emerald-300">Human Resources & Ops</span>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+              <span class="text-[11px] text-slate-400 font-mono block">Primary Domain</span>
+              <span class="text-sm font-bold text-emerald-300">Human Resources</span>
             </div>
-            <div class="p-3 rounded-xl bg-slate-900/60 border border-emerald-500/10">
-              <span class="text-xs text-slate-400 block">Languages</span>
-              <span class="text-sm font-semibold text-emerald-300">Tamil & English</span>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800">
+              <span class="text-[11px] text-slate-400 font-mono block">Languages</span>
+              <span class="text-sm font-bold text-emerald-300">English & Tamil</span>
             </div>
-            <div class="p-3 rounded-xl bg-slate-900/60 border border-emerald-500/10 col-span-2 sm:col-span-1">
-              <span class="text-xs text-slate-400 block">Location</span>
-              <span class="text-sm font-semibold text-emerald-300">Erode, TN</span>
+            <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 col-span-2 sm:col-span-1">
+              <span class="text-[11px] text-slate-400 font-mono block">Location</span>
+              <span class="text-sm font-bold text-emerald-300">Erode, Tamil Nadu</span>
             </div>
           </div>
         </div>
 
         <!-- Career Objective Highlight -->
-        <div class="glass-panel rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-4 border-emerald-500/30">
-          <div class="space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-lg">
+        <div class="glass-surface-hover rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-sm">
               <i class="fa-solid fa-bullseye"></i>
             </div>
-            <h3 class="text-lg font-bold text-white">Career Objective</h3>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+            <h3 class="text-xl font-bold text-white font-display">Career Objective</h3>
+            <blockquote class="text-slate-300 text-xs sm:text-sm leading-relaxed italic border-l-2 border-emerald-500/40 pl-3.5">
               "To contribute to organizational success by leveraging strong interpersonal skills, proactive communication, and modern HR practices while continuously building professional mastery."
-            </p>
+            </blockquote>
           </div>
 
           <div class="pt-4 border-t border-slate-800">
             <div class="flex items-center gap-2 text-xs text-emerald-400 font-semibold">
-              <i class="fa-solid fa-seedling"></i>
-              <span>Open to Internships & Projects</span>
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Open to Corporate Projects & Internships</span>
             </div>
           </div>
         </div>
@@ -388,50 +404,60 @@
     <section id="experience" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
         <div class="w-8 h-1 bg-emerald-500 rounded-full"></div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Work Experience & Internships</h2>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
+          Work Experience & Internships
+        </h2>
       </div>
 
-      <div class="glass-panel-interactive rounded-2xl p-6 sm:p-8 border border-emerald-500/20">
+      <div class="glass-surface rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-700/50">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800">
           <div class="flex items-start sm:items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-950 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-xl flex-shrink-0">
-              <i class="fa-solid fa-briefcase"></i>
+            <div class="w-14 h-14 rounded-2xl bg-slate-900 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl flex-shrink-0 shadow-inner">
+              <i class="fa-solid fa-building-columns"></i>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-white">Summer Intern</h3>
-              <p class="text-emerald-400 font-medium text-sm">V Thangavel and Sons Pvt. Ltd.</p>
+              <h3 class="text-xl sm:text-2xl font-bold text-white">Summer Intern</h3>
+              <p class="text-emerald-400 font-semibold text-sm sm:text-base">V Thangavel and Sons Pvt. Ltd.</p>
             </div>
           </div>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-900/40 border border-emerald-500/30 text-emerald-300 text-xs font-semibold self-start sm:self-auto">
-            <i class="fa-regular fa-calendar"></i> Summer Internship
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-950/70 border border-emerald-500/30 text-emerald-300 text-xs font-semibold self-start sm:self-auto font-mono">
+            <i class="fa-regular fa-calendar"></i> Summer Internship Completed
           </span>
         </div>
 
-        <div class="pt-6 space-y-4">
-          <h4 class="text-sm font-semibold text-slate-200 uppercase tracking-wider">Key Contributions & Learning Outcomes:</h4>
+        <div class="space-y-4">
+          <h4 class="text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider">
+            Key Contributions & Professional Learning Outcomes:
+          </h4>
           
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="p-4 rounded-xl bg-slate-900/70 border border-emerald-500/10 space-y-2">
-              <div class="text-emerald-400 text-base"><i class="fa-solid fa-building"></i></div>
-              <h5 class="text-white text-sm font-semibold">Corporate Exposure</h5>
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/90 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm">
+                <i class="fa-solid fa-building"></i>
+              </div>
+              <h5 class="text-white text-sm font-bold">Corporate Exposure</h5>
               <p class="text-slate-300 text-xs leading-relaxed">
-                Completed intensive summer training gaining direct exposure to day-to-day operations and structured workplace culture.
+                Gained direct practical exposure to structured workplace operations, departmental workflows, and organizational standards.
               </p>
             </div>
 
-            <div class="p-4 rounded-xl bg-slate-900/70 border border-emerald-500/10 space-y-2">
-              <div class="text-emerald-400 text-base"><i class="fa-solid fa-comments"></i></div>
-              <h5 class="text-white text-sm font-semibold">Workplace Communication</h5>
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/90 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+              <h5 class="text-white text-sm font-bold">Workplace Communication</h5>
               <p class="text-slate-300 text-xs leading-relaxed">
-                Enhanced professional communication etiquette, internal coordination, and inter-departmental collaboration.
+                Refined professional correspondence etiquette, active listening, internal team coordination, and inter-departmental interactions.
               </p>
             </div>
 
-            <div class="p-4 rounded-xl bg-slate-900/70 border border-emerald-500/10 space-y-2">
-              <div class="text-emerald-400 text-base"><i class="fa-solid fa-award"></i></div>
-              <h5 class="text-white text-sm font-semibold">Internship Certificate</h5>
+            <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800/90 space-y-2.5">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-sm">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <h5 class="text-white text-sm font-bold">Verified Deliverables</h5>
               <p class="text-slate-300 text-xs leading-relaxed">
-                Successfully completed all project deliverables and earned official Certificate of Internship Completion.
+                Successfully completed assigned projects and earned official Certificate of Internship Completion for performance.
               </p>
             </div>
           </div>
@@ -442,100 +468,96 @@
     <!-- ========================================================================= -->
     <!-- SECTION: PROTOSEM (20-WEEK INDUSTRY-INTEGRATED INNOVATION JOURNEY) -->
     <!-- ========================================================================= -->
-    <section id="protosem" class="space-y-10 scroll-mt-24" data-aos="fade-up" data-aos-duration="900">
+    <section id="protosem" class="space-y-8 scroll-mt-24" data-aos="fade-up" data-aos-duration="900">
       
       <!-- Section Label & Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-emerald-500/20 pb-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-6">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-400/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">
-            <i class="fa-solid fa-compass text-emerald-400"></i> PROTOSEM
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-3">
+            <i class="fa-solid fa-compass text-emerald-400"></i> PRICE PROTOSEM
           </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            PRICE ProtoSem
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
+            Innovation Engineer Trainee
           </h2>
           <p class="text-emerald-400 font-semibold text-base sm:text-lg pt-1">
-            Innovation Engineer Trainee <span class="text-slate-400 font-normal">| 20-Week Industry-Integrated Innovation Programme</span>
+            20-Week Industry-Integrated Innovation Programme <span class="text-slate-400 font-normal">| KCLAS & Forge Collaboration</span>
           </p>
         </div>
 
-        <div class="flex items-center gap-2 text-xs font-mono text-emerald-300 bg-emerald-950/60 border border-emerald-500/30 px-4 py-2 rounded-xl self-start md:self-auto">
+        <div class="flex items-center gap-2 text-xs font-mono text-emerald-300 bg-emerald-950/70 border border-emerald-500/30 px-4 py-2 rounded-xl self-start md:self-auto shadow-sm">
           <i class="fa-solid fa-layer-group"></i>
-          <span>1 PROGRAMME • 4 PHASES • 20 WEEKS</span>
+          <span>WEEK 00 + 4 PHASES (20 WEEKS)</span>
         </div>
       </div>
 
       <!-- Programme Description & Purpose Glassmorphism Card -->
-      <div class="glass-panel rounded-2xl p-6 sm:p-8 space-y-6 border border-emerald-500/30 relative overflow-hidden">
-        <!-- Subtle background watermark badge -->
-        <div class="absolute -right-8 -bottom-8 text-emerald-500/5 text-9xl font-black select-none pointer-events-none">
-          20W
-        </div>
-
-        <div class="space-y-4 max-w-4xl relative z-10">
-          <h3 class="text-lg font-bold text-white flex items-center gap-2">
+      <div class="glass-surface rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-700/50 relative overflow-hidden">
+        
+        <div class="space-y-3 max-w-4xl relative z-10">
+          <h3 class="text-lg font-bold text-white flex items-center gap-2 font-display">
             <i class="fa-solid fa-lightbulb text-emerald-400"></i>
-            Programme Overview & Objectives
+            Programme Overview & Core Objectives
           </h3>
           <p class="text-slate-200 text-sm sm:text-base leading-relaxed">
-            Selected for a 20-week industry-integrated innovation programme focused on solving real-world retail and commerce challenges through AI, analytics, intelligent systems, IoT, prototyping, and entrepreneurship.
+            Selected for an intensive 20-week industry-integrated innovation programme focused on solving real-world retail and commerce challenges through AI, analytics, intelligent systems, IoT prototyping, and modern business management.
           </p>
           <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Working with industry problem statements to explore, develop, and validate practical technology solutions beyond conventional classroom learning.
+            Working directly on industry problem statements to explore, develop, and validate practical technology and management solutions beyond conventional classroom learning.
           </p>
         </div>
 
-        <!-- DOMAIN / FOCUS TAGS (Programme Disciplines) -->
-        <div class="pt-4 border-t border-slate-800 space-y-3">
+        <!-- DOMAIN / FOCUS TAGS -->
+        <div class="pt-4 border-t border-slate-800/80 space-y-3">
           <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 block font-mono">
-            Programme Focus Areas & Core Disciplines
+            Key Innovation Focus Areas
           </span>
           <div class="flex flex-wrap gap-2.5">
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-emerald-500/25 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all">
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/40 transition-all">
               <i class="fa-solid fa-cart-shopping text-emerald-400"></i>
               Phygital Retail & Intelligent Commerce
             </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-emerald-500/25 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all">
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/40 transition-all">
               <i class="fa-solid fa-brain text-emerald-400"></i>
               AI & Analytics
             </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-emerald-500/25 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all">
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/40 transition-all">
               <i class="fa-solid fa-microchip text-emerald-400"></i>
               Intelligent Systems & IoT
             </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-emerald-500/25 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all">
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/40 transition-all">
               <i class="fa-solid fa-cubes text-emerald-400"></i>
-              Prototyping
+              Prototyping & Validation
             </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/80 border border-emerald-500/25 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all">
+            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-medium text-emerald-300 hover:border-emerald-500/40 transition-all">
               <i class="fa-solid fa-rocket text-emerald-400"></i>
-              Entrepreneurship
+              Entrepreneurship & Strategy
             </div>
           </div>
         </div>
       </div>
 
       <!-- VISUAL PROGRESSION TIMELINE INDICATOR -->
-      <div class="glass-panel rounded-2xl p-5 border border-emerald-500/20">
+      <div class="glass-surface rounded-2xl p-4 sm:p-5 border border-slate-800">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div class="flex items-center gap-3">
-            <span class="text-xs font-mono font-semibold text-slate-400 uppercase">Progression Rail:</span>
+            <span class="text-xs font-mono font-semibold text-slate-400 uppercase">Milestone Rail:</span>
             <div class="hidden md:flex items-center gap-2 font-mono text-xs text-emerald-400">
-              <span class="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/40 text-emerald-300 font-bold">00</span>
-              <span class="text-emerald-600 font-bold">━━━━</span>
+              <span class="px-2 py-0.5 rounded bg-emerald-950 border border-emerald-500/50 text-emerald-300 font-bold">00</span>
+              <span class="text-emerald-700 font-bold">━━━━</span>
               <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">01</span>
-              <span class="text-emerald-800 font-bold">━━━━</span>
+              <span class="text-slate-700 font-bold">━━━━</span>
               <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">05</span>
-              <span class="text-emerald-800 font-bold">━━━━</span>
+              <span class="text-slate-700 font-bold">━━━━</span>
               <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">10</span>
-              <span class="text-emerald-800 font-bold">━━━━</span>
+              <span class="text-slate-700 font-bold">━━━━</span>
               <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">15</span>
-              <span class="text-emerald-800 font-bold">━━━━</span>
+              <span class="text-slate-700 font-bold">━━━━</span>
               <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-400">20</span>
             </div>
           </div>
           <div class="text-xs text-slate-400 flex items-center gap-2">
             <i class="fa-regular fa-clock text-emerald-400"></i>
-            <span>Interactive Programme Log & Future Blog Archive</span>
+            <span>Interactive Weekly Innovation Log & Journal</span>
           </div>
         </div>
       </div>
@@ -544,18 +566,18 @@
       <div class="space-y-4">
         <div class="flex items-center justify-between">
           <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
-            <i class="fa-solid fa-filter text-emerald-400"></i> Filter by Phase:
+            <i class="fa-solid fa-filter text-emerald-400"></i> Filter Programme View:
           </span>
-          <span id="phase-counter-badge" class="text-xs font-mono text-emerald-400 px-2.5 py-1 rounded-md bg-emerald-950/60 border border-emerald-500/20">
+          <span id="phase-counter-badge" class="text-xs font-mono text-emerald-400 px-3 py-1 rounded-lg bg-emerald-950/70 border border-emerald-500/30">
             Showing all weeks (Week 00–20)
           </span>
         </div>
 
-        <div class="flex flex-wrap items-center gap-2 p-1.5 glass-panel rounded-2xl border border-emerald-500/20" role="tablist">
+        <div class="flex flex-wrap items-center gap-2 p-1.5 glass-surface rounded-2xl border border-slate-800" role="tablist">
           <button 
             onclick="filterProtoPhase('all')" 
             id="tab-all"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-emerald-500 text-slate-950 shadow-md shadow-emerald-500/20"
             role="tab"
             aria-selected="true"
           >
@@ -564,7 +586,7 @@
           <button 
             onclick="filterProtoPhase(0)" 
             id="tab-0"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
             role="tab"
             aria-selected="false"
           >
@@ -573,7 +595,7 @@
           <button 
             onclick="filterProtoPhase(1)" 
             id="tab-1"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
             role="tab"
             aria-selected="false"
           >
@@ -582,7 +604,7 @@
           <button 
             onclick="filterProtoPhase(2)" 
             id="tab-2"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
             role="tab"
             aria-selected="false"
           >
@@ -591,7 +613,7 @@
           <button 
             onclick="filterProtoPhase(3)" 
             id="tab-3"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
             role="tab"
             aria-selected="false"
           >
@@ -600,7 +622,7 @@
           <button 
             onclick="filterProtoPhase(4)" 
             id="tab-4"
-            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/60 transition-all"
+            class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/70 transition-all"
             role="tab"
             aria-selected="false"
           >
@@ -609,7 +631,7 @@
         </div>
       </div>
 
-      <!-- 20-WEEK JOURNEY GRID / TIMELINE CONTAINER (Dynamically Rendered for Data-Driven Architecture) -->
+      <!-- 20-WEEK JOURNEY GRID / TIMELINE CONTAINER -->
       <div id="protosem-cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
         <!-- Week cards generated by JS below -->
       </div>
@@ -620,80 +642,96 @@
     <section id="education" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
         <div class="w-8 h-1 bg-emerald-500 rounded-full"></div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Education</h2>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
+          Education
+        </h2>
       </div>
 
-      <div class="glass-panel-interactive rounded-2xl p-6 sm:p-8 border border-emerald-500/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div class="glass-surface-hover rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-xl bg-emerald-950 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-xl flex-shrink-0">
+          <div class="w-14 h-14 rounded-2xl bg-slate-900 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-2xl flex-shrink-0 shadow-inner">
             <i class="fa-solid fa-graduation-cap"></i>
           </div>
-          <div class="space-y-1">
-            <h3 class="text-xl font-bold text-white">Bachelor of Business Administration (BBA)</h3>
-            <p class="text-emerald-400 font-semibold text-sm">Kumaraguru College of Liberal Arts and Science</p>
-            <p class="text-slate-400 text-xs">Currently in 2nd Year • Focus on Human Resource Management & Business Studies</p>
+          <div class="space-y-1.5">
+            <h3 class="text-xl sm:text-2xl font-bold text-white">Bachelor of Business Administration (BBA)</h3>
+            <p class="text-emerald-400 font-semibold text-sm sm:text-base">Kumaraguru College of Liberal Arts and Science</p>
+            <p class="text-slate-400 text-xs sm:text-sm">Currently in 2nd Year • Focus on Human Resource Management & Business Studies</p>
           </div>
         </div>
 
         <div class="flex flex-col sm:items-end gap-2">
-          <span class="px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-semibold text-xs">
+          <span class="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-semibold text-xs font-mono">
             2025 – 2028 (Ongoing)
           </span>
-          <span class="text-slate-400 text-xs">Full-Time Undergraduate</span>
+          <span class="text-slate-400 text-xs">Full-Time Undergraduate Scholar</span>
         </div>
       </div>
     </section>
 
-    <!-- SECTION: CORE SKILLS & EXPERTISE -->
+    <!-- SECTION: CORE COMPETENCIES -->
     <section id="skills" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
         <div class="w-8 h-1 bg-emerald-500 rounded-full"></div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Skills & Competencies</h2>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
+          Core Competencies & Expertise
+        </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Card 1 -->
-        <div class="glass-panel-interactive rounded-2xl p-6 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-lg">
-            <i class="fa-solid fa-users"></i>
+        <div class="glass-surface-hover rounded-3xl p-6 space-y-3.5 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-sm">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white font-display">Human Resources</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Talent acquisition basics, employee relations, workplace engagement, and organizational support.
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-white">Human Resources</h3>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Talent acquisition fundamentals, employee engagement, workplace relations, and onboarding support.
-          </p>
+          <span class="text-[11px] font-mono text-emerald-400 font-semibold pt-2 border-t border-slate-800">HR Strategy</span>
         </div>
 
         <!-- Card 2 -->
-        <div class="glass-panel-interactive rounded-2xl p-6 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-lg">
-            <i class="fa-solid fa-comments"></i>
+        <div class="glass-surface-hover rounded-3xl p-6 space-y-3.5 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-sm">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white font-display">Communication</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Professional correspondence, presentation etiquette, active listening, and inter-departmental alignment.
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-white">Communication</h3>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Effective verbal and written business correspondence, active listening, and presentation skills.
-          </p>
+          <span class="text-[11px] font-mono text-emerald-400 font-semibold pt-2 border-t border-slate-800">Business Correspondence</span>
         </div>
 
         <!-- Card 3 -->
-        <div class="glass-panel-interactive rounded-2xl p-6 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-lg">
-            <i class="fa-solid fa-handshake"></i>
+        <div class="glass-surface-hover rounded-3xl p-6 space-y-3.5 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-sm">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white font-display">Team Dynamics</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Collaborative mindset, conflict resolution, active participation, and cross-functional leadership.
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-white">Team Collaboration</h3>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Team-first mindset, conflict resolution, active participation, and cross-functional support.
-          </p>
+          <span class="text-[11px] font-mono text-emerald-400 font-semibold pt-2 border-t border-slate-800">Consul (ESFJ-T)</span>
         </div>
 
         <!-- Card 4 -->
-        <div class="glass-panel-interactive rounded-2xl p-6 space-y-3">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-400 text-lg">
-            <i class="fa-solid fa-chart-line"></i>
+        <div class="glass-surface-hover rounded-3xl p-6 space-y-3.5 flex flex-col justify-between">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl shadow-sm">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white font-display">Management</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Operational planning, task prioritization, structured time management, and execution discipline.
+            </p>
           </div>
-          <h3 class="text-lg font-bold text-white">Management</h3>
-          <p class="text-slate-300 text-xs leading-relaxed">
-            Organizational planning, task prioritization, operational discipline, and adaptive problem-solving.
-          </p>
+          <span class="text-[11px] font-mono text-emerald-400 font-semibold pt-2 border-t border-slate-800">Operations & Logistics</span>
         </div>
       </div>
     </section>
@@ -702,35 +740,37 @@
     <section id="contact" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
         <div class="w-8 h-1 bg-emerald-500 rounded-full"></div>
-        <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Let's Connect</h2>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
+          Let's Connect
+        </h2>
       </div>
 
-      <div class="glass-panel rounded-3xl p-8 sm:p-12 border border-emerald-500/30 relative overflow-hidden">
-        <div class="max-w-2xl mx-auto text-center space-y-6">
-          <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 text-2xl">
+      <div class="glass-surface rounded-3xl p-8 sm:p-12 border border-slate-700/60 relative overflow-hidden text-center space-y-6">
+        <div class="max-w-2xl mx-auto space-y-6">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-2xl shadow-sm">
             <i class="fa-solid fa-paper-plane"></i>
           </div>
           
-          <h3 class="text-2xl sm:text-4xl font-extrabold text-white">
+          <h3 class="text-2xl sm:text-4xl font-extrabold text-white font-display">
             Ready to collaborate or discuss opportunities?
           </h3>
           
-          <p class="text-slate-300 text-sm sm:text-base">
-            Feel free to reach out directly via email or connect with me on LinkedIn. I am always open to internship opportunities, mentorship, and professional discussions.
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            I am always open to corporate internship opportunities, professional mentorship, and discussions in Human Resources, Management, and Retail Innovation.
           </p>
 
           <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-            <a href="mailto:priyadharnish552@gmail.com" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl shadow-emerald-500/25">
+            <a href="mailto:priyadharnish552@gmail.com" class="px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition-all transform hover:scale-105 flex items-center gap-2 shadow-xl shadow-emerald-500/25">
               <i class="fa-solid fa-envelope"></i>
               priyadharnish552@gmail.com
             </a>
 
-            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl glass-panel text-white hover:text-emerald-400 hover:border-emerald-500 font-bold text-sm transition-all transform hover:scale-105 flex items-center gap-2">
-              <i class="fa-brands fa-linkedin text-emerald-400"></i>
-              Connect on LinkedIn
+            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl glass-surface-hover text-white hover:text-emerald-400 hover:border-emerald-500/40 font-bold text-sm transition-all transform hover:scale-105 flex items-center gap-2">
+              <i class="fa-brands fa-linkedin text-emerald-400 text-base"></i>
+              LinkedIn Profile
             </a>
 
-            <a href="resume.html" target="_blank" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-sm transition-all flex items-center gap-2">
+            <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold text-sm transition-all flex items-center gap-2">
               <i class="fa-solid fa-file-pdf text-emerald-400"></i>
               View ATS Resume
             </a>
@@ -741,26 +781,26 @@
 
   </main>
 
-  <!-- REUSABLE WEEK MODAL DIALOG -->
+  <!-- REUSABLE WEEK MODAL DIALOG (Executive Innovation Log Reader) -->
   <div id="week-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" onclick="closeWeekModal(event)">
-    <div class="glass-panel max-w-2xl w-full rounded-2xl p-6 sm:p-8 space-y-6 border border-emerald-400/40 relative shadow-2xl max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+    <div class="glass-surface max-w-2xl w-full rounded-3xl p-6 sm:p-8 space-y-6 border border-slate-700/60 relative shadow-2xl max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
       <!-- Close button -->
-      <button onclick="closeWeekModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+      <button onclick="closeWeekModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 flex items-center justify-center transition-colors">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
       <div class="flex items-center gap-3">
-        <span id="modal-phase-tag" class="text-xs font-mono px-3 py-1 rounded-md bg-emerald-950 border border-emerald-500/30 text-emerald-400 font-semibold">
+        <span id="modal-phase-tag" class="text-xs font-mono px-3 py-1 rounded-md bg-emerald-950 border border-emerald-500/40 text-emerald-300 font-bold">
           WEEK 00 • ORIENTATION & IMMERSION
         </span>
         <span class="text-xs text-slate-400 font-mono">• ProtoSem Innovation Journey</span>
       </div>
 
-      <div class="space-y-2">
-        <h3 id="modal-week-title" class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+      <div class="space-y-1.5">
+        <h3 id="modal-week-title" class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           ProtoSem – 0th Week Reflection
         </h3>
-        <p id="modal-status-subtitle" class="text-emerald-400 font-medium text-xs sm:text-sm flex items-center gap-1.5">
+        <p id="modal-status-subtitle" class="text-emerald-400 font-semibold text-xs sm:text-sm flex items-center gap-1.5">
           <i class="fa-solid fa-book-open"></i> <span id="modal-status-text">Published Reflection</span>
         </p>
       </div>
@@ -776,12 +816,12 @@
       </div>
 
       <!-- Journal Entry Body -->
-      <div class="p-5 sm:p-6 rounded-xl bg-slate-950/90 border border-emerald-500/30 space-y-3 font-sans shadow-inner">
+      <div class="p-5 sm:p-6 rounded-2xl bg-slate-950/95 border border-slate-800 space-y-3 font-sans shadow-inner">
         <div class="text-xs text-slate-400 font-mono flex items-center justify-between border-b border-slate-800/80 pb-2.5">
-          <span class="flex items-center gap-1.5 text-emerald-400">
+          <span class="flex items-center gap-1.5 text-emerald-400 font-semibold">
             <i class="fa-solid fa-pen-nib text-xs"></i> Weekly Story & Reflection
           </span>
-          <span id="modal-status-badge" class="text-emerald-300 font-mono font-semibold px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-500/30">
+          <span id="modal-status-badge" class="text-emerald-300 font-mono font-semibold px-2.5 py-0.5 rounded bg-emerald-950/80 border border-emerald-500/30">
             Status: Published
           </span>
         </div>
@@ -803,14 +843,11 @@
   <footer class="border-t border-slate-800/80 py-8 px-4 sm:px-8 text-center text-xs text-slate-500">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>© 2026 S. Priyadharshni. All rights reserved.</p>
-      <div class="flex items-center gap-4 text-slate-400">
-        <a href="https://github.com/priyadharshni2007" target="_blank" class="hover:text-emerald-400 transition-colors">
-          <i class="fa-brands fa-github text-sm"></i> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" class="hover:text-emerald-400 transition-colors">
-          <i class="fa-brands fa-linkedin text-sm"></i> LinkedIn
-        </a>
-      </div>
+      <p class="flex items-center gap-2">
+        <span>BBA Scholar & Innovation Engineer Trainee</span>
+        <span>•</span>
+        <span class="text-emerald-400 font-medium">PRICE ProtoSem</span>
+      </p>
     </div>
   </footer>
 
@@ -820,22 +857,8 @@
     AOS.init({
       once: true,
       duration: 800,
-      easing: 'ease-out-cubic'
+      easing: 'ease-out-cubic',
     });
-
-    // Terminal typing animation
-    const textToType = "Ready to create impact through people & management.";
-    let charIndex = 0;
-    const outputElement = document.getElementById("typed-output");
-
-    function typeTerminal() {
-      if (charIndex < textToType.length) {
-        outputElement.textContent += textToType.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeTerminal, 60);
-      }
-    }
-    setTimeout(typeTerminal, 400);
 
     // =========================================================================
     // PROTOSEM DATA-DRIVEN ARCHITECTURE (WEEK 00 + 20 WEEKS)
@@ -928,7 +951,7 @@
 
         return `
         <div 
-          class="week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isPublished ? 'border-emerald-400/50 bg-emerald-950/30 ring-1 ring-emerald-500/30 shadow-lg shadow-emerald-500/5' : ''}"
+          class="week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isPublished ? 'border-emerald-500/40 bg-slate-900/90 ring-1 ring-emerald-500/30 shadow-lg shadow-emerald-500/5' : ''}"
           onclick="openWeekModal(${w.weekNumber})"
           tabindex="0"
           role="button"
@@ -937,17 +960,17 @@
         >
           <!-- Top Row: Phase Tag & Number Badge -->
           <div class="flex items-center justify-between">
-            <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full ${w.isPublished ? 'bg-emerald-500/20 border border-emerald-400/50 text-emerald-300' : 'bg-emerald-950/80 border border-emerald-500/30 text-emerald-400'}">
+            <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full ${w.isPublished ? 'bg-emerald-500/20 border border-emerald-400/50 text-emerald-300' : 'bg-slate-900 border border-slate-700 text-slate-400'}">
               ${w.phaseTag}
             </span>
-            <div class="week-number-badge w-8 h-8 rounded-xl ${w.isPublished ? 'bg-emerald-950 border border-emerald-400/50 text-emerald-300 shadow-sm' : 'bg-slate-900/80 border border-emerald-500/20 text-slate-300'} font-mono text-xs font-bold flex items-center justify-center transition-all">
+            <div class="week-number-badge w-8 h-8 rounded-xl ${w.isPublished ? 'bg-emerald-950 border border-emerald-400/50 text-emerald-300 shadow-sm' : 'bg-slate-900/80 border border-slate-700 text-slate-400'} font-mono text-xs font-bold flex items-center justify-center transition-all">
               ${w.padWeek}
             </div>
           </div>
 
           ${mainImage ? `
             <!-- Photo Preview Dual/Single Thumbnail -->
-            <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-1.5 rounded-xl overflow-hidden border border-emerald-500/30 bg-slate-950 p-1">
+            <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-1.5 rounded-xl overflow-hidden border border-slate-700 bg-slate-950 p-1">
               <div class="relative h-28 sm:h-32 rounded-lg overflow-hidden bg-slate-900">
                 <img src="${mainImage.src}" alt="${mainImage.caption || w.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
@@ -969,19 +992,19 @@
 
           <!-- Middle: Week Title & Status -->
           <div class="space-y-1.5 py-1">
-            <h4 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
+            <h4 class="text-base sm:text-lg font-bold text-white group-hover:text-emerald-300 transition-colors flex items-center gap-2">
               <span>${w.cardTitle}</span>
               ${w.isPublished ? '<span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Story Ready</span>' : ''}
             </h4>
             <p class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full ${w.isPublished ? 'bg-emerald-400 animate-pulse' : 'bg-emerald-400/60'}"></span>
+              <span class="w-1.5 h-1.5 rounded-full ${w.isPublished ? 'bg-emerald-400 animate-pulse' : 'bg-slate-600'}"></span>
               <span class="${w.isPublished ? 'text-emerald-300 font-semibold' : ''}">${w.isPublished ? 'REFLECTION PUBLISHED' : 'FIELD NOTES IN PROGRESS'}</span>
             </p>
           </div>
 
           <!-- Bottom: Action Indicator & Arrow -->
           <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
-            <span class="text-[11px] font-mono ${w.isPublished ? 'text-emerald-300 font-semibold' : 'text-emerald-400/90'} group-hover:text-emerald-300">
+            <span class="text-[11px] font-mono ${w.isPublished ? 'text-emerald-300 font-semibold' : 'text-slate-400'} group-hover:text-emerald-300">
               ${w.isPublished ? 'Read Story' : 'Future Story'}
             </span>
             <div class="week-arrow flex items-center gap-1 text-slate-500 group-hover:text-emerald-400 transition-all font-semibold">
@@ -1072,9 +1095,9 @@
           if (imageList.length === 1) {
             const img = imageList[0];
             galleryContainer.innerHTML = `
-              <div class="rounded-xl overflow-hidden border border-emerald-500/30 bg-slate-950 shadow-xl">
+              <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 shadow-xl">
                 <img src="${img.src}" alt="${img.alt || week.title}" class="w-full max-h-80 object-cover">
-                <div class="px-4 py-2.5 bg-slate-900/95 border-t border-emerald-500/20 text-xs font-mono text-slate-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <div class="px-4 py-2.5 bg-slate-900/95 border-t border-slate-800 text-xs font-mono text-slate-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                   <span class="flex items-center gap-1.5 text-emerald-300">
                     <i class="fa-solid fa-camera text-emerald-400"></i> ${img.caption}
                   </span>
@@ -1086,16 +1109,16 @@
             galleryContainer.innerHTML = `
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 ${imageList.map(img => `
-                  <div class="rounded-xl overflow-hidden border border-emerald-500/30 bg-slate-950 shadow-xl flex flex-col justify-between group/img">
+                  <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 shadow-xl flex flex-col justify-between group/img">
                     <div class="h-48 sm:h-52 overflow-hidden bg-slate-900 relative">
                       <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500">
                       ${img.badge ? `
-                        <span class="absolute top-2 left-2 text-[10px] font-mono px-2 py-0.5 rounded bg-slate-950/85 text-emerald-300 border border-emerald-500/30 backdrop-blur-sm">
+                        <span class="absolute top-2.5 left-2.5 text-[10px] font-mono px-2 py-0.5 rounded bg-slate-950/85 text-emerald-300 border border-emerald-500/30 backdrop-blur-sm">
                           ${img.badge}
                         </span>
                       ` : ''}
                     </div>
-                    <div class="p-3 bg-slate-900/95 border-t border-emerald-500/20 text-xs font-mono space-y-0.5">
+                    <div class="p-3 bg-slate-900/95 border-t border-slate-800 text-xs font-mono space-y-0.5">
                       <div class="text-emerald-300 font-semibold text-xs flex items-center gap-1.5 truncate">
                         <i class="fa-solid fa-image text-emerald-400 text-[10px]"></i> ${img.caption}
                       </div>
