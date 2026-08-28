@@ -184,7 +184,7 @@
 
     /* Week Card Light Pink Styling */
     .week-card {
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(244, 114, 182, 0.25);
@@ -194,9 +194,9 @@
     
     .week-card:hover {
       background: #ffffff;
-      border-color: rgba(236, 72, 153, 0.5);
+      border-color: rgba(236, 72, 153, 0.55);
       transform: translateY(-5px);
-      box-shadow: 0 22px 45px -15px rgba(236, 72, 153, 0.28);
+      box-shadow: 0 22px 45px -15px rgba(236, 72, 153, 0.3);
     }
 
     .week-card:hover .week-arrow {
@@ -205,9 +205,22 @@
     }
 
     .week-card:hover .week-number-badge {
-      background: rgba(251, 207, 232, 0.7);
+      background: rgba(251, 207, 232, 0.85);
       color: #be185d;
       border-color: rgba(236, 72, 153, 0.5);
+    }
+
+    /* Creative Phase Pillar Card */
+    .phase-pillar {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(244, 114, 182, 0.25);
+      transition: all 0.3s ease;
+    }
+    .phase-pillar:hover, .phase-pillar.active-pillar {
+      background: #ffffff;
+      border-color: #ec4899;
+      box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.25);
+      transform: translateY(-2px);
     }
 
     /* Gradient Text */
@@ -248,7 +261,7 @@
 
     /* Modal Backdrop */
     .modal-backdrop {
-      background: rgba(49, 27, 41, 0.5);
+      background: rgba(49, 27, 41, 0.55);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
     }
@@ -306,7 +319,7 @@
   <!-- Main Container -->
   <main class="max-w-6xl mx-auto px-4 sm:px-8 pt-6 pb-24 space-y-32 relative z-10">
 
-    <!-- HERO SECTION: Light Pink Executive Profile & Candidate Overview -->
+    <!-- HERO SECTION -->
     <section class="pt-6 sm:pt-12" data-aos="fade-up" data-aos-duration="1000">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
@@ -370,7 +383,7 @@
             <!-- Top Subtle Pink Accent Line -->
             <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-pink-400 via-rose-400 to-pink-300"></div>
 
-            <!-- Card Header: Profile Monogram & Verified Status -->
+            <!-- Card Header -->
             <div class="flex items-center justify-between border-b border-pink-100 pb-5">
               <div class="flex items-center gap-4">
                 <div class="relative">
@@ -591,7 +604,7 @@
     </section>
 
     <!-- ========================================================================= -->
-    <!-- SECTION: PROTOSEM (20-WEEK INDUSTRY-INTEGRATED INNOVATION JOURNEY) -->
+    <!-- SECTION: PROTOSEM (CREATIVE 20-WEEK INNOVATION BOARD & ROADMAP) -->
     <!-- ========================================================================= -->
     <section id="protosem" class="space-y-8 scroll-mt-24" data-aos="fade-up" data-aos-duration="900">
       
@@ -602,102 +615,150 @@
             <i class="fa-solid fa-compass text-pink-600"></i> PRICE PROTOSEM
           </div>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
-            Innovation Engineer Trainee
+            Innovation Engineer Trainee Board
           </h2>
           <p class="text-pink-700 font-bold text-base sm:text-lg pt-1">
-            20-Week Industry-Integrated Innovation Programme <span class="text-slate-600 font-normal">| KCLAS & Forge Collaboration</span>
+            20-Week Industry Innovation Journey <span class="text-slate-600 font-normal">| KCLAS & Forge Retail Incubation</span>
           </p>
         </div>
 
         <div class="flex items-center gap-2 text-xs font-mono text-pink-700 bg-pink-100 border border-pink-300 px-4 py-2 rounded-2xl self-start md:self-auto shadow-sm font-bold">
-          <i class="fa-solid fa-layer-group text-pink-500"></i>
+          <i class="fa-solid fa-cubes-stacked text-pink-500"></i>
           <span>WEEK 00 + 4 PHASES (20 WEEKS)</span>
         </div>
       </div>
 
-      <!-- Programme Description & Purpose Card -->
-      <div class="pearl-card rounded-3xl p-6 sm:p-8 space-y-6 border border-pink-200/90 relative overflow-hidden shadow-xl">
+      <!-- Creative 5-Phase Thematic Roadmap Pillars -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
         
-        <div class="space-y-3 max-w-4xl relative z-10">
-          <h3 class="text-lg sm:text-xl font-bold text-slate-900 flex items-center gap-2.5 font-display">
-            <i class="fa-solid fa-lightbulb text-pink-500"></i>
-            Programme Overview & Core Objectives
-          </h3>
-          <p class="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
-            Selected for an intensive 20-week industry-integrated innovation programme focused on solving real-world retail and commerce challenges through AI, analytics, intelligent systems, IoT prototyping, and modern business management.
-          </p>
-          <p class="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
-            Working directly on industry problem statements to explore, develop, and validate practical technology and management solutions beyond conventional classroom learning.
-          </p>
-        </div>
-
-        <!-- DOMAIN / FOCUS TAGS -->
-        <div class="pt-4 border-t border-pink-100 space-y-3">
-          <span class="text-xs font-bold uppercase tracking-wider text-slate-600 block font-mono">
-            Key Innovation Focus Areas
-          </span>
-          <div class="flex flex-wrap gap-2.5">
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-pink-50/80 border border-pink-200 text-xs sm:text-sm font-bold text-pink-800 hover:border-pink-400 hover:bg-white transition-all shadow-sm">
-              <i class="fa-solid fa-cart-shopping text-pink-500"></i>
-              Phygital Retail & Intelligent Commerce
-            </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-pink-50/80 border border-pink-200 text-xs sm:text-sm font-bold text-pink-800 hover:border-pink-400 hover:bg-white transition-all shadow-sm">
-              <i class="fa-solid fa-brain text-rose-500"></i>
-              AI & Analytics
-            </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-pink-50/80 border border-pink-200 text-xs sm:text-sm font-bold text-pink-800 hover:border-pink-400 hover:bg-white transition-all shadow-sm">
-              <i class="fa-solid fa-microchip text-pink-500"></i>
-              Intelligent Systems & IoT
-            </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-pink-50/80 border border-pink-200 text-xs sm:text-sm font-bold text-pink-800 hover:border-pink-400 hover:bg-white transition-all shadow-sm">
-              <i class="fa-solid fa-cubes text-rose-500"></i>
-              Prototyping & Validation
-            </div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-pink-50/80 border border-pink-200 text-xs sm:text-sm font-bold text-pink-800 hover:border-pink-400 hover:bg-white transition-all shadow-sm">
-              <i class="fa-solid fa-rocket text-pink-500"></i>
-              Entrepreneurship & Strategy
-            </div>
+        <!-- Pillar 0: Orientation -->
+        <div onclick="filterProtoPhase(0)" class="phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              🌟
+            </span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-pink-100 text-pink-700">W00</span>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-900 group-hover:text-pink-600 transition-colors">Orientation</h4>
+            <p class="text-[11px] text-slate-500 line-clamp-1">Launch & Immersion</p>
+          </div>
+          <div class="text-[10px] font-mono text-emerald-600 font-bold flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Published
           </div>
         </div>
+
+        <!-- Pillar 1: Phase 01 -->
+        <div onclick="filterProtoPhase(1)" class="phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              🔍
+            </span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-amber-100 text-amber-800">W01–05</span>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-900 group-hover:text-pink-600 transition-colors">Phase 01: Discovery</h4>
+            <p class="text-[11px] text-slate-500 line-clamp-1">Problem & Market Insights</p>
+          </div>
+          <div class="text-[10px] font-mono text-slate-400">5 Sprints</div>
+        </div>
+
+        <!-- Pillar 2: Phase 02 -->
+        <div onclick="filterProtoPhase(2)" class="phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              💡
+            </span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-purple-100 text-purple-800">W06–10</span>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-900 group-hover:text-pink-600 transition-colors">Phase 02: Ideation</h4>
+            <p class="text-[11px] text-slate-500 line-clamp-1">AI & Intelligent Systems</p>
+          </div>
+          <div class="text-[10px] font-mono text-slate-400">5 Sprints</div>
+        </div>
+
+        <!-- Pillar 3: Phase 03 -->
+        <div onclick="filterProtoPhase(3)" class="phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              🛠️
+            </span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-cyan-100 text-cyan-800">W11–15</span>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-900 group-hover:text-pink-600 transition-colors">Phase 03: Prototype</h4>
+            <p class="text-[11px] text-slate-500 line-clamp-1">Hardware/Software PoC</p>
+          </div>
+          <div class="text-[10px] font-mono text-slate-400">5 Sprints</div>
+        </div>
+
+        <!-- Pillar 4: Phase 04 -->
+        <div onclick="filterProtoPhase(4)" class="phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group col-span-2 sm:col-span-1">
+          <div class="flex items-center justify-between">
+            <span class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              🚀
+            </span>
+            <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800">W16–20</span>
+          </div>
+          <div>
+            <h4 class="text-xs font-bold text-slate-900 group-hover:text-pink-600 transition-colors">Phase 04: Launch</h4>
+            <p class="text-[11px] text-slate-500 line-clamp-1">Venture & Demo Day</p>
+          </div>
+          <div class="text-[10px] font-mono text-slate-400">5 Sprints</div>
+        </div>
+
       </div>
 
-      <!-- VISUAL PROGRESSION TIMELINE INDICATOR -->
+      <!-- VISUAL PROGRESSION TIMELINE TRACK -->
       <div class="pearl-card rounded-2xl p-4 sm:p-5 border border-pink-200/80 shadow-md">
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div class="flex items-center gap-3">
-            <span class="text-xs font-mono font-bold text-slate-600 uppercase">Milestone Rail:</span>
+            <span class="text-xs font-mono font-bold text-slate-600 uppercase">Interactive Rail:</span>
             <div class="hidden md:flex items-center gap-2 font-mono text-xs text-pink-700">
-              <span class="px-2.5 py-0.5 rounded-lg bg-pink-200 border border-pink-400 text-pink-900 font-bold shadow-sm">00</span>
+              <button onclick="filterProtoPhase(0)" class="px-2.5 py-0.5 rounded-lg bg-pink-200 border border-pink-400 text-pink-900 font-bold shadow-sm hover:scale-105 transition-transform">00</button>
               <span class="text-pink-400 font-bold">━━━━</span>
-              <span class="px-2.5 py-0.5 rounded-lg bg-white border border-pink-200 text-slate-700 font-semibold">01</span>
+              <button onclick="filterProtoPhase(1)" class="px-2.5 py-0.5 rounded-lg bg-white border border-pink-200 text-slate-700 font-semibold hover:border-pink-400 hover:scale-105 transition-all">01</button>
               <span class="text-pink-200 font-bold">━━━━</span>
-              <span class="px-2.5 py-0.5 rounded-lg bg-white border border-pink-200 text-slate-700 font-semibold">05</span>
+              <button onclick="filterProtoPhase(1)" class="px-2.5 py-0.5 rounded-lg bg-white border border-pink-200 text-slate-700 font-semibold hover:border-pink-400 hover:scale-105 transition-all">05</button>
               <span class="text-pink-200 font-bold">━━━━</span>
-              <span class="px-2.5 py-0.5 rounded-lg bg-white border border-pink-200 text-slate-700 font-semibold">10</span>
+              <button onclick="filterProtoPhase(2)" class="px-2.5 py-0.5 rounded-lg bg-white border border-pink-200 text-slate-700 font-semibold hover:border-pink-400 hover:scale-105 transition-all">10</button>
               <span class="text-pink-200 font-bold">━━━━</span>
-              <span class="px-2.5 py-0.5 rounded-lg bg-white border border-pink-200 text-slate-700 font-semibold">15</span>
+              <button onclick="filterProtoPhase(3)" class="px-2.5 py-0.5 rounded-lg bg-white border border-pink-200 text-slate-700 font-semibold hover:border-pink-400 hover:scale-105 transition-all">15</button>
               <span class="text-pink-200 font-bold">━━━━</span>
-              <span class="px-2.5 py-0.5 rounded-lg bg-white border border-pink-200 text-slate-700 font-semibold">20</span>
+              <button onclick="filterProtoPhase(4)" class="px-2.5 py-0.5 rounded-lg bg-white border border-pink-200 text-slate-700 font-semibold hover:border-pink-400 hover:scale-105 transition-all">20</button>
             </div>
           </div>
           <div class="text-xs text-slate-600 font-medium flex items-center gap-2">
             <i class="fa-regular fa-clock text-pink-500"></i>
-            <span>Interactive Weekly Innovation Log & Journal</span>
+            <span>Click any node to instantly view phase milestones</span>
           </div>
         </div>
       </div>
 
-      <!-- PHASE NAVIGATION (Filter Buttons) -->
+      <!-- BOARD CONTROLS (Search + Phase Buttons + Live Counter) -->
       <div class="space-y-4">
-        <div class="flex items-center justify-between">
-          <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-600 flex items-center gap-2">
-            <i class="fa-solid fa-filter text-pink-500"></i> Filter Programme View:
-          </span>
-          <span id="phase-counter-badge" class="text-xs font-mono text-pink-700 font-bold px-3.5 py-1 rounded-xl bg-pink-100 border border-pink-300 shadow-sm">
-            Showing all weeks (Week 00–20)
+        
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <!-- Live Keyword Search -->
+          <div class="relative flex-1 max-w-md">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-pink-400 text-xs"></i>
+            <input 
+              type="text" 
+              id="proto-search-input"
+              oninput="handleProtoSearch(this.value)"
+              placeholder="Search weeks, topics, or keywords (e.g. Launch, AI, Prototype)..." 
+              class="w-full pl-9 pr-4 py-2.5 rounded-2xl bg-white border border-pink-200 text-slate-800 text-xs sm:text-sm placeholder:text-slate-400 focus:outline-none focus:border-pink-500 shadow-sm transition-all"
+            >
+          </div>
+
+          <!-- Counter Badge -->
+          <span id="phase-counter-badge" class="text-xs font-mono text-pink-700 font-bold px-3.5 py-2 rounded-xl bg-pink-100 border border-pink-300 shadow-sm self-start sm:self-auto">
+            Showing all 21 weeks (Week 00–20)
           </span>
         </div>
 
+        <!-- Filter Buttons -->
         <div class="flex flex-wrap items-center gap-2 p-1.5 pearl-card rounded-2xl border border-pink-200 shadow-sm" role="tablist">
           <button 
             onclick="filterProtoPhase('all')" 
@@ -715,7 +776,7 @@
             role="tab"
             aria-selected="false"
           >
-            Week 00 <span class="text-xs opacity-75 font-normal">(Orientation)</span>
+            🌟 Week 00 <span class="text-xs opacity-75 font-normal">(Orientation)</span>
           </button>
           <button 
             onclick="filterProtoPhase(1)" 
@@ -724,7 +785,7 @@
             role="tab"
             aria-selected="false"
           >
-            Phase 01 <span class="text-xs opacity-75 font-normal">(W01–05)</span>
+            🔍 Phase 01 <span class="text-xs opacity-75 font-normal">(W01–05)</span>
           </button>
           <button 
             onclick="filterProtoPhase(2)" 
@@ -733,7 +794,7 @@
             role="tab"
             aria-selected="false"
           >
-            Phase 02 <span class="text-xs opacity-75 font-normal">(W06–10)</span>
+            💡 Phase 02 <span class="text-xs opacity-75 font-normal">(W06–10)</span>
           </button>
           <button 
             onclick="filterProtoPhase(3)" 
@@ -742,7 +803,7 @@
             role="tab"
             aria-selected="false"
           >
-            Phase 03 <span class="text-xs opacity-75 font-normal">(W11–15)</span>
+            🛠️ Phase 03 <span class="text-xs opacity-75 font-normal">(W11–15)</span>
           </button>
           <button 
             onclick="filterProtoPhase(4)" 
@@ -751,14 +812,14 @@
             role="tab"
             aria-selected="false"
           >
-            Phase 04 <span class="text-xs opacity-75 font-normal">(W16–20)</span>
+            🚀 Phase 04 <span class="text-xs opacity-75 font-normal">(W16–20)</span>
           </button>
         </div>
       </div>
 
-      <!-- 20-WEEK JOURNEY GRID / TIMELINE CONTAINER -->
+      <!-- 21-WEEK DYNAMIC JOURNEY BOARD (Grid Container) -->
       <div id="protosem-cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
-        <!-- Week cards generated by JS below -->
+        <!-- Cards generated by JS below -->
       </div>
 
     </section>
@@ -918,21 +979,24 @@
 
   </main>
 
-  <!-- REUSABLE WEEK MODAL DIALOG (Executive Innovation Log Reader) -->
+  <!-- REUSABLE WEEK MODAL DIALOG (Official Innovation Field Journal) -->
   <div id="week-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" onclick="closeWeekModal(event)">
     <div class="pearl-card max-w-2xl w-full rounded-3xl p-6 sm:p-8 space-y-6 border border-pink-300 relative shadow-2xl max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+      
       <!-- Close button -->
-      <button onclick="closeWeekModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-pink-100 text-slate-600 hover:text-pink-600 hover:bg-pink-200 flex items-center justify-center transition-colors shadow-sm">
+      <button onclick="closeWeekModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-pink-100 text-slate-600 hover:text-pink-600 hover:bg-pink-200 flex items-center justify-center transition-colors shadow-sm" aria-label="Close modal">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
+      <!-- Header Tag & Breadcrumbs -->
       <div class="flex items-center gap-3">
         <span id="modal-phase-tag" class="text-xs font-mono px-3.5 py-1 rounded-lg bg-pink-100 border border-pink-300 text-pink-800 font-bold shadow-sm">
           WEEK 00 • ORIENTATION & IMMERSION
         </span>
-        <span class="text-xs text-slate-600 font-mono">• ProtoSem Innovation Journey</span>
+        <span class="text-xs text-slate-600 font-mono">• Field Notes Log</span>
       </div>
 
+      <!-- Title & Subtitle -->
       <div class="space-y-1.5">
         <h3 id="modal-week-title" class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-display">
           ProtoSem – 0th Week Reflection
@@ -967,10 +1031,16 @@
         <!-- Dynamically injected gallery items (single or multi-grid) -->
       </div>
 
-      <div class="flex items-center justify-between pt-2">
-        <span id="modal-route-path" class="text-xs font-mono text-slate-500">/protosem/week-00</span>
-        <button onclick="closeWeekModal()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-bold text-xs transition-all shadow-md shadow-pink-500/25">
-          Close Story
+      <!-- Modal Footer with Next / Prev Navigation -->
+      <div class="flex items-center justify-between pt-2 border-t border-pink-100">
+        <button id="modal-prev-btn" onclick="navigateModalWeek(-1)" class="px-3.5 py-2 rounded-xl bg-pink-50 border border-pink-200 text-slate-700 hover:text-pink-600 text-xs font-bold transition-all flex items-center gap-1.5">
+          <i class="fa-solid fa-arrow-left text-[10px]"></i> Previous
+        </button>
+
+        <span id="modal-route-path" class="text-xs font-mono text-slate-500 hidden sm:inline">/protosem/week-00</span>
+
+        <button id="modal-next-btn" onclick="navigateModalWeek(1)" class="px-3.5 py-2 rounded-xl bg-pink-50 border border-pink-200 text-slate-700 hover:text-pink-600 text-xs font-bold transition-all flex items-center gap-1.5">
+          Next <i class="fa-solid fa-arrow-right text-[10px]"></i>
         </button>
       </div>
     </div>
@@ -1009,8 +1079,42 @@
     });
 
     // =========================================================================
-    // PROTOSEM DATA-DRIVEN ARCHITECTURE (WEEK 00 + 20 WEEKS)
+    // PROTOSEM ENRICHED DATA-DRIVEN ARCHITECTURE (WEEK 00 + 20 SPRINT WEEKS)
     // =========================================================================
+    let currentModalWeekIndex = 0;
+    let currentFilterPhase = 'all';
+    let currentSearchQuery = '';
+
+    const weekThemes = [
+      // Phase 01: Weeks 01 - 05
+      { icon: "fa-solid fa-magnifying-glass", subtitle: "Problem Discovery", tag: "Discovery" },
+      { icon: "fa-solid fa-users-viewfinder", subtitle: "Stakeholder Research", tag: "Field Study" },
+      { icon: "fa-solid fa-chart-pie", subtitle: "Market & Data Insights", tag: "Analytics" },
+      { icon: "fa-solid fa-bullseye", subtitle: "Problem Scope Framing", tag: "Framing" },
+      { icon: "fa-solid fa-clipboard-check", subtitle: "Phase 01 Review Gate", tag: "Milestone Review" },
+
+      // Phase 02: Weeks 06 - 10
+      { icon: "fa-solid fa-lightbulb", subtitle: "Concept Ideation", tag: "Design Thinking" },
+      { icon: "fa-solid fa-brain", subtitle: "AI & Smart Analytics", tag: "Intelligent Systems" },
+      { icon: "fa-solid fa-microchip", subtitle: "IoT & Systems Design", tag: "Connected Tech" },
+      { icon: "fa-solid fa-cart-shopping", subtitle: "Phygital Architecture", tag: "Commerce Flow" },
+      { icon: "fa-solid fa-award", subtitle: "Phase 02 Mid-Term Gate", tag: "Feasibility Review" },
+
+      // Phase 03: Weeks 11 - 15
+      { icon: "fa-solid fa-cubes", subtitle: "Proof-of-Concept Sprint", tag: "PoC Sprint" },
+      { icon: "fa-solid fa-gears", subtitle: "Hardware/Software Build", tag: "Prototyping" },
+      { icon: "fa-solid fa-vial-circle-check", subtitle: "Lab Testing & Iteration", tag: "Quality Testing" },
+      { icon: "fa-solid fa-shop", subtitle: "Field Pilot & User Trials", tag: "Pilot Testing" },
+      { icon: "fa-solid fa-circle-nodes", subtitle: "Phase 03 Prototype Gate", tag: "Validation Review" },
+
+      // Phase 04: Weeks 16 - 20
+      { icon: "fa-solid fa-chart-line", subtitle: "Business & Venture Model", tag: "Economics" },
+      { icon: "fa-solid fa-thumbs-up", subtitle: "User Validation & Tuning", tag: "User Testing" },
+      { icon: "fa-solid fa-gem", subtitle: "Product Hardening", tag: "Refinement" },
+      { icon: "fa-solid fa-person-chalkboard", subtitle: "Pitch Deck & Showcase", tag: "Pitch Coaching" },
+      { icon: "fa-solid fa-rocket", subtitle: "Grand Finale & Demo Day", tag: "PRICE Showcase" }
+    ];
+
     const protoSemWeeks = [];
 
     // Week 00 (Orientation & Immersion Reflection)
@@ -1019,7 +1123,8 @@
       padWeek: "00",
       title: "ProtoSem – 0th Week Reflection",
       cardTitle: "WEEK 00",
-      cardSubtitle: "0th Week Reflection",
+      cardSubtitle: "Orientation & Team Immersion",
+      themeIcon: "fa-solid fa-compass-drafting",
       phase: 0,
       phaseName: "Week 00 (Orientation)",
       phaseTag: "WEEK 00 • IMMERSION",
@@ -1027,11 +1132,12 @@
       status: "Reflection Published",
       badge: "Published",
       isPublished: true,
+      categoryTag: "Kickoff Milestone",
       images: [
         {
           src: "assets/protosem-week-00.jpg",
           alt: "ProtoSem Launch & Inauguration @ Sarabhai Kalam Theater",
-          caption: "ProtoSem Launch Inauguration",
+          caption: "ProtoSem Launch Inauguration Screen",
           location: "Sarabhai Kalam Theater, KCT Campus",
           badge: "Launch Event"
         },
@@ -1068,21 +1174,25 @@
         phaseName = "Phase 02";
       }
 
+      const theme = weekThemes[i - 1];
+
       protoSemWeeks.push({
         weekNumber: i,
         padWeek: padWeek,
-        title: `WEEK ${padWeek}`,
+        title: `WEEK ${padWeek} • ${theme.subtitle}`,
         cardTitle: `WEEK ${padWeek}`,
-        cardSubtitle: "Field Notes in Progress",
+        cardSubtitle: theme.subtitle,
+        themeIcon: theme.icon,
         phase: phase,
         phaseName: phaseName,
         phaseTag: `PHASE 0${phase}`,
+        categoryTag: theme.tag,
         slug: `week-${padWeek}`,
         status: "Field Notes in Progress",
         badge: "Coming Soon",
         isPublished: false,
-        highlights: [],
-        journalNote: "This chapter will document field observations, technical explorations, prototyping milestones, and key reflections from this week.",
+        highlights: [`Sprint Focus: ${theme.subtitle}`, `Discipline: ${theme.tag}`, "PRICE Innovation Framework"],
+        journalNote: `This chapter will document field observations, technical explorations, prototyping milestones, and key reflections for Week ${padWeek} (${theme.subtitle}). Stay tuned as the sprint progresses!`,
         isZero: false
       });
     }
@@ -1092,14 +1202,30 @@
       const container = document.getElementById("protosem-cards-container");
       if (!container) return;
 
+      if (weeksToRender.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full p-12 text-center pearl-card rounded-3xl space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-xl mx-auto">
+              <i class="fa-solid fa-search"></i>
+            </div>
+            <h4 class="text-base font-bold text-slate-800">No milestones found</h4>
+            <p class="text-xs text-slate-500">Try searching for a different keyword or select another phase filter above.</p>
+            <button onclick="filterProtoPhase('all')" class="px-4 py-2 rounded-xl bg-pink-500 text-white text-xs font-bold shadow-md shadow-pink-500/20">
+              Reset Filters
+            </button>
+          </div>
+        `;
+        return;
+      }
+
       container.innerHTML = weeksToRender.map(w => {
         const hasImages = w.images && w.images.length > 0;
-        const mainImage = hasImages ? w.images[0] : (w.image ? { src: w.image, caption: w.imageCaption } : null);
+        const mainImage = hasImages ? w.images[0] : null;
         const secondImage = hasImages && w.images.length > 1 ? w.images[1] : null;
 
         return `
         <div 
-          class="week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isPublished ? 'border-pink-300 bg-white ring-1 ring-pink-400/40 shadow-xl shadow-pink-500/10' : ''}"
+          class="week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isPublished ? 'border-pink-300 bg-white ring-2 ring-pink-400/50 shadow-xl shadow-pink-500/15' : ''}"
           onclick="openWeekModal(${w.weekNumber})"
           tabindex="0"
           role="button"
@@ -1108,29 +1234,39 @@
         >
           <!-- Top Row: Phase Tag & Number Badge -->
           <div class="flex items-center justify-between">
-            <span class="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full ${w.isPublished ? 'bg-pink-100 border border-pink-300 text-pink-700' : 'bg-slate-100 border border-slate-200 text-slate-600'}">
+            <span class="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full ${w.isPublished ? 'bg-pink-100 border border-pink-300 text-pink-800 shadow-sm' : 'bg-slate-100 border border-slate-200 text-slate-600'}">
               ${w.phaseTag}
             </span>
-            <div class="week-number-badge w-8 h-8 rounded-xl ${w.isPublished ? 'bg-pink-100 border border-pink-300 text-pink-700 shadow-sm' : 'bg-slate-100 border border-slate-200 text-slate-600'} font-mono text-xs font-bold flex items-center justify-center transition-all">
+            <div class="week-number-badge w-8 h-8 rounded-xl ${w.isPublished ? 'bg-pink-200/80 border border-pink-400 text-pink-900 shadow-sm' : 'bg-slate-100 border border-slate-200 text-slate-600'} font-mono text-xs font-bold flex items-center justify-center transition-all">
               ${w.padWeek}
             </div>
           </div>
 
-          <!-- Middle: Week Title & Status -->
-          <div class="space-y-1.5 py-1">
-            <h4 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-pink-600 transition-colors flex items-center gap-2">
-              <span>${w.cardTitle}</span>
-              ${w.isPublished ? '<span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-pink-100 text-pink-700 border border-pink-300 shadow-sm font-bold">Story Ready</span>' : ''}
-            </h4>
-            <p class="text-xs text-slate-500 font-mono flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full ${w.isPublished ? 'bg-pink-500 animate-pulse' : 'bg-slate-400'}"></span>
-              <span class="${w.isPublished ? 'text-pink-700 font-bold' : ''}">${w.isPublished ? 'REFLECTION PUBLISHED' : 'FIELD NOTES IN PROGRESS'}</span>
-            </p>
+          <!-- Middle: Icon, Title & Subtitle -->
+          <div class="space-y-2 py-1">
+            <div class="flex items-center gap-2">
+              <span class="w-7 h-7 rounded-lg ${w.isPublished ? 'bg-pink-100 text-pink-600' : 'bg-slate-100 text-slate-500'} flex items-center justify-center text-xs">
+                <i class="${w.themeIcon || 'fa-solid fa-cube'}"></i>
+              </span>
+              <span class="text-[11px] font-mono font-semibold text-slate-500 uppercase tracking-wider">
+                ${w.categoryTag || 'Milestone'}
+              </span>
+            </div>
+
+            <div>
+              <h4 class="text-base font-bold text-slate-900 group-hover:text-pink-600 transition-colors flex items-center gap-1.5">
+                <span>${w.cardTitle}</span>
+                ${w.isPublished ? '<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold">Story Ready</span>' : ''}
+              </h4>
+              <p class="text-xs text-slate-600 font-medium line-clamp-1 pt-0.5">
+                ${w.cardSubtitle}
+              </p>
+            </div>
           </div>
 
           ${mainImage ? `
             <!-- Photo Preview Dual/Single Thumbnail (At Bottom of Card Content) -->
-            <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-1.5 rounded-xl overflow-hidden border border-pink-200 bg-pink-50 p-1">
+            <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-1.5 rounded-xl overflow-hidden border border-pink-200 bg-pink-50/80 p-1">
               <div class="relative h-28 sm:h-32 rounded-lg overflow-hidden bg-pink-100">
                 <img src="${mainImage.src}" alt="${mainImage.caption || w.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -1148,15 +1284,27 @@
                 </div>
               ` : ''}
             </div>
-          ` : ''}
+          ` : `
+            <!-- Upcoming Sprints Progress Bar Pill -->
+            <div class="p-2.5 rounded-xl bg-pink-50/50 border border-pink-100 space-y-1.5">
+              <div class="flex items-center justify-between text-[10px] font-mono text-slate-500">
+                <span>Sprint Progress</span>
+                <span class="text-pink-600 font-bold">Upcoming</span>
+              </div>
+              <div class="w-full h-1.5 rounded-full bg-pink-100 overflow-hidden">
+                <div class="h-full bg-pink-300 rounded-full w-1/4"></div>
+              </div>
+            </div>
+          `}
 
           <!-- Bottom: Action Indicator & Arrow -->
           <div class="pt-3 border-t border-pink-100 flex items-center justify-between text-xs text-slate-500">
-            <span class="text-[11px] font-mono ${w.isPublished ? 'text-pink-700 font-bold' : 'text-slate-500'} group-hover:text-pink-600">
-              ${w.isPublished ? 'Read Story' : 'Future Story'}
+            <span class="text-[11px] font-mono ${w.isPublished ? 'text-pink-700 font-bold' : 'text-slate-500'} group-hover:text-pink-600 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full ${w.isPublished ? 'bg-emerald-500 animate-pulse' : 'bg-slate-400'}"></span>
+              ${w.isPublished ? 'Read Story' : 'Milestone Preview'}
             </span>
             <div class="week-arrow flex items-center gap-1 text-slate-400 group-hover:text-pink-600 transition-all font-semibold">
-              <span class="text-[11px]">${w.isPublished ? 'Read' : 'Preview'}</span>
+              <span class="text-[11px]">${w.isPublished ? 'Open' : 'Preview'}</span>
               <i class="fa-solid fa-arrow-right text-[11px]"></i>
             </div>
           </div>
@@ -1168,8 +1316,16 @@
     // Initial render of all weeks
     renderWeekCards(protoSemWeeks);
 
+    // Search Filtering Functionality
+    function handleProtoSearch(query) {
+      currentSearchQuery = query.toLowerCase().trim();
+      applyFilters();
+    }
+
     // Phase Filter Functionality
     function filterProtoPhase(phase) {
+      currentFilterPhase = phase;
+      
       // Update Tab Styles
       const buttons = document.querySelectorAll('.phase-btn');
       buttons.forEach(btn => {
@@ -1186,27 +1342,57 @@
         activeBtn.setAttribute('aria-selected', 'true');
       }
 
-      // Filter & Render Cards
+      applyFilters();
+    }
+
+    // Combined Filter Execution
+    function applyFilters() {
+      let filtered = protoSemWeeks;
+
+      // Phase Filter
+      if (currentFilterPhase === 0 || currentFilterPhase === '0') {
+        filtered = filtered.filter(w => w.phase === 0);
+      } else if (currentFilterPhase !== 'all') {
+        filtered = filtered.filter(w => w.phase === parseInt(currentFilterPhase));
+      }
+
+      // Search Query Filter
+      if (currentSearchQuery) {
+        filtered = filtered.filter(w => 
+          w.title.toLowerCase().includes(currentSearchQuery) ||
+          w.cardSubtitle.toLowerCase().includes(currentSearchQuery) ||
+          w.journalNote.toLowerCase().includes(currentSearchQuery) ||
+          (w.categoryTag && w.categoryTag.toLowerCase().includes(currentSearchQuery)) ||
+          (w.highlights && w.highlights.some(h => h.toLowerCase().includes(currentSearchQuery)))
+        );
+      }
+
+      renderWeekCards(filtered);
+
+      // Update Counter Badge
       const counterBadge = document.getElementById("phase-counter-badge");
-      if (phase === 'all') {
-        renderWeekCards(protoSemWeeks);
-        if (counterBadge) counterBadge.textContent = "Showing all weeks (Week 00–20)";
-      } else if (phase === 0 || phase === '0') {
-        const filtered = protoSemWeeks.filter(w => w.phase === 0);
-        renderWeekCards(filtered);
-        if (counterBadge) counterBadge.textContent = "Showing Week 00 (Orientation & Immersion)";
-      } else {
-        const filtered = protoSemWeeks.filter(w => w.phase === parseInt(phase));
-        renderWeekCards(filtered);
-        if (counterBadge) counterBadge.textContent = `Showing Phase 0${phase} (5 weeks)`;
+      if (counterBadge) {
+        if (currentSearchQuery) {
+          counterBadge.textContent = `Found ${filtered.length} matching week(s)`;
+        } else if (currentFilterPhase === 'all') {
+          counterBadge.textContent = "Showing all 21 weeks (Week 00–20)";
+        } else if (currentFilterPhase === 0 || currentFilterPhase === '0') {
+          counterBadge.textContent = "Showing Week 00 (Orientation & Immersion)";
+        } else {
+          counterBadge.textContent = `Showing Phase 0${currentFilterPhase} (${filtered.length} weeks)`;
+        }
       }
     }
 
     // Modal Interaction
     function openWeekModal(weekNum) {
-      const week = protoSemWeeks.find(w => w.weekNumber === weekNum);
-      if (!week) return;
+      const weekIndex = protoSemWeeks.findIndex(w => w.weekNumber === weekNum);
+      if (weekIndex === -1) return;
+      currentModalWeekIndex = weekIndex;
+      renderModalContent(protoSemWeeks[weekIndex]);
+    }
 
+    function renderModalContent(week) {
       if (week.weekNumber === 0) {
         document.getElementById("modal-phase-tag").textContent = "WEEK 00 • ORIENTATION & IMMERSION";
         document.getElementById("modal-status-text").textContent = "Published Reflection • Launch & Immersion";
@@ -1214,7 +1400,7 @@
       } else {
         document.getElementById("modal-phase-tag").textContent = `PHASE 0${week.phase} • WEEKS 0${(week.phase-1)*5+1}–${week.phase*5 < 10 ? '0' + week.phase*5 : week.phase*5}`;
         document.getElementById("modal-status-text").textContent = "Field Notes in Progress";
-        document.getElementById("modal-status-badge").textContent = "Status: Coming Soon";
+        document.getElementById("modal-status-badge").textContent = "Status: Upcoming Sprint";
       }
       document.getElementById("modal-week-title").textContent = week.title;
       
@@ -1243,7 +1429,7 @@
       // Render gallery showcase (supporting single or multi-images)
       const galleryContainer = document.getElementById("modal-gallery-container");
       if (galleryContainer) {
-        const imageList = week.images || (week.image ? [{ src: week.image, caption: week.imageCaption, location: "ProtoSem Launch", badge: "Photo" }] : []);
+        const imageList = week.images || [];
         if (imageList.length > 0) {
           galleryContainer.classList.remove("hidden");
           if (imageList.length === 1) {
@@ -1265,7 +1451,7 @@
                 ${imageList.map(img => `
                   <div class="rounded-2xl overflow-hidden border border-pink-200 bg-white shadow-lg flex flex-col justify-between group/img">
                     <div class="h-48 sm:h-52 overflow-hidden bg-pink-50 relative">
-                      <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500">
+                      <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                       ${img.badge ? `
                         <span class="absolute top-2.5 left-2.5 text-[10px] font-mono px-2 py-0.5 rounded-lg bg-white/90 text-pink-700 border border-pink-300 backdrop-blur-sm shadow-sm font-bold">
                           ${img.badge}
@@ -1298,6 +1484,15 @@
       document.body.style.overflow = "hidden";
     }
 
+    // Modal navigation next/previous
+    function navigateModalWeek(step) {
+      let newIndex = currentModalWeekIndex + step;
+      if (newIndex < 0) newIndex = protoSemWeeks.length - 1;
+      if (newIndex >= protoSemWeeks.length) newIndex = 0;
+      currentModalWeekIndex = newIndex;
+      renderModalContent(protoSemWeeks[newIndex]);
+    }
+
     function closeWeekModal(e) {
       const modal = document.getElementById("week-modal");
       modal.classList.add("hidden");
@@ -1307,6 +1502,10 @@
     // Close on Escape key
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeWeekModal();
+      if (!document.getElementById("week-modal").classList.contains("hidden")) {
+        if (e.key === "ArrowLeft") navigateModalWeek(-1);
+        if (e.key === "ArrowRight") navigateModalWeek(1);
+      }
     });
   </script>
 </body>
