@@ -1284,24 +1284,32 @@
           </div>
 
           ${mainImage ? `
-            <!-- Photo Preview Dual/Single Thumbnail (At Bottom of Card Content) -->
-            <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-1.5 rounded-xl overflow-hidden border border-slate-700/80 bg-slate-950 p-1">
-              <div class="relative h-28 sm:h-32 rounded-lg overflow-hidden bg-slate-900">
-                <img src="${mainImage.src}" alt="${mainImage.caption || w.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-                <div class="absolute bottom-1.5 left-1.5 text-[9px] font-mono text-pink-300 bg-slate-950/90 px-1.5 py-0.5 rounded border border-pink-500/30">
-                  <i class="fa-solid fa-camera mr-0.5 text-pink-400"></i> Launch
-                </div>
+            <!-- Photo Preview Dual/Single Thumbnail (Elevated Modern Gallery Theme) -->
+            <div class="space-y-1.5 pt-1">
+              <div class="flex items-center justify-between text-[10px] font-mono text-pink-300 px-1">
+                <span class="flex items-center gap-1 font-semibold">
+                  <i class="fa-solid fa-photo-film text-pink-400"></i> Visual Artifacts
+                </span>
+                <span class="text-slate-400 font-medium">${secondImage ? '2 Photos' : '1 Photo'}</span>
               </div>
-              ${secondImage ? `
-                <div class="relative h-28 sm:h-32 rounded-lg overflow-hidden bg-slate-900">
-                  <img src="${secondImage.src}" alt="${secondImage.caption || w.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-                  <div class="absolute bottom-1.5 left-1.5 text-[9px] font-mono text-pink-300 bg-slate-950/90 px-1.5 py-0.5 rounded border border-pink-500/30">
-                    <i class="fa-solid fa-user-tag mr-0.5 text-pink-400"></i> Consul
+              <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-2 p-1.5 rounded-2xl bg-gradient-to-tr from-pink-950/90 via-slate-900/90 to-purple-950/80 border border-pink-500/40 shadow-xl group/thumb">
+                <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden bg-slate-950 border border-pink-500/25 shadow-inner">
+                  <img src="${mainImage.src}" alt="${mainImage.caption || w.title}" class="w-full h-full object-cover group-hover/thumb:scale-108 transition-transform duration-700">
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent pointer-events-none"></div>
+                  <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-pink-200 bg-pink-950/90 border border-pink-400/50 px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
+                    <i class="fa-solid fa-camera mr-1 text-pink-400"></i> Launch
                   </div>
                 </div>
-              ` : ''}
+                ${secondImage ? `
+                  <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden bg-slate-950 border border-pink-500/25 shadow-inner">
+                    <img src="${secondImage.src}" alt="${secondImage.caption || w.title}" class="w-full h-full object-cover group-hover/thumb:scale-108 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent pointer-events-none"></div>
+                    <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-pink-200 bg-pink-950/90 border border-pink-400/50 px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
+                      <i class="fa-solid fa-id-card mr-1 text-pink-400"></i> Consul
+                    </div>
+                  </div>
+                ` : ''}
+              </div>
             </div>
           ` : `
             <!-- Upcoming Sprints Progress Bar Pill -->
@@ -1445,7 +1453,7 @@
         noteContainer.innerHTML = `<p class="leading-relaxed">${week.journalNote}</p>`;
       }
 
-      // Render gallery showcase (supporting single or multi-images)
+      // Render gallery showcase (Elevated Gallery Theme)
       const galleryContainer = document.getElementById("modal-gallery-container");
       if (galleryContainer) {
         const imageList = week.images || [];
@@ -1454,35 +1462,44 @@
           if (imageList.length === 1) {
             const img = imageList[0];
             galleryContainer.innerHTML = `
-              <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 shadow-xl">
-                <img src="${img.src}" alt="${img.alt || week.title}" class="w-full max-h-80 object-cover">
-                <div class="px-4 py-2.5 bg-slate-900 border-t border-slate-800 text-xs font-mono text-slate-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                  <span class="flex items-center gap-1.5 text-pink-300 font-bold">
+              <div class="rounded-2xl overflow-hidden border border-pink-500/40 bg-gradient-to-b from-slate-900 to-slate-950 shadow-2xl p-2.5">
+                <div class="rounded-xl overflow-hidden relative bg-slate-950 max-h-80">
+                  <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+                  ${img.badge ? `
+                    <span class="absolute top-3 left-3 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-pink-950/90 text-pink-200 border border-pink-400/50 backdrop-blur-md shadow-md">
+                      ✨ ${img.badge}
+                    </span>
+                  ` : ''}
+                </div>
+                <div class="px-4 py-3 bg-slate-900/90 rounded-b-xl text-xs font-mono text-slate-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1 mt-1.5 border-t border-slate-800">
+                  <span class="flex items-center gap-2 text-pink-300 font-bold">
                     <i class="fa-solid fa-camera text-pink-400"></i> ${img.caption}
                   </span>
-                  <span class="text-slate-400 text-[11px] font-sans">${img.location || ''}</span>
+                  <span class="text-slate-400 text-[11px] font-sans flex items-center gap-1">
+                    <i class="fa-solid fa-location-dot text-[10px] text-pink-400"></i> ${img.location || ''}
+                  </span>
                 </div>
               </div>
             `;
           } else {
             galleryContainer.innerHTML = `
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 ${imageList.map(img => `
-                  <div class="rounded-2xl overflow-hidden border border-slate-700 bg-slate-950 shadow-xl flex flex-col justify-between group/img">
-                    <div class="h-48 sm:h-52 overflow-hidden bg-slate-900 relative">
-                      <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                  <div class="rounded-2xl overflow-hidden border border-pink-500/40 bg-gradient-to-b from-slate-900 to-slate-950 shadow-2xl p-2.5 flex flex-col justify-between group/gallery">
+                    <div class="h-52 sm:h-56 overflow-hidden rounded-xl bg-slate-950 relative border border-slate-800">
+                      <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full object-cover group-hover/gallery:scale-108 transition-transform duration-700">
                       ${img.badge ? `
-                        <span class="absolute top-2.5 left-2.5 text-[10px] font-mono px-2 py-0.5 rounded-lg bg-slate-950/90 text-pink-300 border border-pink-500/40 backdrop-blur-sm shadow-sm font-bold">
-                          ${img.badge}
+                        <span class="absolute top-2.5 left-2.5 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-pink-950/90 text-pink-200 border border-pink-400/50 backdrop-blur-md shadow-md">
+                          ✨ ${img.badge}
                         </span>
                       ` : ''}
                     </div>
-                    <div class="p-3 bg-slate-900/90 border-t border-slate-800 text-xs font-mono space-y-0.5">
+                    <div class="p-3 bg-slate-900/90 rounded-b-xl border-t border-slate-800/80 text-xs font-mono space-y-1 mt-1.5">
                       <div class="text-pink-300 font-bold text-xs flex items-center gap-1.5 truncate">
-                        <i class="fa-solid fa-image text-pink-400 text-[10px]"></i> ${img.caption}
+                        <i class="fa-solid fa-image text-pink-400 text-xs"></i> ${img.caption}
                       </div>
-                      <div class="text-slate-400 text-[11px] font-sans truncate">
-                        ${img.location || ''}
+                      <div class="text-slate-400 text-[11px] font-sans truncate flex items-center gap-1">
+                        <i class="fa-solid fa-location-dot text-[10px] text-pink-400"></i> ${img.location || ''}
                       </div>
                     </div>
                   </div>
