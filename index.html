@@ -678,7 +678,9 @@
               <h4 class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors">Phase 01: Discovery</h4>
               <p class="text-[11px] text-slate-400 line-clamp-1">Problem & Market Insights</p>
             </div>
-            <div class="text-[10px] font-mono text-slate-500">5 Sprints</div>
+            <div class="text-[10px] font-mono text-emerald-400 font-bold flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> W01 Live • 4 Ahead
+            </div>
           </div>
 
           <!-- Pillar 2: Phase 02 -->
@@ -1178,7 +1180,47 @@
       isZero: true
     });
 
-    for (let i = 1; i <= 20; i++) {
+    // Week 01 (Design Thinking, SWOT Analysis & Retail Exploration)
+    protoSemWeeks.push({
+      weekNumber: 1,
+      padWeek: "01",
+      title: "Week 1 – ProtoSem Reflection",
+      cardTitle: "WEEK 01",
+      cardSubtitle: "Design Thinking, SWOT & Retail Insights",
+      themeIcon: "fa-solid fa-lightbulb",
+      phase: 1,
+      phaseName: "Phase 01",
+      phaseTag: "PHASE 01 • DISCOVERY",
+      categoryTag: "Design Thinking & SWOT",
+      slug: "week-01",
+      status: "Reflection Published",
+      badge: "Published",
+      isPublished: true,
+      images: [],
+      highlights: [
+        "Design Thinking & Customer Perspective",
+        "Retail Sector SWOT Analysis",
+        "Portfolio Creation Session",
+        "Motivational Session by Ram",
+        "Guest Lectures: Agri, Textile & Retail",
+        "Week 1 Presentation & Reflection"
+      ],
+      journalNote: `<p class="leading-relaxed">Week 1 of Protosem was filled with learning, teamwork, and practical experiences. We started the week with a session on Design Thinking, where we learned to understand problems from a customer’s perspective and develop practical solutions. As part of the activity, we selected a retail sector and analysed its strengths, weaknesses, opportunities, and threats through a SWOT analysis. We also had an Onam holiday, which gave us a short break before continuing with our activities. During the week, we attended a session on portfolio creation, where we learned how to document our experiences, activities, and learnings effectively. Towards the weekend, we participated in an inspiring motivational session by Ram, followed by guest lectures that provided insights into the agriculture, textile, and retail industries. We concluded the week with our Week 1 presentation, where we presented our work and reflected on our learning.</p>
+      <div class="mt-4 p-4 rounded-xl bg-pink-950/60 border border-pink-500/30 space-y-2">
+        <h4 class="text-pink-300 font-bold text-xs uppercase font-mono flex items-center gap-1.5">
+          <i class="fa-solid fa-star text-pink-400"></i> Week 1 Takeaway
+        </h4>
+        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+          This week taught me the importance of thinking differently, working as a team, and learning through practical experiences. Design Thinking helped me approach problems from a customer’s perspective, while the SWOT analysis improved my analytical and decision-making skills. The guest lectures also gave me a better understanding of real-world businesses and different industries.
+        </p>
+        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1">
+          Overall, Week 1 helped me build my communication, teamwork, analytical thinking, creativity, and presentation skills. It was a valuable beginning to my Protosem journey and motivated me to make the most of the upcoming weeks.
+        </p>
+      </div>`,
+      isZero: false
+    });
+
+    for (let i = 2; i <= 20; i++) {
       const padWeek = i < 10 ? `0${i}` : `${i}`;
       let phase = 1;
       let phaseName = "Phase 01";
@@ -1311,6 +1353,23 @@
                 ` : ''}
               </div>
             </div>
+          ` : (w.isPublished ? `
+            <!-- Published Highlights Preview -->
+            <div class="p-3 rounded-2xl bg-gradient-to-tr from-pink-950/70 via-slate-900/80 to-purple-950/60 border border-pink-500/30 space-y-2">
+              <div class="flex items-center justify-between text-[10px] font-mono text-pink-300">
+                <span class="flex items-center gap-1 font-semibold">
+                  <i class="fa-solid fa-sparkles text-pink-400"></i> Key Topics & Insights
+                </span>
+                <span class="text-emerald-400 font-bold">● Published</span>
+              </div>
+              <div class="flex flex-wrap gap-1">
+                ${(w.highlights || []).slice(0, 3).map(h => `
+                  <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-950/80 text-pink-200 border border-pink-500/20 font-mono truncate max-w-full">
+                    ${h}
+                  </span>
+                `).join("")}
+              </div>
+            </div>
           ` : `
             <!-- Upcoming Sprints Progress Bar Pill -->
             <div class="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-1.5">
@@ -1322,7 +1381,7 @@
                 <div class="h-full bg-pink-500/60 rounded-full w-1/4"></div>
               </div>
             </div>
-          `}
+          `)}
 
           <!-- Bottom: Action Indicator & Arrow -->
           <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
@@ -1420,10 +1479,16 @@
     }
 
     function renderModalContent(week) {
-      if (week.weekNumber === 0) {
-        document.getElementById("modal-phase-tag").textContent = "WEEK 00 • ORIENTATION & IMMERSION";
-        document.getElementById("modal-status-text").textContent = "Published Reflection • Launch & Immersion";
-        document.getElementById("modal-status-badge").textContent = "Status: Published Story";
+      if (week.isPublished) {
+        if (week.weekNumber === 0) {
+          document.getElementById("modal-phase-tag").textContent = "WEEK 00 • ORIENTATION & IMMERSION";
+          document.getElementById("modal-status-text").textContent = "Published Reflection • Launch & Immersion";
+          document.getElementById("modal-status-badge").textContent = "Status: Published Story";
+        } else {
+          document.getElementById("modal-phase-tag").textContent = `${week.phaseTag} • WEEK ${week.padWeek}`;
+          document.getElementById("modal-status-text").textContent = `Published Reflection • Week ${week.padWeek} Story`;
+          document.getElementById("modal-status-badge").textContent = "Status: Published Story";
+        }
       } else {
         document.getElementById("modal-phase-tag").textContent = `PHASE 0${week.phase} • WEEKS 0${(week.phase-1)*5+1}–${week.phase*5 < 10 ? '0' + week.phase*5 : week.phase*5}`;
         document.getElementById("modal-status-text").textContent = "Field Notes in Progress";
@@ -1450,7 +1515,9 @@
       // Render note / text
       const noteContainer = document.getElementById("modal-journal-note");
       if (noteContainer) {
-        noteContainer.innerHTML = `<p class="leading-relaxed">${week.journalNote}</p>`;
+        noteContainer.innerHTML = week.journalNote.startsWith("<p") || week.journalNote.includes("<div")
+          ? week.journalNote
+          : `<p class="leading-relaxed">${week.journalNote}</p>`;
       }
 
       // Render gallery showcase (Elevated Gallery Theme)
