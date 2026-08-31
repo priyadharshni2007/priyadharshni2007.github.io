@@ -14,31 +14,18 @@
       theme: {
         extend: {
           colors: {
-            brand: {
-              50: '#fff1f2',
-              100: '#ffe4e6',
-              200: '#fecdd3',
-              300: '#fda4af',
-              400: '#fb7185',
-              500: '#f43f5e',
-              600: '#e11d48',
-              700: '#be123c',
-              800: '#9f1239',
-              900: '#881337',
-              950: '#4c0519',
-            },
-            pink: {
-              50: '#fdf2f8',
-              100: '#fce7f3',
-              200: '#fbcfe8',
-              300: '#f9a8d4',
-              400: '#f472b6',
-              500: '#ec4899',
-              600: '#db2777',
-              700: '#be185d',
-              800: '#9d174d',
-              900: '#831843',
-              950: '#500724',
+            noir: {
+              50: '#fafafa',
+              100: '#f4f4f5',
+              200: '#e4e4e7',
+              300: '#d4d4d8',
+              400: '#a1a1aa',
+              500: '#71717a',
+              600: '#52525b',
+              700: '#3f3f46',
+              800: '#27272a',
+              900: '#18181b',
+              950: '#09090b',
             }
           },
           fontFamily: {
@@ -55,11 +42,11 @@
           keyframes: {
             float: {
               '0%, 100%': { transform: 'translateY(0px) scale(1)' },
-              '50%': { transform: 'translateY(-12px) scale(1.02)' },
+              '50%': { transform: 'translateY(-10px) scale(1.01)' },
             },
             pulseGlow: {
               '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-              '50%': { opacity: '0.8', transform: 'scale(1.08)' },
+              '50%': { opacity: '0.8', transform: 'scale(1.05)' },
             },
             shimmer: {
               '0%': { backgroundPosition: '-200% 0' },
@@ -84,61 +71,61 @@
   
   <style>
     :root {
-      color-scheme: light;
+      color-scheme: dark;
     }
     
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #fff5f7;
-      color: #1e293b;
+      background-color: #050507;
+      color: #f4f4f5;
       overflow-x: hidden;
-      selection-background-color: #f472b6;
-      selection-color: #ffffff;
+      selection-background-color: #ffffff;
+      selection-color: #000000;
     }
 
-    /* Soft Pearl Rose Background Mesh */
-    .pink-mesh-bg {
-      background-color: #fff5f7;
+    /* Monochrome Cyber Grid Background */
+    .mono-mesh-bg {
+      background-color: #050507;
       background-image: 
-        radial-gradient(rgba(244, 114, 182, 0.18) 1.5px, transparent 1.5px),
-        radial-gradient(rgba(251, 113, 133, 0.12) 1.5px, transparent 1.5px);
+        radial-gradient(rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px),
+        radial-gradient(rgba(255, 255, 255, 0.05) 1.2px, transparent 1.2px);
       background-size: 36px 36px, 72px 72px;
       background-position: 0 0, 18px 18px;
     }
     
-    /* Glowing Ambient Blush Orbs */
-    .pink-orb-1 {
+    /* Glowing Ambient Platinum Orbs */
+    .mono-orb-1 {
       position: absolute;
       top: -120px;
       left: 10%;
       width: 650px;
       height: 650px;
-      background: radial-gradient(circle, rgba(253, 164, 175, 0.35) 0%, rgba(254, 205, 211, 0.18) 45%, transparent 70%);
-      filter: blur(80px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .pink-orb-2 {
-      position: absolute;
-      top: 35%;
-      right: 5%;
-      width: 650px;
-      height: 650px;
-      background: radial-gradient(circle, rgba(244, 114, 182, 0.28) 0%, rgba(251, 207, 232, 0.16) 50%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, rgba(161, 161, 170, 0.03) 45%, transparent 70%);
       filter: blur(90px);
       pointer-events: none;
       z-index: 0;
     }
 
-    .pink-orb-3 {
+    .mono-orb-2 {
+      position: absolute;
+      top: 35%;
+      right: 5%;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.06) 0%, rgba(113, 113, 122, 0.03) 50%, transparent 70%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .mono-orb-3 {
       position: absolute;
       top: 70%;
       left: 5%;
       width: 550px;
       height: 550px;
-      background: radial-gradient(circle, rgba(251, 113, 133, 0.25) 0%, rgba(255, 228, 230, 0.18) 50%, transparent 70%);
-      filter: blur(80px);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(82, 82, 91, 0.02) 50%, transparent 70%);
+      filter: blur(90px);
       pointer-events: none;
       z-index: 0;
     }
@@ -149,110 +136,102 @@
       top: 0;
       left: 0;
       height: 3px;
-      background: linear-gradient(90deg, #ec4899, #f43f5e, #fb7185, #ec4899);
+      background: linear-gradient(90deg, #52525b, #ffffff, #d4d4d8, #ffffff);
       background-size: 200% 100%;
       animation: shimmer 3s linear infinite;
       z-index: 100;
       transition: width 0.1s ease-out;
     }
     
-    /* Pearl Glassmorphism Surfaces */
-    .pearl-card {
-      background: rgba(255, 255, 255, 0.88);
+    /* Monochrome Glass Surfaces */
+    .noir-card {
+      background: rgba(15, 15, 18, 0.88);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(244, 114, 182, 0.28);
-      box-shadow: 0 14px 35px -10px rgba(244, 114, 182, 0.18), inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 14px 35px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
-    .pearl-card-hover {
-      background: rgba(255, 255, 255, 0.82);
+    .noir-card-hover {
+      background: rgba(18, 18, 22, 0.82);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(244, 114, 182, 0.25);
-      box-shadow: 0 12px 30px -10px rgba(244, 114, 182, 0.14), inset 0 1px 0 0 rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .pearl-card-hover:hover {
-      background: rgba(255, 255, 255, 0.96);
-      border-color: rgba(244, 63, 94, 0.45);
+    .noir-card-hover:hover {
+      background: rgba(24, 24, 29, 0.96);
+      border-color: rgba(255, 255, 255, 0.4);
       transform: translateY(-4px);
-      box-shadow: 0 20px 45px -12px rgba(244, 114, 182, 0.28), 0 0 25px -5px rgba(251, 113, 133, 0.2);
+      box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 255, 0.1);
     }
 
-    /* ========================================================================= */
-    /* THEME: MIDNIGHT OBSIDIAN & ROSE-GOLD INNOVATION VAULT (FOR WEEKLY BOX)    */
-    /* ========================================================================= */
+    /* Monochrome ProtoSem Hub Vault */
     .proto-vault-container {
-      background: radial-gradient(circle at 50% 0%, rgba(236, 72, 153, 0.12) 0%, transparent 60%),
-                  radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
-                  #0a0f1d;
-      border: 1px solid rgba(244, 114, 182, 0.35);
-      box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.4), 0 0 35px -5px rgba(236, 72, 153, 0.2);
+      background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.06) 0%, transparent 60%),
+                  radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+                  #0a0a0d;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 35px -5px rgba(255, 255, 255, 0.05);
     }
 
-    /* Dark Vault Week Cards */
+    /* Monochrome Week Cards */
     .vault-week-card {
-      background: rgba(15, 23, 42, 0.78);
+      background: rgba(18, 18, 22, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
     .vault-week-card:hover {
-      background: rgba(24, 34, 58, 0.92);
-      border-color: rgba(244, 114, 182, 0.6);
+      background: rgba(28, 28, 34, 0.95);
+      border-color: rgba(255, 255, 255, 0.5);
       transform: translateY(-5px);
-      box-shadow: 0 22px 45px -12px rgba(236, 72, 153, 0.28), 0 0 20px rgba(244, 114, 182, 0.15);
+      box-shadow: 0 22px 45px -12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.15);
     }
 
     .vault-week-card:hover .vault-arrow {
       transform: translateX(4px);
-      color: #f472b6;
+      color: #ffffff;
     }
 
     .vault-week-card:hover .vault-number-badge {
-      background: rgba(236, 72, 153, 0.25);
-      color: #f472b6;
-      border-color: rgba(244, 114, 182, 0.5);
-      box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
+      background: #ffffff;
+      color: #000000;
+      border-color: #ffffff;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
 
-    /* Phase Pillar inside Vault */
+    /* Phase Pillar */
     .vault-phase-pillar {
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(18, 18, 22, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       transition: all 0.3s ease;
     }
     .vault-phase-pillar:hover, .vault-phase-pillar.active-pillar {
-      background: rgba(30, 41, 59, 0.9);
-      border-color: #ec4899;
-      box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.3);
+      background: rgba(32, 32, 38, 0.95);
+      border-color: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.15);
       transform: translateY(-2px);
     }
 
-    /* Gradient Text */
-    .text-gradient-pink {
-      background: linear-gradient(135deg, #1e1b2e 0%, #831843 50%, #be123c 100%);
+    /* Monochrome Metallic Gradient Text */
+    .text-gradient-mono {
+      background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 50%, #a1a1aa 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .text-gradient-rose {
-      background: linear-gradient(135deg, #db2777 0%, #e11d48 50%, #f43f5e 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    /* Glowing Pink Pill Badges */
-    .pink-pill {
-      background: linear-gradient(135deg, rgba(253, 232, 240, 0.9) 0%, rgba(255, 228, 230, 0.85) 100%);
-      border: 1px solid rgba(244, 114, 182, 0.4);
-      box-shadow: 0 0 20px -5px rgba(244, 114, 182, 0.25);
+    /* Monochrome Pill Badges */
+    .mono-pill {
+      background: rgba(24, 24, 27, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px -5px rgba(255, 255, 255, 0.1);
     }
 
     /* Custom Scrollbar */
@@ -260,67 +239,67 @@
       width: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #fff5f7;
+      background: #09090b;
     }
     ::-webkit-scrollbar-thumb {
-      background: #f472b6;
+      background: #3f3f46;
       border-radius: 4px;
-      border: 2px solid #fff5f7;
+      border: 2px solid #09090b;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #db2777;
+      background: #71717a;
     }
 
     /* Modal Backdrop */
     .modal-backdrop {
-      background: rgba(10, 15, 29, 0.85);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: rgba(0, 0, 0, 0.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
   </style>
 </head>
-<body class="relative min-h-screen pink-mesh-bg font-sans">
+<body class="relative min-h-screen mono-mesh-bg font-sans text-zinc-100">
 
   <!-- Top Scroll Progress Bar -->
   <div id="progress-bar" style="width: 0%;"></div>
 
-  <!-- Ambient Background Glowing Blush Orbs -->
-  <div class="pink-orb-1"></div>
-  <div class="pink-orb-2"></div>
-  <div class="pink-orb-3"></div>
+  <!-- Ambient Background Glowing Monochrome Orbs -->
+  <div class="mono-orb-1"></div>
+  <div class="mono-orb-2"></div>
+  <div class="mono-orb-3"></div>
 
   <!-- Floating Navigation Bar -->
   <header class="sticky top-0 z-50 px-4 sm:px-8 py-4">
-    <nav class="max-w-6xl mx-auto pearl-card rounded-2xl sm:rounded-full px-6 py-3.5 flex items-center justify-between transition-all border border-pink-200/80 shadow-xl">
+    <nav class="max-w-6xl mx-auto noir-card rounded-2xl sm:rounded-full px-6 py-3.5 flex items-center justify-between transition-all border border-zinc-800 shadow-2xl">
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-pink-500 via-rose-400 to-pink-300 text-white flex items-center justify-center font-black text-sm shadow-md shadow-pink-500/25 group-hover:scale-110 transition-transform duration-300">
+        <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-black text-sm shadow-md shadow-white/10 group-hover:scale-110 transition-transform duration-300">
           SP
         </div>
         <div>
-          <span class="font-bold text-base tracking-tight text-slate-900 group-hover:text-pink-600 transition-colors block font-display">
+          <span class="font-bold text-base tracking-tight text-white group-hover:text-zinc-300 transition-colors block font-display">
             S. Priyadharshni
           </span>
-          <span class="text-[11px] text-pink-600 font-semibold block">
+          <span class="text-[11px] text-zinc-400 font-semibold block">
             BBA & Innovation Trainee
           </span>
         </div>
       </a>
 
       <!-- Desktop Links -->
-      <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
-        <a href="#about" class="hover:text-pink-600 transition-colors">About</a>
-        <a href="#experience" class="hover:text-pink-600 transition-colors">Experience</a>
-        <a href="#protosem" class="text-pink-700 font-bold hover:text-pink-600 transition-colors flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-pink-100/80 border border-pink-300/80 shadow-sm">
-          <span class="w-2 h-2 rounded-full bg-pink-500 animate-ping"></span> ProtoSem
+      <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-zinc-300">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+        <a href="#protosem" class="text-white font-bold hover:text-zinc-300 transition-colors flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-800/90 border border-zinc-700 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-white animate-ping"></span> ProtoSem
         </a>
-        <a href="#education" class="hover:text-pink-600 transition-colors">Education</a>
-        <a href="#skills" class="hover:text-pink-600 transition-colors">Competencies</a>
-        <a href="#contact" class="hover:text-pink-600 transition-colors">Contact</a>
+        <a href="#education" class="hover:text-white transition-colors">Education</a>
+        <a href="#skills" class="hover:text-white transition-colors">Competencies</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
       </div>
 
       <!-- Action Button -->
       <div class="flex items-center gap-3">
-        <a href="resume.html" target="_blank" class="flex items-center gap-2 text-xs font-extrabold px-4 sm:px-5 py-2.5 rounded-xl sm:rounded-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white transition-all transform hover:scale-105 shadow-md shadow-pink-500/25">
+        <a href="resume.html" target="_blank" class="flex items-center gap-2 text-xs font-extrabold px-4 sm:px-5 py-2.5 rounded-xl sm:rounded-full bg-white hover:bg-zinc-200 text-black transition-all transform hover:scale-105 shadow-md shadow-white/10">
           <i class="fa-solid fa-file-arrow-down text-sm"></i>
           <span>ATS Resume</span>
         </a>
@@ -338,142 +317,142 @@
         <!-- Left: Executive Profile Intro -->
         <div class="lg:col-span-6 space-y-6 text-left">
           
-          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full pink-pill text-pink-700 text-xs font-bold uppercase tracking-wider">
-            <span class="w-2 h-2 rounded-full bg-pink-500 animate-pulse"></span>
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full mono-pill text-zinc-200 text-xs font-bold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
             <span>Available for HR & Management Roles</span>
           </div>
 
           <div class="space-y-3">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-gradient-pink leading-none">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-display text-gradient-mono leading-none">
               S. Priyadharshni
             </h1>
-            <p class="text-xl sm:text-2xl font-bold text-gradient-rose">
+            <p class="text-xl sm:text-2xl font-bold text-zinc-300">
               BBA Scholar & Innovation Engineer Trainee
             </p>
           </div>
 
-          <p class="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
-            Bachelor of Business Administration (BBA) scholar at <strong class="text-slate-900 font-bold">Kumaraguru College of Liberal Arts and Science</strong> and Innovation Engineer Trainee at <strong class="text-pink-700 font-bold">PRICE ProtoSem</strong>. Dedicated to advancing human resources, organizational leadership, and modern retail commerce through people-first strategy and intelligent systems.
+          <p class="text-zinc-400 text-sm sm:text-base leading-relaxed font-normal">
+            Bachelor of Business Administration (BBA) scholar at <strong class="text-white font-bold">Kumaraguru College of Liberal Arts and Science</strong> and Innovation Engineer Trainee at <strong class="text-white font-bold">PRICE ProtoSem</strong>. Dedicated to advancing human resources, organizational leadership, and modern retail commerce through people-first strategy and intelligent systems.
           </p>
 
           <!-- Contact & Action Badges -->
           <div class="flex flex-wrap items-center gap-3.5 pt-2">
-            <a href="mailto:priyadharnish552@gmail.com" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-extrabold text-xs sm:text-sm transition-all flex items-center gap-2.5 shadow-xl shadow-pink-500/25 transform hover:-translate-y-1">
+            <a href="mailto:priyadharnish552@gmail.com" class="px-6 py-3 rounded-2xl bg-white hover:bg-zinc-200 text-black font-extrabold text-xs sm:text-sm transition-all flex items-center gap-2.5 shadow-xl shadow-white/10 transform hover:-translate-y-1">
               <i class="fa-regular fa-envelope text-base"></i>
               Get in Touch
             </a>
-            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl pearl-card-hover text-slate-800 font-bold text-xs sm:text-sm hover:text-pink-600 hover:border-pink-400 transition-all flex items-center gap-2.5 transform hover:-translate-y-1">
-              <i class="fa-brands fa-linkedin text-pink-600 text-base"></i>
+            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl noir-card-hover text-zinc-200 font-bold text-xs sm:text-sm hover:text-white hover:border-zinc-400 transition-all flex items-center gap-2.5 transform hover:-translate-y-1">
+              <i class="fa-brands fa-linkedin text-white text-base"></i>
               LinkedIn Profile
             </a>
-            <a href="resume.html" target="_blank" class="px-4 py-3 rounded-2xl bg-white/90 border border-pink-200 text-slate-700 hover:text-pink-600 hover:border-pink-300 text-xs sm:text-sm font-bold transition-all flex items-center gap-2">
-              <i class="fa-solid fa-arrow-down-to-bracket text-xs text-pink-600"></i>
+            <a href="resume.html" target="_blank" class="px-4 py-3 rounded-2xl bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 text-xs sm:text-sm font-bold transition-all flex items-center gap-2">
+              <i class="fa-solid fa-arrow-down-to-bracket text-xs text-white"></i>
               Resume
             </a>
           </div>
 
           <!-- Quick Verified Badges -->
-          <div class="flex flex-wrap items-center gap-4 text-xs text-slate-600 pt-3 border-t border-pink-200/80 font-medium">
+          <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400 pt-3 border-t border-zinc-800 font-medium">
             <span class="flex items-center gap-1.5">
-              <i class="fa-solid fa-location-dot text-pink-600"></i> Erode, Tamil Nadu
+              <i class="fa-solid fa-location-dot text-white"></i> Erode, Tamil Nadu
             </span>
             <span>•</span>
             <span class="flex items-center gap-1.5">
-              <i class="fa-solid fa-graduation-cap text-pink-600"></i> BBA 2nd Year (2025–2028)
+              <i class="fa-solid fa-graduation-cap text-white"></i> BBA 2nd Year (2025–2028)
             </span>
             <span>•</span>
             <span class="flex items-center gap-1.5">
-              <i class="fa-solid fa-id-badge text-pink-600"></i> ESFJ-T (Consul)
+              <i class="fa-solid fa-id-badge text-white"></i> ESFJ-T (Consul)
             </span>
           </div>
         </div>
 
-        <!-- Right: Light Pink Pearl Profile Card -->
+        <!-- Right: Monochrome Profile Card -->
         <div class="lg:col-span-6" data-aos="fade-left" data-aos-duration="1000">
-          <div class="pearl-card rounded-3xl p-6 sm:p-8 space-y-6 border border-pink-300/80 shadow-2xl relative overflow-hidden group">
+          <div class="noir-card rounded-3xl p-6 sm:p-8 space-y-6 border border-zinc-800 shadow-2xl relative overflow-hidden group">
             
-            <!-- Top Subtle Pink Accent Line -->
-            <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-pink-400 via-rose-400 to-pink-300"></div>
+            <!-- Top Subtle Accent Line -->
+            <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent"></div>
 
             <!-- Card Header -->
-            <div class="flex items-center justify-between border-b border-pink-100 pb-5">
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-5">
               <div class="flex items-center gap-4">
                 <div class="relative">
-                  <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-pink-500 via-rose-400 to-pink-300 text-white flex items-center justify-center font-black text-xl shadow-lg shadow-pink-500/25">
+                  <div class="w-14 h-14 rounded-2xl bg-white text-black flex items-center justify-center font-black text-xl shadow-lg shadow-white/10">
                     SP
                   </div>
-                  <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow-sm animate-pulse"></span>
+                  <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-400 border-2 border-black shadow-sm animate-pulse"></span>
                 </div>
                 <div>
-                  <h3 class="text-lg sm:text-xl font-bold text-slate-900 tracking-tight font-display">Executive Candidate Profile</h3>
-                  <p class="text-xs text-pink-600 font-semibold">BBA Scholar & Innovation Trainee</p>
+                  <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight font-display">Executive Candidate Profile</h3>
+                  <p class="text-xs text-zinc-400 font-semibold">BBA Scholar & Innovation Trainee</p>
                 </div>
               </div>
-              <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-pink-100 border border-pink-300 text-pink-700 text-xs font-bold font-mono shadow-sm">
-                <i class="fa-solid fa-circle-check text-[11px] text-pink-600"></i> Active
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold font-mono shadow-sm">
+                <i class="fa-solid fa-circle-check text-[11px] text-white"></i> Active
               </span>
             </div>
 
             <!-- Key Metrics 4-Tile Grid -->
             <div class="grid grid-cols-2 gap-3.5">
-              <div class="p-4 rounded-2xl bg-pink-50/70 border border-pink-200/80 hover:border-pink-300 transition-colors space-y-1">
-                <span class="text-[10px] font-mono text-slate-500 uppercase tracking-wider block font-semibold">Innovation Enrolment</span>
-                <span class="text-base font-bold text-slate-900 block">PRICE ProtoSem</span>
-                <span class="text-xs text-pink-700 font-bold flex items-center gap-1">
-                  <i class="fa-solid fa-bolt text-[10px] text-pink-500"></i> 20-Week Programme
+              <div class="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-1">
+                <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block font-semibold">Innovation Enrolment</span>
+                <span class="text-base font-bold text-white block">PRICE ProtoSem</span>
+                <span class="text-xs text-zinc-300 font-bold flex items-center gap-1">
+                  <i class="fa-solid fa-bolt text-[10px] text-white"></i> 20-Week Programme
                 </span>
               </div>
 
-              <div class="p-4 rounded-2xl bg-pink-50/70 border border-pink-200/80 hover:border-pink-300 transition-colors space-y-1">
-                <span class="text-[10px] font-mono text-slate-500 uppercase tracking-wider block font-semibold">Corporate Experience</span>
-                <span class="text-base font-bold text-slate-900 block">Summer Intern</span>
-                <span class="text-xs text-rose-700 font-bold flex items-center gap-1">
-                  <i class="fa-solid fa-building text-[10px] text-rose-500"></i> V Thangavel & Sons
+              <div class="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-1">
+                <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block font-semibold">Corporate Experience</span>
+                <span class="text-base font-bold text-white block">Summer Intern</span>
+                <span class="text-xs text-zinc-300 font-bold flex items-center gap-1">
+                  <i class="fa-solid fa-building text-[10px] text-white"></i> V Thangavel & Sons
                 </span>
               </div>
 
-              <div class="p-4 rounded-2xl bg-pink-50/70 border border-pink-200/80 hover:border-pink-300 transition-colors space-y-1">
-                <span class="text-[10px] font-mono text-slate-500 uppercase tracking-wider block font-semibold">Core Domain Focus</span>
-                <span class="text-base font-bold text-slate-900 block">Human Resources</span>
-                <span class="text-xs text-slate-600 font-semibold">Talent & Operations</span>
+              <div class="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-1">
+                <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block font-semibold">Core Domain Focus</span>
+                <span class="text-base font-bold text-white block">Human Resources</span>
+                <span class="text-xs text-zinc-400 font-semibold">Talent & Operations</span>
               </div>
 
-              <div class="p-4 rounded-2xl bg-pink-50/70 border border-pink-200/80 hover:border-pink-300 transition-colors space-y-1">
-                <span class="text-[10px] font-mono text-slate-500 uppercase tracking-wider block font-semibold">Personality Profile</span>
-                <span class="text-base font-bold text-slate-900 block">Consul (ESFJ-T)</span>
-                <span class="text-xs text-pink-700 font-bold flex items-center gap-1">
-                  <i class="fa-solid fa-users text-[10px] text-pink-500"></i> People Leadership
+              <div class="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-1">
+                <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block font-semibold">Personality Profile</span>
+                <span class="text-base font-bold text-white block">Consul (ESFJ-T)</span>
+                <span class="text-xs text-zinc-300 font-bold flex items-center gap-1">
+                  <i class="fa-solid fa-users text-[10px] text-white"></i> People Leadership
                 </span>
               </div>
             </div>
 
             <!-- Core Pillar Tags -->
             <div class="space-y-2 pt-1">
-              <span class="text-xs font-mono font-bold text-slate-600 uppercase tracking-wider block">
+              <span class="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider block">
                 Key Professional Competencies
               </span>
               <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-xl bg-white border border-pink-200 text-slate-800 text-xs font-bold hover:border-pink-400 transition-colors shadow-sm">
-                  <i class="fa-solid fa-users text-pink-500 mr-1 text-[11px]"></i> HR Strategy
+                <span class="px-3 py-1 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
+                  <i class="fa-solid fa-users text-white mr-1 text-[11px]"></i> HR Strategy
                 </span>
-                <span class="px-3 py-1 rounded-xl bg-white border border-pink-200 text-slate-800 text-xs font-bold hover:border-pink-400 transition-colors shadow-sm">
-                  <i class="fa-solid fa-cart-shopping text-rose-500 mr-1 text-[11px]"></i> Phygital Retail
+                <span class="px-3 py-1 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
+                  <i class="fa-solid fa-cart-shopping text-white mr-1 text-[11px]"></i> Phygital Retail
                 </span>
-                <span class="px-3 py-1 rounded-xl bg-white border border-pink-200 text-slate-800 text-xs font-bold hover:border-pink-400 transition-colors shadow-sm">
-                  <i class="fa-solid fa-comments text-pink-500 mr-1 text-[11px]"></i> Communication
+                <span class="px-3 py-1 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
+                  <i class="fa-solid fa-comments text-white mr-1 text-[11px]"></i> Communication
                 </span>
-                <span class="px-3 py-1 rounded-xl bg-white border border-pink-200 text-slate-800 text-xs font-bold hover:border-pink-400 transition-colors shadow-sm">
-                  <i class="fa-solid fa-cubes text-rose-500 mr-1 text-[11px]"></i> Prototyping
+                <span class="px-3 py-1 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
+                  <i class="fa-solid fa-cubes text-white mr-1 text-[11px]"></i> Prototyping
                 </span>
               </div>
             </div>
 
             <!-- Card Footer Indicator -->
-            <div class="pt-3 border-t border-pink-100 flex items-center justify-between text-xs text-slate-600 font-medium">
-              <span class="flex items-center gap-1.5 text-pink-700 font-bold">
-                <i class="fa-solid fa-shield-halved text-xs text-pink-500"></i> Verified Academic Record
+            <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-400 font-medium">
+              <span class="flex items-center gap-1.5 text-zinc-200 font-bold">
+                <i class="fa-solid fa-shield-halved text-xs text-white"></i> Verified Academic Record
               </span>
-              <span class="font-mono text-[11px] text-slate-500">Kumaraguru College & ProtoSem</span>
+              <span class="font-mono text-[11px] text-zinc-500">Kumaraguru College & ProtoSem</span>
             </div>
 
           </div>
@@ -485,64 +464,64 @@
     <!-- SECTION: ABOUT & STRATEGIC VISION -->
     <section id="about" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-display">
+        <div class="w-8 h-1 bg-white rounded-full"></div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           About & Career Vision
         </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Main Bio Card -->
-        <div class="md:col-span-2 pearl-card-hover rounded-3xl p-6 sm:p-8 space-y-5">
+        <div class="md:col-span-2 noir-card-hover rounded-3xl p-6 sm:p-8 space-y-5">
           <div class="flex items-center gap-4">
-            <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 text-white flex items-center justify-center font-black text-2xl shadow-lg shadow-pink-500/20 flex-shrink-0">
+            <div class="w-16 h-16 rounded-2xl bg-white text-black flex items-center justify-center font-black text-2xl shadow-lg shadow-white/10 flex-shrink-0">
               SP
             </div>
             <div>
-              <h3 class="text-xl font-bold text-slate-900 font-display">S. Priyadharshni</h3>
-              <p class="text-pink-600 text-sm font-bold">BBA Scholar • Aspiring Human Resources Specialist</p>
+              <h3 class="text-xl font-bold text-white font-display">S. Priyadharshni</h3>
+              <p class="text-zinc-400 text-sm font-bold">BBA Scholar • Aspiring Human Resources Specialist</p>
             </div>
           </div>
 
-          <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
-            I am a motivated and proactive Bachelor of Business Administration (BBA) student at <strong class="text-slate-900 font-bold">Kumaraguru College of Liberal Arts and Science</strong>. With an enthusiastic mindset and practical exposure gained through corporate summer internship and hands-on innovation training, I am committed to advancing my expertise in human resource management, employee engagement, and business operations.
+          <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+            I am a motivated and proactive Bachelor of Business Administration (BBA) student at <strong class="text-white font-bold">Kumaraguru College of Liberal Arts and Science</strong>. With an enthusiastic mindset and practical exposure gained through corporate summer internship and hands-on innovation training, I am committed to advancing my expertise in human resource management, employee engagement, and business operations.
           </p>
 
-          <p class="text-slate-700 text-sm sm:text-base leading-relaxed">
+          <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
             I thrive in dynamic team environments where clear communication, empathy, and organized management drive high team productivity and mutual organizational growth.
           </p>
 
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 pt-2">
-            <div class="p-3.5 rounded-2xl bg-pink-50/70 border border-pink-200/80">
-              <span class="text-[11px] text-slate-500 font-mono block font-semibold">Primary Domain</span>
-              <span class="text-sm font-bold text-pink-700">Human Resources</span>
+            <div class="p-3.5 rounded-2xl bg-zinc-900/80 border border-zinc-800">
+              <span class="text-[11px] text-zinc-500 font-mono block font-semibold">Primary Domain</span>
+              <span class="text-sm font-bold text-white">Human Resources</span>
             </div>
-            <div class="p-3.5 rounded-2xl bg-pink-50/70 border border-pink-200/80">
-              <span class="text-[11px] text-slate-500 font-mono block font-semibold">Languages</span>
-              <span class="text-sm font-bold text-pink-700">English & Tamil</span>
+            <div class="p-3.5 rounded-2xl bg-zinc-900/80 border border-zinc-800">
+              <span class="text-[11px] text-zinc-500 font-mono block font-semibold">Languages</span>
+              <span class="text-sm font-bold text-white">English & Tamil</span>
             </div>
-            <div class="p-3.5 rounded-2xl bg-pink-50/70 border border-pink-200/80 col-span-2 sm:col-span-1">
-              <span class="text-[11px] text-slate-500 font-mono block font-semibold">Location</span>
-              <span class="text-sm font-bold text-pink-700">Erode, Tamil Nadu</span>
+            <div class="p-3.5 rounded-2xl bg-zinc-900/80 border border-zinc-800 col-span-2 sm:col-span-1">
+              <span class="text-[11px] text-zinc-500 font-mono block font-semibold">Location</span>
+              <span class="text-sm font-bold text-white">Erode, Tamil Nadu</span>
             </div>
           </div>
         </div>
 
         <!-- Career Objective Highlight -->
-        <div class="pearl-card-hover rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <div class="noir-card-hover rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
           <div class="space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-pink-100 border border-pink-300 flex items-center justify-center text-pink-600 text-xl shadow-sm">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-white text-xl shadow-sm">
               <i class="fa-solid fa-bullseye"></i>
             </div>
-            <h3 class="text-xl font-bold text-slate-900 font-display">Career Objective</h3>
-            <blockquote class="text-slate-700 text-xs sm:text-sm leading-relaxed italic border-l-2 border-pink-400 pl-3.5">
+            <h3 class="text-xl font-bold text-white font-display">Career Objective</h3>
+            <blockquote class="text-zinc-300 text-xs sm:text-sm leading-relaxed italic border-l-2 border-white pl-3.5">
               "To contribute to organizational success by leveraging strong interpersonal skills, proactive communication, and modern HR practices while continuously building professional mastery."
             </blockquote>
           </div>
 
-          <div class="pt-4 border-t border-pink-200">
-            <div class="flex items-center gap-2 text-xs text-pink-700 font-bold">
-              <i class="fa-solid fa-circle-check text-pink-500 text-sm"></i>
+          <div class="pt-4 border-t border-zinc-800">
+            <div class="flex items-center gap-2 text-xs text-zinc-200 font-bold">
+              <i class="fa-solid fa-circle-check text-white text-sm"></i>
               <span>Open to Corporate Projects & Internships</span>
             </div>
           </div>
@@ -553,60 +532,60 @@
     <!-- SECTION: EXPERIENCE & INTERNSHIPS -->
     <section id="experience" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-display">
+        <div class="w-8 h-1 bg-white rounded-full"></div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           Work Experience & Internships
         </h2>
       </div>
 
-      <div class="pearl-card rounded-3xl p-6 sm:p-8 space-y-6 border border-pink-200/90 shadow-xl">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-pink-100">
+      <div class="noir-card rounded-3xl p-6 sm:p-8 space-y-6 border border-zinc-800 shadow-xl">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-zinc-800">
           <div class="flex items-start sm:items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-pink-100 to-rose-50 border border-pink-300 flex items-center justify-center text-pink-600 text-2xl flex-shrink-0 shadow-md">
+            <div class="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-md">
               <i class="fa-solid fa-building-columns"></i>
             </div>
             <div>
-              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 font-display">Summer Intern</h3>
-              <p class="text-pink-600 font-bold text-sm sm:text-base">V Thangavel and Sons Pvt. Ltd.</p>
+              <h3 class="text-xl sm:text-2xl font-bold text-white font-display">Summer Intern</h3>
+              <p class="text-zinc-400 font-bold text-sm sm:text-base">V Thangavel and Sons Pvt. Ltd.</p>
             </div>
           </div>
-          <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-pink-100 border border-pink-300 text-pink-800 text-xs font-bold self-start sm:self-auto font-mono shadow-sm">
-            <i class="fa-regular fa-calendar text-pink-600"></i> Summer Internship Completed
+          <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold self-start sm:self-auto font-mono shadow-sm">
+            <i class="fa-regular fa-calendar text-white"></i> Summer Internship Completed
           </span>
         </div>
 
         <div class="space-y-4">
-          <h4 class="text-xs font-mono font-bold text-slate-600 uppercase tracking-wider">
+          <h4 class="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider">
             Key Contributions & Professional Learning Outcomes:
           </h4>
           
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="p-5 rounded-2xl bg-pink-50/60 border border-pink-200/80 hover:border-pink-300 transition-colors space-y-2.5">
-              <div class="w-9 h-9 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-base">
+            <div class="p-5 rounded-2xl bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-2.5">
+              <div class="w-9 h-9 rounded-xl bg-zinc-800 text-white flex items-center justify-center text-base">
                 <i class="fa-solid fa-building"></i>
               </div>
-              <h5 class="text-slate-900 text-sm font-bold">Corporate Exposure</h5>
-              <p class="text-slate-700 text-xs leading-relaxed">
+              <h5 class="text-white text-sm font-bold">Corporate Exposure</h5>
+              <p class="text-zinc-400 text-xs leading-relaxed">
                 Gained direct practical exposure to structured workplace operations, departmental workflows, and organizational standards.
               </p>
             </div>
 
-            <div class="p-5 rounded-2xl bg-pink-50/60 border border-pink-200/80 hover:border-pink-300 transition-colors space-y-2.5">
-              <div class="w-9 h-9 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-base">
+            <div class="p-5 rounded-2xl bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-2.5">
+              <div class="w-9 h-9 rounded-xl bg-zinc-800 text-white flex items-center justify-center text-base">
                 <i class="fa-solid fa-comments"></i>
               </div>
-              <h5 class="text-slate-900 text-sm font-bold">Workplace Communication</h5>
-              <p class="text-slate-700 text-xs leading-relaxed">
+              <h5 class="text-white text-sm font-bold">Workplace Communication</h5>
+              <p class="text-zinc-400 text-xs leading-relaxed">
                 Refined professional correspondence etiquette, active listening, internal team coordination, and inter-departmental interactions.
               </p>
             </div>
 
-            <div class="p-5 rounded-2xl bg-pink-50/60 border border-pink-200/80 hover:border-pink-300 transition-colors space-y-2.5">
-              <div class="w-9 h-9 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center text-base">
+            <div class="p-5 rounded-2xl bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-2.5">
+              <div class="w-9 h-9 rounded-xl bg-zinc-800 text-white flex items-center justify-center text-base">
                 <i class="fa-solid fa-award"></i>
               </div>
-              <h5 class="text-slate-900 text-sm font-bold">Verified Deliverables</h5>
-              <p class="text-slate-700 text-xs leading-relaxed">
+              <h5 class="text-white text-sm font-bold">Verified Deliverables</h5>
+              <p class="text-zinc-400 text-xs leading-relaxed">
                 Successfully completed assigned projects and earned official Certificate of Internship Completion for performance.
               </p>
             </div>
@@ -616,32 +595,32 @@
     </section>
 
     <!-- ========================================================================= -->
-    <!-- SECTION: PROTOSEM (MIDNIGHT OBSIDIAN & ROSE-GOLD INNOVATION VAULT)        -->
+    <!-- SECTION: PROTOSEM (MONOCHROME INNOVATION VAULT)                            -->
     <!-- ========================================================================= -->
     <section id="protosem" class="scroll-mt-24" data-aos="fade-up" data-aos-duration="900">
       
-      <!-- Obsidian & Rose-Gold Container Card -->
+      <!-- Obsidian & Platinum Container Card -->
       <div class="proto-vault-container rounded-3xl p-6 sm:p-10 space-y-8 relative overflow-hidden">
         
         <!-- Subtle Top Glow Line -->
-        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-pink-400 to-transparent"></div>
+        <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent"></div>
 
         <!-- Section Header -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-800 pb-6">
           <div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-pink-500/20 border border-pink-500/40 text-pink-300 text-xs font-extrabold uppercase tracking-widest mb-3 shadow-sm">
-              <i class="fa-solid fa-compass text-pink-400"></i> PRICE PROTOSEM
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-extrabold uppercase tracking-widest mb-3 shadow-sm">
+              <i class="fa-solid fa-compass text-white"></i> PRICE PROTOSEM
             </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
               Innovation Engineer Trainee Board
             </h2>
-            <p class="text-pink-400 font-semibold text-base sm:text-lg pt-1">
-              20-Week Industry Innovation Journey <span class="text-slate-400 font-normal">| KCLAS & Forge Retail Incubation</span>
+            <p class="text-zinc-300 font-semibold text-base sm:text-lg pt-1">
+              20-Week Industry Innovation Journey <span class="text-zinc-500 font-normal">| KCLAS & Forge Retail Incubation</span>
             </p>
           </div>
 
-          <div class="flex items-center gap-2 text-xs font-mono text-pink-300 bg-slate-900/90 border border-pink-500/30 px-4 py-2 rounded-2xl self-start md:self-auto shadow-md">
-            <i class="fa-solid fa-cubes-stacked text-pink-400"></i>
+          <div class="flex items-center gap-2 text-xs font-mono text-zinc-200 bg-zinc-900 border border-zinc-700 px-4 py-2 rounded-2xl self-start md:self-auto shadow-md">
+            <i class="fa-solid fa-cubes-stacked text-white"></i>
             <span>WEEK 00 + 4 PHASES (20 WEEKS)</span>
           </div>
         </div>
@@ -652,14 +631,14 @@
           <!-- Pillar 0: Orientation -->
           <div onclick="filterProtoPhase(0)" class="vault-phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
             <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-xl bg-pink-950/80 border border-pink-500/40 text-pink-300 flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              <span class="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
                 🌟
               </span>
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-pink-950 text-pink-300 border border-pink-500/30">W00</span>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border border-zinc-700">W00</span>
             </div>
             <div>
-              <h4 class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors">Orientation</h4>
-              <p class="text-[11px] text-slate-400 line-clamp-1">Launch & Immersion</p>
+              <h4 class="text-xs font-bold text-white group-hover:text-zinc-300 transition-colors">Orientation</h4>
+              <p class="text-[11px] text-zinc-400 line-clamp-1">Launch & Immersion</p>
             </div>
             <div class="text-[10px] font-mono text-emerald-400 font-bold flex items-center gap-1">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Published
@@ -669,14 +648,14 @@
           <!-- Pillar 1: Phase 01 -->
           <div onclick="filterProtoPhase(1)" class="vault-phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
             <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-xl bg-amber-950/80 border border-amber-500/40 text-amber-300 flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              <span class="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
                 🔍
               </span>
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-amber-950 text-amber-300 border border-amber-500/30">W01–05</span>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border border-zinc-700">W01–05</span>
             </div>
             <div>
-              <h4 class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors">Phase 01: Discovery</h4>
-              <p class="text-[11px] text-slate-400 line-clamp-1">Problem & Market Insights</p>
+              <h4 class="text-xs font-bold text-white group-hover:text-zinc-300 transition-colors">Phase 01: Discovery</h4>
+              <p class="text-[11px] text-zinc-400 line-clamp-1">Problem & Market Insights</p>
             </div>
             <div class="text-[10px] font-mono text-emerald-400 font-bold flex items-center gap-1">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> W01 Live • 4 Ahead
@@ -686,71 +665,71 @@
           <!-- Pillar 2: Phase 02 -->
           <div onclick="filterProtoPhase(2)" class="vault-phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
             <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-xl bg-purple-950/80 border border-purple-500/40 text-purple-300 flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              <span class="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
                 💡
               </span>
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-purple-950 text-purple-300 border border-purple-500/30">W06–10</span>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border border-zinc-700">W06–10</span>
             </div>
             <div>
-              <h4 class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors">Phase 02: Ideation</h4>
-              <p class="text-[11px] text-slate-400 line-clamp-1">AI & Intelligent Systems</p>
+              <h4 class="text-xs font-bold text-white group-hover:text-zinc-300 transition-colors">Phase 02: Ideation</h4>
+              <p class="text-[11px] text-zinc-400 line-clamp-1">AI & Intelligent Systems</p>
             </div>
-            <div class="text-[10px] font-mono text-slate-500">5 Sprints</div>
+            <div class="text-[10px] font-mono text-zinc-500">5 Sprints</div>
           </div>
 
           <!-- Pillar 3: Phase 03 -->
           <div onclick="filterProtoPhase(3)" class="vault-phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
             <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-xl bg-cyan-950/80 border border-cyan-500/40 text-cyan-300 flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              <span class="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
                 🛠️
               </span>
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-cyan-950 text-cyan-300 border border-cyan-500/30">W11–15</span>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border border-zinc-700">W11–15</span>
             </div>
             <div>
-              <h4 class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors">Phase 03: Prototype</h4>
-              <p class="text-[11px] text-slate-400 line-clamp-1">Hardware/Software PoC</p>
+              <h4 class="text-xs font-bold text-white group-hover:text-zinc-300 transition-colors">Phase 03: Prototype</h4>
+              <p class="text-[11px] text-zinc-400 line-clamp-1">Hardware/Software PoC</p>
             </div>
-            <div class="text-[10px] font-mono text-slate-500">5 Sprints</div>
+            <div class="text-[10px] font-mono text-zinc-500">5 Sprints</div>
           </div>
 
           <!-- Pillar 4: Phase 04 -->
           <div onclick="filterProtoPhase(4)" class="vault-phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group col-span-2 sm:col-span-1">
             <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-300 flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              <span class="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
                 🚀
               </span>
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-emerald-950 text-emerald-300 border border-emerald-500/30">W16–20</span>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border border-zinc-700">W16–20</span>
             </div>
             <div>
-              <h4 class="text-xs font-bold text-white group-hover:text-pink-300 transition-colors">Phase 04: Launch</h4>
-              <p class="text-[11px] text-slate-400 line-clamp-1">Venture & Demo Day</p>
+              <h4 class="text-xs font-bold text-white group-hover:text-zinc-300 transition-colors">Phase 04: Launch</h4>
+              <p class="text-[11px] text-zinc-400 line-clamp-1">Venture & Demo Day</p>
             </div>
-            <div class="text-[10px] font-mono text-slate-500">5 Sprints</div>
+            <div class="text-[10px] font-mono text-zinc-500">5 Sprints</div>
           </div>
 
         </div>
 
         <!-- PROGRESSION TIMELINE TRACK -->
-        <div class="rounded-2xl p-4 sm:p-5 bg-slate-900/80 border border-slate-800 shadow-inner">
+        <div class="rounded-2xl p-4 sm:p-5 bg-zinc-900/80 border border-zinc-800 shadow-inner">
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-3">
-              <span class="text-xs font-mono font-bold text-slate-400 uppercase">Interactive Track:</span>
-              <div class="hidden md:flex items-center gap-2 font-mono text-xs text-pink-300">
-                <button onclick="filterProtoPhase(0)" class="px-2.5 py-0.5 rounded-lg bg-pink-950 border border-pink-500/50 text-pink-300 font-bold shadow-sm hover:scale-105 transition-transform">00</button>
-                <span class="text-pink-500 font-bold">━━━━</span>
-                <button onclick="filterProtoPhase(1)" class="px-2.5 py-0.5 rounded-lg bg-slate-950 border border-slate-700 text-slate-400 font-semibold hover:border-pink-400 hover:text-white hover:scale-105 transition-all">01</button>
-                <span class="text-slate-700 font-bold">━━━━</span>
-                <button onclick="filterProtoPhase(1)" class="px-2.5 py-0.5 rounded-lg bg-slate-950 border border-slate-700 text-slate-400 font-semibold hover:border-pink-400 hover:text-white hover:scale-105 transition-all">05</button>
-                <span class="text-slate-700 font-bold">━━━━</span>
-                <button onclick="filterProtoPhase(2)" class="px-2.5 py-0.5 rounded-lg bg-slate-950 border border-slate-700 text-slate-400 font-semibold hover:border-pink-400 hover:text-white hover:scale-105 transition-all">10</button>
-                <span class="text-slate-700 font-bold">━━━━</span>
-                <button onclick="filterProtoPhase(3)" class="px-2.5 py-0.5 rounded-lg bg-slate-950 border border-slate-700 text-slate-400 font-semibold hover:border-pink-400 hover:text-white hover:scale-105 transition-all">15</button>
-                <span class="text-slate-700 font-bold">━━━━</span>
-                <button onclick="filterProtoPhase(4)" class="px-2.5 py-0.5 rounded-lg bg-slate-950 border border-slate-700 text-slate-400 font-semibold hover:border-pink-400 hover:text-white hover:scale-105 transition-all">20</button>
+              <span class="text-xs font-mono font-bold text-zinc-400 uppercase">Interactive Track:</span>
+              <div class="hidden md:flex items-center gap-2 font-mono text-xs text-zinc-300">
+                <button onclick="filterProtoPhase(0)" class="px-2.5 py-0.5 rounded-lg bg-white border border-white text-black font-bold shadow-sm hover:scale-105 transition-transform">00</button>
+                <span class="text-zinc-500 font-bold">━━━━</span>
+                <button onclick="filterProtoPhase(1)" class="px-2.5 py-0.5 rounded-lg bg-white border border-white text-black font-bold shadow-sm hover:scale-105 transition-transform">01</button>
+                <span class="text-zinc-500 font-bold">━━━━</span>
+                <button onclick="filterProtoPhase(1)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">05</button>
+                <span class="text-zinc-700 font-bold">━━━━</span>
+                <button onclick="filterProtoPhase(2)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">10</button>
+                <span class="text-zinc-700 font-bold">━━━━</span>
+                <button onclick="filterProtoPhase(3)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">15</button>
+                <span class="text-zinc-700 font-bold">━━━━</span>
+                <button onclick="filterProtoPhase(4)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">20</button>
               </div>
             </div>
-            <div class="text-xs text-slate-400 font-medium flex items-center gap-2">
-              <i class="fa-regular fa-clock text-pink-400"></i>
+            <div class="text-xs text-zinc-400 font-medium flex items-center gap-2">
+              <i class="fa-regular fa-clock text-white"></i>
               <span>Click any node to filter phase milestones</span>
             </div>
           </div>
@@ -762,28 +741,28 @@
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <!-- Live Keyword Search -->
             <div class="relative flex-1 max-w-md">
-              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-pink-400 text-xs"></i>
+              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400 text-xs"></i>
               <input 
                 type="text" 
                 id="proto-search-input"
                 oninput="handleProtoSearch(this.value)"
                 placeholder="Search weeks, topics, or keywords (e.g. Launch, AI, Prototype)..." 
-                class="w-full pl-9 pr-4 py-2.5 rounded-2xl bg-slate-900/90 border border-slate-700 text-white text-xs sm:text-sm placeholder:text-slate-500 focus:outline-none focus:border-pink-500 shadow-sm transition-all"
+                class="w-full pl-9 pr-4 py-2.5 rounded-2xl bg-zinc-900 border border-zinc-700 text-white text-xs sm:text-sm placeholder:text-zinc-500 focus:outline-none focus:border-white shadow-sm transition-all"
               >
             </div>
 
             <!-- Counter Badge -->
-            <span id="phase-counter-badge" class="text-xs font-mono text-pink-300 font-bold px-3.5 py-2 rounded-xl bg-pink-950/80 border border-pink-500/30 shadow-sm self-start sm:self-auto">
+            <span id="phase-counter-badge" class="text-xs font-mono text-zinc-200 font-bold px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-700 shadow-sm self-start sm:self-auto">
               Showing all 21 weeks (Week 00–20)
             </span>
           </div>
 
           <!-- Filter Buttons inside Vault -->
-          <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-slate-900/80 border border-slate-800" role="tablist">
+          <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-zinc-900 border border-zinc-800" role="tablist">
             <button 
               onclick="filterProtoPhase('all')" 
               id="tab-all"
-              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-md shadow-pink-500/25"
+              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all bg-white text-black shadow-md shadow-white/10"
               role="tab"
               aria-selected="true"
             >
@@ -792,7 +771,7 @@
             <button 
               onclick="filterProtoPhase(0)" 
               id="tab-0"
-              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-pink-300 hover:bg-slate-800 transition-all"
+              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white hover:bg-zinc-800 transition-all"
               role="tab"
               aria-selected="false"
             >
@@ -801,7 +780,7 @@
             <button 
               onclick="filterProtoPhase(1)" 
               id="tab-1"
-              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-pink-300 hover:bg-slate-800 transition-all"
+              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white hover:bg-zinc-800 transition-all"
               role="tab"
               aria-selected="false"
             >
@@ -810,7 +789,7 @@
             <button 
               onclick="filterProtoPhase(2)" 
               id="tab-2"
-              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-pink-300 hover:bg-slate-800 transition-all"
+              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white hover:bg-zinc-800 transition-all"
               role="tab"
               aria-selected="false"
             >
@@ -819,7 +798,7 @@
             <button 
               onclick="filterProtoPhase(3)" 
               id="tab-3"
-              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-pink-300 hover:bg-slate-800 transition-all"
+              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white hover:bg-zinc-800 transition-all"
               role="tab"
               aria-selected="false"
             >
@@ -828,7 +807,7 @@
             <button 
               onclick="filterProtoPhase(4)" 
               id="tab-4"
-              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-300 hover:text-pink-300 hover:bg-slate-800 transition-all"
+              class="phase-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white hover:bg-zinc-800 transition-all"
               role="tab"
               aria-selected="false"
             >
@@ -848,29 +827,29 @@
     <!-- SECTION: EDUCATION -->
     <section id="education" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-display">
+        <div class="w-8 h-1 bg-white rounded-full"></div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           Education
         </h2>
       </div>
 
-      <div class="pearl-card-hover rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
+      <div class="noir-card-hover rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
         <div class="flex items-start gap-4">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-pink-100 to-rose-50 border border-pink-300 flex items-center justify-center text-pink-600 text-2xl flex-shrink-0 shadow-md">
+          <div class="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-md">
             <i class="fa-solid fa-graduation-cap"></i>
           </div>
           <div class="space-y-1.5">
-            <h3 class="text-xl sm:text-2xl font-bold text-slate-900 font-display">Bachelor of Business Administration (BBA)</h3>
-            <p class="text-pink-700 font-bold text-sm sm:text-base">Kumaraguru College of Liberal Arts and Science</p>
-            <p class="text-slate-600 text-xs sm:text-sm font-medium">Currently in 2nd Year • Focus on Human Resource Management & Business Studies</p>
+            <h3 class="text-xl sm:text-2xl font-bold text-white font-display">Bachelor of Business Administration (BBA)</h3>
+            <p class="text-zinc-300 font-bold text-sm sm:text-base">Kumaraguru College of Liberal Arts and Science</p>
+            <p class="text-zinc-400 text-xs sm:text-sm font-medium">Currently in 2nd Year • Focus on Human Resource Management & Business Studies</p>
           </div>
         </div>
 
         <div class="flex flex-col sm:items-end gap-2">
-          <span class="px-4 py-1.5 rounded-full bg-pink-100 border border-pink-300 text-pink-800 font-bold text-xs font-mono shadow-sm">
+          <span class="px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200 font-bold text-xs font-mono shadow-sm">
             2025 – 2028 (Ongoing)
           </span>
-          <span class="text-slate-600 text-xs font-semibold">Full-Time Undergraduate Scholar</span>
+          <span class="text-zinc-400 text-xs font-semibold">Full-Time Undergraduate Scholar</span>
         </div>
       </div>
     </section>
@@ -878,76 +857,76 @@
     <!-- SECTION: CORE COMPETENCIES -->
     <section id="skills" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-display">
+        <div class="w-8 h-1 bg-white rounded-full"></div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           Core Competencies & Expertise
         </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Card 1 -->
-        <div class="pearl-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
+        <div class="noir-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
           <div class="space-y-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-pink-100 border border-pink-300 flex items-center justify-center text-pink-600 text-xl shadow-md group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-users-gear"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900 font-display">Human Resources</h3>
-            <p class="text-slate-700 text-xs leading-relaxed">
+            <h3 class="text-lg font-bold text-white font-display">Human Resources</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
               Talent acquisition basics, employee relations, workplace engagement, and organizational support.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-pink-700 font-bold pt-2.5 border-t border-pink-200 flex items-center justify-between">
+          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t border-zinc-800 flex items-center justify-between">
             <span>HR Strategy</span>
             <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
           </span>
         </div>
 
         <!-- Card 2 -->
-        <div class="pearl-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
+        <div class="noir-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
           <div class="space-y-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-rose-100 border border-rose-300 flex items-center justify-center text-rose-600 text-xl shadow-md group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-comments"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900 font-display">Communication</h3>
-            <p class="text-slate-700 text-xs leading-relaxed">
+            <h3 class="text-lg font-bold text-white font-display">Communication</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
               Professional correspondence, presentation etiquette, active listening, and inter-departmental alignment.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-rose-700 font-bold pt-2.5 border-t border-pink-200 flex items-center justify-between">
+          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t border-zinc-800 flex items-center justify-between">
             <span>Business Correspondence</span>
             <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
           </span>
         </div>
 
         <!-- Card 3 -->
-        <div class="pearl-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
+        <div class="noir-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
           <div class="space-y-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-pink-100 border border-pink-300 flex items-center justify-center text-pink-600 text-xl shadow-md group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-handshake"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900 font-display">Team Dynamics</h3>
-            <p class="text-slate-700 text-xs leading-relaxed">
+            <h3 class="text-lg font-bold text-white font-display">Team Dynamics</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
               Collaborative mindset, conflict resolution, active participation, and cross-functional leadership.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-pink-700 font-bold pt-2.5 border-t border-pink-200 flex items-center justify-between">
+          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t border-zinc-800 flex items-center justify-between">
             <span>Consul (ESFJ-T)</span>
             <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
           </span>
         </div>
 
         <!-- Card 4 -->
-        <div class="pearl-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
+        <div class="noir-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
           <div class="space-y-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-rose-100 border border-rose-300 flex items-center justify-center text-rose-600 text-xl shadow-md group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-chart-line"></i>
             </div>
-            <h3 class="text-lg font-bold text-slate-900 font-display">Management</h3>
-            <p class="text-slate-700 text-xs leading-relaxed">
+            <h3 class="text-lg font-bold text-white font-display">Management</h3>
+            <p class="text-zinc-400 text-xs leading-relaxed">
               Operational planning, task prioritization, structured time management, and execution discipline.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-rose-700 font-bold pt-2.5 border-t border-pink-200 flex items-center justify-between">
+          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t border-zinc-800 flex items-center justify-between">
             <span>Operations & Planning</span>
             <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
           </span>
@@ -958,39 +937,39 @@
     <!-- SECTION: CONTACT & CONNECT -->
     <section id="contact" class="space-y-8" data-aos="fade-up" data-aos-duration="800">
       <div class="flex items-center gap-3">
-        <div class="w-8 h-1 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full"></div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-display">
+        <div class="w-8 h-1 bg-white rounded-full"></div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           Let's Connect
         </h2>
       </div>
 
-      <div class="pearl-card rounded-3xl p-8 sm:p-12 border border-pink-300 relative overflow-hidden text-center space-y-6 shadow-2xl">
+      <div class="noir-card rounded-3xl p-8 sm:p-12 border border-zinc-800 relative overflow-hidden text-center space-y-6 shadow-2xl">
         <div class="max-w-2xl mx-auto space-y-6">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-tr from-pink-500/20 to-rose-500/20 border border-pink-300 text-pink-600 text-2xl shadow-lg shadow-pink-500/20 animate-float-slow">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-700 text-white text-2xl shadow-lg shadow-white/5 animate-float-slow">
             <i class="fa-solid fa-paper-plane"></i>
           </div>
           
-          <h3 class="text-2xl sm:text-4xl font-extrabold text-slate-900 font-display">
+          <h3 class="text-2xl sm:text-4xl font-extrabold text-white font-display">
             Ready to collaborate or discuss opportunities?
           </h3>
           
-          <p class="text-slate-700 text-sm sm:text-base leading-relaxed font-normal">
+          <p class="text-zinc-400 text-sm sm:text-base leading-relaxed font-normal">
             I am always open to corporate internship opportunities, professional mentorship, and discussions in Human Resources, Management, and Retail Innovation.
           </p>
 
           <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-            <a href="mailto:priyadharnish552@gmail.com" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-extrabold text-sm transition-all transform hover:scale-105 flex items-center gap-2.5 shadow-xl shadow-pink-500/25">
+            <a href="mailto:priyadharnish552@gmail.com" class="px-6 py-3.5 rounded-2xl bg-white hover:bg-zinc-200 text-black font-extrabold text-sm transition-all transform hover:scale-105 flex items-center gap-2.5 shadow-xl shadow-white/10">
               <i class="fa-solid fa-envelope"></i>
               priyadharnish552@gmail.com
             </a>
 
-            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-2xl pearl-card-hover text-slate-800 font-bold text-sm transition-all transform hover:scale-105 flex items-center gap-2.5">
-              <i class="fa-brands fa-linkedin text-pink-600 text-base"></i>
+            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-2xl noir-card-hover text-zinc-200 font-bold text-sm transition-all transform hover:scale-105 flex items-center gap-2.5">
+              <i class="fa-brands fa-linkedin text-white text-base"></i>
               LinkedIn Profile
             </a>
 
-            <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-2xl bg-white/90 hover:bg-pink-50 border border-pink-300 text-slate-800 font-bold text-sm transition-all flex items-center gap-2.5 shadow-sm">
-              <i class="fa-solid fa-file-pdf text-pink-600"></i>
+            <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-2xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-200 font-bold text-sm transition-all flex items-center gap-2.5 shadow-sm">
+              <i class="fa-solid fa-file-pdf text-white"></i>
               View ATS Resume
             </a>
           </div>
@@ -1002,19 +981,19 @@
 
   <!-- REUSABLE WEEK MODAL DIALOG (Official Innovation Field Journal) -->
   <div id="week-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" onclick="closeWeekModal(event)">
-    <div class="bg-slate-900 max-w-2xl w-full rounded-3xl p-6 sm:p-8 space-y-6 border border-pink-500/40 relative shadow-2xl max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+    <div class="bg-zinc-950 max-w-2xl w-full rounded-3xl p-6 sm:p-8 space-y-6 border border-zinc-700 relative shadow-2xl max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
       
       <!-- Close button -->
-      <button onclick="closeWeekModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 flex items-center justify-center transition-colors shadow-sm" aria-label="Close modal">
+      <button onclick="closeWeekModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 flex items-center justify-center transition-colors shadow-sm" aria-label="Close modal">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
       <!-- Header Tag & Breadcrumbs -->
       <div class="flex items-center gap-3">
-        <span id="modal-phase-tag" class="text-xs font-mono px-3.5 py-1 rounded-lg bg-pink-950 border border-pink-500/40 text-pink-300 font-bold shadow-sm">
+        <span id="modal-phase-tag" class="text-xs font-mono px-3.5 py-1 rounded-lg bg-zinc-900 border border-zinc-700 text-zinc-200 font-bold shadow-sm">
           WEEK 00 • ORIENTATION & IMMERSION
         </span>
-        <span class="text-xs text-slate-400 font-mono">• Field Notes Log</span>
+        <span class="text-xs text-zinc-400 font-mono">• Field Notes Log</span>
       </div>
 
       <!-- Title & Subtitle -->
@@ -1022,8 +1001,8 @@
         <h3 id="modal-week-title" class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight font-display">
           ProtoSem – 0th Week Reflection
         </h3>
-        <p id="modal-status-subtitle" class="text-pink-400 font-bold text-xs sm:text-sm flex items-center gap-1.5">
-          <i class="fa-solid fa-book-open"></i> <span id="modal-status-text">Published Reflection</span>
+        <p id="modal-status-subtitle" class="text-zinc-300 font-bold text-xs sm:text-sm flex items-center gap-1.5">
+          <i class="fa-solid fa-book-open text-white"></i> <span id="modal-status-text">Published Reflection</span>
         </p>
       </div>
 
@@ -1033,16 +1012,16 @@
       </div>
 
       <!-- Journal Entry Body -->
-      <div class="p-5 sm:p-6 rounded-2xl bg-slate-950/90 border border-slate-800 space-y-3 font-sans shadow-inner">
-        <div class="text-xs text-slate-400 font-mono flex items-center justify-between border-b border-slate-800/80 pb-2.5">
-          <span class="flex items-center gap-1.5 text-pink-400 font-bold">
-            <i class="fa-solid fa-pen-nib text-xs"></i> Weekly Story & Reflection
+      <div class="p-5 sm:p-6 rounded-2xl bg-zinc-900/90 border border-zinc-800 space-y-3 font-sans shadow-inner">
+        <div class="text-xs text-zinc-400 font-mono flex items-center justify-between border-b border-zinc-800 pb-2.5">
+          <span class="flex items-center gap-1.5 text-zinc-200 font-bold">
+            <i class="fa-solid fa-pen-nib text-xs text-white"></i> Weekly Story & Reflection
           </span>
-          <span id="modal-status-badge" class="text-pink-300 font-mono font-bold px-2.5 py-0.5 rounded-lg bg-pink-950/80 border border-pink-500/40">
+          <span id="modal-status-badge" class="text-white font-mono font-bold px-2.5 py-0.5 rounded-lg bg-zinc-800 border border-zinc-700">
             Status: Published
           </span>
         </div>
-        <div id="modal-journal-note" class="text-slate-200 text-sm sm:text-base leading-relaxed space-y-3 pt-1">
+        <div id="modal-journal-note" class="text-zinc-200 text-sm sm:text-base leading-relaxed space-y-3 pt-1">
           <!-- Full Reflection Injected via JS -->
         </div>
       </div>
@@ -1053,14 +1032,14 @@
       </div>
 
       <!-- Modal Footer with Next / Prev Navigation -->
-      <div class="flex items-center justify-between pt-2 border-t border-slate-800">
-        <button id="modal-prev-btn" onclick="navigateModalWeek(-1)" class="px-3.5 py-2 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5">
+      <div class="flex items-center justify-between pt-2 border-t border-zinc-800">
+        <button id="modal-prev-btn" onclick="navigateModalWeek(-1)" class="px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5">
           <i class="fa-solid fa-arrow-left text-[10px]"></i> Previous
         </button>
 
-        <span id="modal-route-path" class="text-xs font-mono text-slate-500 hidden sm:inline">/protosem/week-00</span>
+        <span id="modal-route-path" class="text-xs font-mono text-zinc-500 hidden sm:inline">/protosem/week-00</span>
 
-        <button id="modal-next-btn" onclick="navigateModalWeek(1)" class="px-3.5 py-2 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5">
+        <button id="modal-next-btn" onclick="navigateModalWeek(1)" class="px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5">
           Next <i class="fa-solid fa-arrow-right text-[10px]"></i>
         </button>
       </div>
@@ -1068,13 +1047,13 @@
   </div>
 
   <!-- Footer -->
-  <footer class="border-t border-pink-200/80 py-8 px-4 sm:px-8 text-center text-xs text-slate-600">
+  <footer class="border-t border-zinc-800/80 py-8 px-4 sm:px-8 text-center text-xs text-zinc-500">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>© 2026 S. Priyadharshni. All rights reserved.</p>
       <p class="flex items-center gap-2">
         <span>BBA Scholar & Innovation Engineer Trainee</span>
         <span>•</span>
-        <span class="text-pink-600 font-bold">PRICE ProtoSem</span>
+        <span class="text-zinc-300 font-bold">PRICE ProtoSem</span>
       </p>
     </div>
   </footer>
@@ -1228,14 +1207,14 @@
         "Week 1 Presentation & Reflection"
       ],
       journalNote: `<p class="leading-relaxed">Week 1 of Protosem was filled with learning, teamwork, and practical experiences. We started the week with a session on Design Thinking, where we learned to understand problems from a customer’s perspective and develop practical solutions. As part of the activity, we selected a retail sector and analysed its strengths, weaknesses, opportunities, and threats through a SWOT analysis. We also had an Onam holiday, which gave us a short break before continuing with our activities. During the week, we attended a session on portfolio creation, where we learned how to document our experiences, activities, and learnings effectively. Towards the weekend, we participated in an inspiring motivational session by Ram, followed by guest lectures that provided insights into the agriculture, textile, and retail industries. We concluded the week with our Week 1 presentation, where we presented our work and reflected on our learning.</p>
-      <div class="mt-4 p-4 rounded-xl bg-pink-950/60 border border-pink-500/30 space-y-2">
-        <h4 class="text-pink-300 font-bold text-xs uppercase font-mono flex items-center gap-1.5">
-          <i class="fa-solid fa-star text-pink-400"></i> Week 1 Takeaway
+      <div class="mt-4 p-4 rounded-xl bg-zinc-900 border border-zinc-700 space-y-2">
+        <h4 class="text-white font-bold text-xs uppercase font-mono flex items-center gap-1.5">
+          <i class="fa-solid fa-star text-white"></i> Week 1 Takeaway
         </h4>
-        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+        <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed">
           This week taught me the importance of thinking differently, working as a team, and learning through practical experiences. Design Thinking helped me approach problems from a customer’s perspective, while the SWOT analysis improved my analytical and decision-making skills. The guest lectures also gave me a better understanding of real-world businesses and different industries.
         </p>
-        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed pt-1">
+        <p class="text-zinc-300 text-xs sm:text-sm leading-relaxed pt-1">
           Overall, Week 1 helped me build my communication, teamwork, analytical thinking, creativity, and presentation skills. It was a valuable beginning to my Protosem journey and motivated me to make the most of the upcoming weeks.
         </p>
       </div>`,
@@ -1280,20 +1259,20 @@
       });
     }
 
-    // Render Week Cards into Container (Vault Obsidian Theme)
+    // Render Week Cards into Container (Monochrome Theme)
     function renderWeekCards(weeksToRender) {
       const container = document.getElementById("protosem-cards-container");
       if (!container) return;
 
       if (weeksToRender.length === 0) {
         container.innerHTML = `
-          <div class="col-span-full p-12 text-center rounded-3xl bg-slate-900/80 border border-slate-800 space-y-3">
-            <div class="w-12 h-12 rounded-2xl bg-pink-950 text-pink-400 flex items-center justify-center text-xl mx-auto border border-pink-500/30">
+          <div class="col-span-full p-12 text-center rounded-3xl bg-zinc-900/80 border border-zinc-800 space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-800 text-white flex items-center justify-center text-xl mx-auto border border-zinc-700">
               <i class="fa-solid fa-search"></i>
             </div>
             <h4 class="text-base font-bold text-white">No milestones found</h4>
-            <p class="text-xs text-slate-400">Try searching for a different keyword or select another phase filter above.</p>
-            <button onclick="filterProtoPhase('all')" class="px-4 py-2 rounded-xl bg-pink-500 hover:bg-pink-400 text-white text-xs font-bold shadow-md shadow-pink-500/20">
+            <p class="text-xs text-zinc-400">Try searching for a different keyword or select another phase filter above.</p>
+            <button onclick="filterProtoPhase('all')" class="px-4 py-2 rounded-xl bg-white hover:bg-zinc-200 text-black text-xs font-bold shadow-md">
               Reset Filters
             </button>
           </div>
@@ -1312,7 +1291,7 @@
 
         return `
         <div 
-          class="vault-week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isPublished ? 'border-pink-500/60 bg-slate-900/95 ring-2 ring-pink-500/30 shadow-xl shadow-pink-500/20' : ''}"
+          class="vault-week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isPublished ? 'border-zinc-500/80 bg-zinc-900/95 ring-2 ring-white/20 shadow-xl shadow-white/5' : ''}"
           onclick="openWeekModal(${w.weekNumber})"
           tabindex="0"
           role="button"
@@ -1321,10 +1300,10 @@
         >
           <!-- Top Row: Phase Tag & Number Badge -->
           <div class="flex items-center justify-between">
-            <span class="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full ${w.isPublished ? 'bg-pink-950 border border-pink-500/40 text-pink-300 shadow-sm' : 'bg-slate-950 border border-slate-800 text-slate-400'}">
+            <span class="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full ${w.isPublished ? 'bg-zinc-800 border border-zinc-600 text-white shadow-sm' : 'bg-zinc-950 border border-zinc-800 text-zinc-400'}">
               ${w.phaseTag}
             </span>
-            <div class="vault-number-badge w-8 h-8 rounded-xl ${w.isPublished ? 'bg-pink-950 border border-pink-500/50 text-pink-300 shadow-sm' : 'bg-slate-950 border border-slate-800 text-slate-400'} font-mono text-xs font-bold flex items-center justify-center transition-all">
+            <div class="vault-number-badge w-8 h-8 rounded-xl ${w.isPublished ? 'bg-white border border-white text-black font-extrabold shadow-sm' : 'bg-zinc-950 border border-zinc-800 text-zinc-400'} font-mono text-xs font-bold flex items-center justify-center transition-all">
               ${w.padWeek}
             </div>
           </div>
@@ -1332,48 +1311,48 @@
           <!-- Middle: Icon, Title & Subtitle -->
           <div class="space-y-2 py-1">
             <div class="flex items-center gap-2">
-              <span class="w-7 h-7 rounded-lg ${w.isPublished ? 'bg-pink-950 text-pink-300 border border-pink-500/30' : 'bg-slate-950 text-slate-400 border border-slate-800'} flex items-center justify-center text-xs">
+              <span class="w-7 h-7 rounded-lg ${w.isPublished ? 'bg-zinc-800 text-white border border-zinc-700' : 'bg-zinc-950 text-zinc-400 border border-zinc-800'} flex items-center justify-center text-xs">
                 <i class="${w.themeIcon || 'fa-solid fa-cube'}"></i>
               </span>
-              <span class="text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wider">
+              <span class="text-[11px] font-mono font-semibold text-zinc-400 uppercase tracking-wider">
                 ${w.categoryTag || 'Milestone'}
               </span>
             </div>
 
             <div>
-              <h4 class="text-base font-bold text-white group-hover:text-pink-300 transition-colors flex items-center gap-1.5">
+              <h4 class="text-base font-bold text-white group-hover:text-zinc-300 transition-colors flex items-center gap-1.5">
                 <span>${w.cardTitle}</span>
-                ${w.isPublished ? '<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/40 font-bold">Story Ready</span>' : ''}
+                ${w.isPublished ? '<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-white text-black border border-white font-extrabold">Story Ready</span>' : ''}
               </h4>
-              <p class="text-xs text-slate-400 font-medium line-clamp-1 pt-0.5">
+              <p class="text-xs text-zinc-400 font-medium line-clamp-1 pt-0.5">
                 ${w.cardSubtitle}
               </p>
             </div>
           </div>
 
           ${mainImage ? `
-            <!-- Photo Preview Dual/Single Thumbnail (Elevated Modern Gallery Theme) -->
+            <!-- Photo Preview Dual/Single Thumbnail (Monochrome Gallery Theme) -->
             <div class="space-y-1.5 pt-1">
-              <div class="flex items-center justify-between text-[10px] font-mono text-pink-300 px-1">
+              <div class="flex items-center justify-between text-[10px] font-mono text-zinc-300 px-1">
                 <span class="flex items-center gap-1 font-semibold">
-                  <i class="fa-solid fa-photo-film text-pink-400"></i> ${showSingleCover ? 'Featured Cover' : 'Visual Artifacts'}
+                  <i class="fa-solid fa-photo-film text-white"></i> ${showSingleCover ? 'Featured Cover' : 'Visual Artifacts'}
                 </span>
-                <span class="text-slate-400 font-medium">${w.images && w.images.length > 1 ? w.images.length + ' Photos inside' : '1 Photo'}</span>
+                <span class="text-zinc-400 font-medium">${w.images && w.images.length > 1 ? w.images.length + ' Photos inside' : '1 Photo'}</span>
               </div>
-              <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-2 p-1.5 rounded-2xl bg-gradient-to-tr from-pink-950/90 via-slate-900/90 to-purple-950/80 border border-pink-500/40 shadow-xl group/thumb">
-                <div class="relative ${showSingleCover ? 'h-32 sm:h-36' : 'h-28 sm:h-32'} rounded-xl overflow-hidden bg-slate-950 border border-pink-500/25 shadow-inner flex items-center justify-center">
+              <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-2 p-1.5 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl group/thumb">
+                <div class="relative ${showSingleCover ? 'h-32 sm:h-36' : 'h-28 sm:h-32'} rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-inner flex items-center justify-center">
                   <img src="${mainImage.src}" alt="${mainImage.caption || w.title}" class="w-full h-full ${mainImage.src.includes('logo') ? 'object-contain bg-white p-3' : 'object-cover'} group-hover/thumb:scale-108 transition-transform duration-700">
-                  <div class="absolute inset-0 ${mainImage.src.includes('logo') ? 'bg-gradient-to-t from-black/15 via-transparent to-transparent' : 'bg-gradient-to-t from-slate-950/85 via-transparent to-transparent'} pointer-events-none"></div>
-                  <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-pink-200 bg-pink-950/90 border border-pink-400/50 px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
-                    <i class="fa-solid ${mainImage.src.includes('logo') ? 'fa-bolt' : 'fa-camera'} mr-1 text-pink-400"></i> ${mainImage.badge || 'Cover'}
+                  <div class="absolute inset-0 ${mainImage.src.includes('logo') ? 'bg-gradient-to-t from-black/15 via-transparent to-transparent' : 'bg-gradient-to-t from-black/80 via-transparent to-transparent'} pointer-events-none"></div>
+                  <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-black bg-white/95 border border-white px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
+                    <i class="fa-solid ${mainImage.src.includes('logo') ? 'fa-bolt' : 'fa-camera'} mr-1 text-black"></i> ${mainImage.badge || 'Cover'}
                   </div>
                 </div>
                 ${secondImage ? `
-                  <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden bg-slate-950 border border-pink-500/25 shadow-inner flex items-center justify-center">
+                  <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-inner flex items-center justify-center">
                     <img src="${secondImage.src}" alt="${secondImage.caption || w.title}" class="w-full h-full ${secondImage.src.includes('logo') ? 'object-contain bg-white p-2.5' : 'object-cover'} group-hover/thumb:scale-108 transition-transform duration-700">
-                    <div class="absolute inset-0 ${secondImage.src.includes('logo') ? 'bg-gradient-to-t from-black/20 via-transparent to-transparent' : 'bg-gradient-to-t from-slate-950/85 via-transparent to-transparent'} pointer-events-none"></div>
-                    <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-pink-200 bg-pink-950/90 border border-pink-400/50 px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
-                      <i class="fa-solid fa-camera mr-1 text-pink-400"></i> ${secondImage.badge || 'Photo'}
+                    <div class="absolute inset-0 ${secondImage.src.includes('logo') ? 'bg-gradient-to-t from-black/20 via-transparent to-transparent' : 'bg-gradient-to-t from-black/80 via-transparent to-transparent'} pointer-events-none"></div>
+                    <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-black bg-white/95 border border-white px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
+                      <i class="fa-solid fa-camera mr-1 text-black"></i> ${secondImage.badge || 'Photo'}
                     </div>
                   </div>
                 ` : ''}
@@ -1381,16 +1360,16 @@
             </div>
           ` : (w.isPublished ? `
             <!-- Published Highlights Preview -->
-            <div class="p-3 rounded-2xl bg-gradient-to-tr from-pink-950/70 via-slate-900/80 to-purple-950/60 border border-pink-500/30 space-y-2">
-              <div class="flex items-center justify-between text-[10px] font-mono text-pink-300">
+            <div class="p-3 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-2">
+              <div class="flex items-center justify-between text-[10px] font-mono text-zinc-300">
                 <span class="flex items-center gap-1 font-semibold">
-                  <i class="fa-solid fa-sparkles text-pink-400"></i> Key Topics & Insights
+                  <i class="fa-solid fa-sparkles text-white"></i> Key Topics & Insights
                 </span>
                 <span class="text-emerald-400 font-bold">● Published</span>
               </div>
               <div class="flex flex-wrap gap-1">
                 ${(w.highlights || []).slice(0, 3).map(h => `
-                  <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-950/80 text-pink-200 border border-pink-500/20 font-mono truncate max-w-full">
+                  <span class="text-[10px] px-2 py-0.5 rounded-md bg-zinc-950 text-zinc-200 border border-zinc-700 font-mono truncate max-w-full">
                     ${h}
                   </span>
                 `).join("")}
@@ -1398,24 +1377,24 @@
             </div>
           ` : `
             <!-- Upcoming Sprints Progress Bar Pill -->
-            <div class="p-2.5 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-1.5">
-              <div class="flex items-center justify-between text-[10px] font-mono text-slate-400">
+            <div class="p-2.5 rounded-xl bg-zinc-950 border border-zinc-800 space-y-1.5">
+              <div class="flex items-center justify-between text-[10px] font-mono text-zinc-400">
                 <span>Sprint Progress</span>
-                <span class="text-pink-400 font-bold">Upcoming</span>
+                <span class="text-white font-bold">Upcoming</span>
               </div>
-              <div class="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
-                <div class="h-full bg-pink-500/60 rounded-full w-1/4"></div>
+              <div class="w-full h-1.5 rounded-full bg-zinc-800 overflow-hidden">
+                <div class="h-full bg-zinc-500 rounded-full w-1/4"></div>
               </div>
             </div>
           `)}
 
           <!-- Bottom: Action Indicator & Arrow -->
-          <div class="pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-            <span class="text-[11px] font-mono ${w.isPublished ? 'text-pink-300 font-bold' : 'text-slate-400'} group-hover:text-pink-300 flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full ${w.isPublished ? 'bg-emerald-400 animate-pulse' : 'bg-slate-600'}"></span>
+          <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-400">
+            <span class="text-[11px] font-mono ${w.isPublished ? 'text-zinc-200 font-bold' : 'text-zinc-400'} group-hover:text-white flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full ${w.isPublished ? 'bg-emerald-400 animate-pulse' : 'bg-zinc-600'}"></span>
               ${w.isPublished ? 'Read Story' : 'Milestone Preview'}
             </span>
-            <div class="vault-arrow flex items-center gap-1 text-slate-500 group-hover:text-pink-400 transition-all font-semibold">
+            <div class="vault-arrow flex items-center gap-1 text-zinc-400 group-hover:text-white transition-all font-semibold">
               <span class="text-[11px]">${w.isPublished ? 'Open' : 'Preview'}</span>
               <i class="fa-solid fa-arrow-right text-[11px]"></i>
             </div>
@@ -1441,16 +1420,16 @@
       // Update Tab Styles
       const buttons = document.querySelectorAll('.phase-btn');
       buttons.forEach(btn => {
-        btn.classList.remove('bg-gradient-to-r', 'from-pink-500', 'to-rose-500', 'text-white', 'shadow-md', 'shadow-pink-500/25', 'font-extrabold');
-        btn.classList.add('text-slate-300', 'font-semibold');
+        btn.classList.remove('bg-white', 'text-black', 'shadow-md', 'font-extrabold');
+        btn.classList.add('text-zinc-300', 'font-semibold');
         btn.setAttribute('aria-selected', 'false');
       });
 
       const activeBtnId = phase === 'all' ? 'tab-all' : `tab-${phase}`;
       const activeBtn = document.getElementById(activeBtnId);
       if (activeBtn) {
-        activeBtn.classList.remove('text-slate-300', 'font-semibold');
-        activeBtn.classList.add('bg-gradient-to-r', 'from-pink-500', 'to-rose-500', 'text-white', 'shadow-md', 'shadow-pink-500/25', 'font-extrabold');
+        activeBtn.classList.remove('text-zinc-300', 'font-semibold');
+        activeBtn.classList.add('bg-white', 'text-black', 'shadow-md', 'shadow-white/10', 'font-extrabold');
         activeBtn.setAttribute('aria-selected', 'true');
       }
 
@@ -1528,8 +1507,8 @@
         if (week.highlights && week.highlights.length > 0) {
           highlightsContainer.classList.remove("hidden");
           highlightsContainer.innerHTML = week.highlights.map(h => `
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-pink-950/90 border border-pink-500/40 text-pink-300 text-xs font-bold">
-              <i class="fa-solid fa-check text-[10px] text-pink-400"></i> ${h}
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold">
+              <i class="fa-solid fa-check text-[10px] text-white"></i> ${h}
             </span>
           `).join("");
         } else {
@@ -1546,7 +1525,7 @@
           : `<p class="leading-relaxed">${week.journalNote}</p>`;
       }
 
-      // Render gallery showcase (Elevated Gallery Theme)
+      // Render gallery showcase (Monochrome Gallery Theme)
       const galleryContainer = document.getElementById("modal-gallery-container");
       if (galleryContainer) {
         const imageList = week.images || [];
@@ -1555,21 +1534,21 @@
           if (imageList.length === 1) {
             const img = imageList[0];
             galleryContainer.innerHTML = `
-              <div class="rounded-2xl overflow-hidden border border-pink-500/40 bg-gradient-to-b from-slate-900 to-slate-950 shadow-2xl p-2.5">
-                <div class="rounded-xl overflow-hidden relative bg-slate-950 max-h-80">
-                  <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              <div class="rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl p-2.5">
+                <div class="rounded-xl overflow-hidden relative bg-zinc-950 max-h-80 flex items-center justify-center">
+                  <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full ${img.src.includes('logo') ? 'object-contain bg-white p-3' : 'object-cover'} hover:scale-105 transition-transform duration-500">
                   ${img.badge ? `
-                    <span class="absolute top-3 left-3 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-pink-950/90 text-pink-200 border border-pink-400/50 backdrop-blur-md shadow-md">
+                    <span class="absolute top-3 left-3 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-black/90 text-white border border-zinc-600 backdrop-blur-md shadow-md">
                       ✨ ${img.badge}
                     </span>
                   ` : ''}
                 </div>
-                <div class="px-4 py-3 bg-slate-900/90 rounded-b-xl text-xs font-mono text-slate-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1 mt-1.5 border-t border-slate-800">
-                  <span class="flex items-center gap-2 text-pink-300 font-bold">
-                    <i class="fa-solid fa-camera text-pink-400"></i> ${img.caption}
+                <div class="px-4 py-3 bg-zinc-950 rounded-b-xl text-xs font-mono text-zinc-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1 mt-1.5 border-t border-zinc-800">
+                  <span class="flex items-center gap-2 text-white font-bold">
+                    <i class="fa-solid fa-camera text-zinc-400"></i> ${img.caption}
                   </span>
-                  <span class="text-slate-400 text-[11px] font-sans flex items-center gap-1">
-                    <i class="fa-solid fa-location-dot text-[10px] text-pink-400"></i> ${img.location || ''}
+                  <span class="text-zinc-400 text-[11px] font-sans flex items-center gap-1">
+                    <i class="fa-solid fa-location-dot text-[10px] text-white"></i> ${img.location || ''}
                   </span>
                 </div>
               </div>
@@ -1578,21 +1557,21 @@
             galleryContainer.innerHTML = `
               <div class="grid grid-cols-1 ${imageList.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3'} gap-3.5">
                 ${imageList.map(img => `
-                  <div class="rounded-2xl overflow-hidden border border-pink-500/40 bg-gradient-to-b from-slate-900 to-slate-950 shadow-2xl p-2.5 flex flex-col justify-between group/gallery">
-                    <div class="h-48 sm:h-52 overflow-hidden rounded-xl bg-slate-950 relative border border-slate-800 flex items-center justify-center">
+                  <div class="rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl p-2.5 flex flex-col justify-between group/gallery">
+                    <div class="h-48 sm:h-52 overflow-hidden rounded-xl bg-zinc-950 relative border border-zinc-800 flex items-center justify-center">
                       <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full ${img.src.includes('logo') ? 'object-contain bg-white p-3' : 'object-cover'} group-hover/gallery:scale-108 transition-transform duration-700">
                       ${img.badge ? `
-                        <span class="absolute top-2.5 left-2.5 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-pink-950/90 text-pink-200 border border-pink-400/50 backdrop-blur-md shadow-md">
+                        <span class="absolute top-2.5 left-2.5 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-black/90 text-white border border-zinc-600 backdrop-blur-md shadow-md">
                           ✨ ${img.badge}
                         </span>
                       ` : ''}
                     </div>
-                    <div class="p-3 bg-slate-900/90 rounded-b-xl border-t border-slate-800/80 text-xs font-mono space-y-1 mt-1.5">
-                      <div class="text-pink-300 font-bold text-xs flex items-center gap-1.5 truncate">
-                        <i class="fa-solid fa-image text-pink-400 text-xs"></i> ${img.caption}
+                    <div class="p-3 bg-zinc-950 rounded-b-xl border-t border-zinc-800 text-xs font-mono space-y-1 mt-1.5">
+                      <div class="text-white font-bold text-xs flex items-center gap-1.5 truncate">
+                        <i class="fa-solid fa-image text-zinc-400 text-xs"></i> ${img.caption}
                       </div>
-                      <div class="text-slate-400 text-[11px] font-sans truncate flex items-center gap-1">
-                        <i class="fa-solid fa-location-dot text-[10px] text-pink-400"></i> ${img.location || ''}
+                      <div class="text-zinc-400 text-[11px] font-sans truncate flex items-center gap-1">
+                        <i class="fa-solid fa-location-dot text-[10px] text-white"></i> ${img.location || ''}
                       </div>
                     </div>
                   </div>
