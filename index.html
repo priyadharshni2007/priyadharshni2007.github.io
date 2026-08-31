@@ -143,13 +143,13 @@
       transition: width 0.1s ease-out;
     }
     
-    /* Dark Glass Surfaces */
+    /* Dark Glass Surfaces with Bold Darker Borders */
     .dark-card {
       background: rgba(18, 18, 23, 0.85);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 14px 35px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+      border: 2px solid #3f3f46;
+      box-shadow: 0 14px 35px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
@@ -157,42 +157,42 @@
       background: rgba(20, 20, 26, 0.82);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 2px solid #3f3f46;
       box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .dark-card-hover:hover {
       background: rgba(26, 26, 33, 0.95);
-      border-color: rgba(255, 255, 255, 0.4);
+      border-color: #ffffff;
       transform: translateY(-4px);
-      box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 255, 255, 0.15);
     }
 
-    /* ProtoSem Innovation Vault Container */
+    /* ProtoSem Innovation Vault Container with Bold Darker Border */
     .proto-dark-vault {
       background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.06) 0%, transparent 60%),
                   radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
                   #0e0e14;
-      border: 1px solid rgba(255, 255, 255, 0.16);
+      border: 2px solid #52525b;
       box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.9), 0 0 35px -5px rgba(255, 255, 255, 0.05);
     }
 
-    /* Dark Vault Week Cards */
+    /* Dark Vault Week Cards with Bold Darker Borders */
     .vault-week-card {
       background: rgba(18, 18, 24, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 2px solid #3f3f46;
       box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.8), inset 0 1px 0 0 rgba(255, 255, 255, 0.06);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
     .vault-week-card:hover {
       background: rgba(28, 28, 36, 0.95);
-      border-color: rgba(255, 255, 255, 0.5);
+      border-color: #ffffff;
       transform: translateY(-5px);
-      box-shadow: 0 22px 45px -12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 22px 45px -12px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.2);
     }
 
     .vault-week-card:hover .vault-arrow {
@@ -207,16 +207,16 @@
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     }
 
-    /* Phase Pillar */
+    /* Phase Pillar with Bold Darker Border */
     .vault-phase-pillar {
       background: rgba(18, 18, 24, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 2px solid #3f3f46;
       transition: all 0.3s ease;
     }
     .vault-phase-pillar:hover, .vault-phase-pillar.active-pillar {
       background: rgba(32, 32, 40, 0.95);
       border-color: #ffffff;
-      box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 25px -5px rgba(255, 255, 255, 0.2);
       transform: translateY(-2px);
     }
 
@@ -256,7 +256,7 @@
 
   <!-- Floating Navigation Bar -->
   <header class="sticky top-0 z-50 px-4 sm:px-8 py-4">
-    <nav class="max-w-6xl mx-auto dark-card rounded-2xl sm:rounded-full px-6 py-3.5 flex items-center justify-between transition-all border border-zinc-800 shadow-2xl">
+    <nav class="max-w-6xl mx-auto dark-card rounded-2xl sm:rounded-full px-6 py-3.5 flex items-center justify-between transition-all border-2 border-zinc-700 shadow-2xl">
       <a href="#" class="flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center font-black text-sm shadow-md shadow-white/10 group-hover:scale-110 transition-transform duration-300">
           SP
@@ -275,7 +275,7 @@
       <div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-zinc-300">
         <a href="#about" class="hover:text-white transition-colors">About</a>
         <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-        <a href="#protosem" class="text-white font-bold hover:text-zinc-300 transition-colors flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-800/90 border border-zinc-700 shadow-sm">
+        <a href="#protosem" class="text-white font-bold hover:text-zinc-300 transition-colors flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-800 border-2 border-zinc-600 shadow-sm">
           <span class="w-2 h-2 rounded-full bg-white animate-ping"></span> ProtoSem
         </a>
         <a href="#education" class="hover:text-white transition-colors">Education</a>
@@ -303,7 +303,7 @@
         <!-- Left: Executive Profile Intro -->
         <div class="lg:col-span-6 space-y-6 text-left">
           
-          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold uppercase tracking-wider shadow-sm">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900 border-2 border-zinc-700 text-zinc-200 text-xs font-bold uppercase tracking-wider shadow-sm">
             <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
             <span>Available for HR & Management Roles</span>
           </div>
@@ -327,18 +327,18 @@
               <i class="fa-regular fa-envelope text-base"></i>
               Get in Touch
             </a>
-            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl dark-card-hover text-zinc-200 font-bold text-xs sm:text-sm hover:text-white hover:border-zinc-400 transition-all flex items-center gap-2.5 transform hover:-translate-y-1">
+            <a href="https://www.linkedin.com/in/priyadharshni-seerangan-9b7908373" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-2xl dark-card-hover text-zinc-200 font-bold text-xs sm:text-sm hover:text-white hover:border-white transition-all flex items-center gap-2.5 transform hover:-translate-y-1">
               <i class="fa-brands fa-linkedin text-white text-base"></i>
               LinkedIn Profile
             </a>
-            <a href="resume.html" target="_blank" class="px-4 py-3 rounded-2xl bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shadow-sm">
+            <a href="resume.html" target="_blank" class="px-4 py-3 rounded-2xl bg-zinc-900 border-2 border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shadow-sm">
               <i class="fa-solid fa-arrow-down-to-bracket text-xs text-white"></i>
               Resume
             </a>
           </div>
 
           <!-- Quick Verified Badges -->
-          <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400 pt-3 border-t border-zinc-800 font-medium">
+          <div class="flex flex-wrap items-center gap-4 text-xs text-zinc-400 pt-3 border-t-2 border-zinc-800 font-medium">
             <span class="flex items-center gap-1.5">
               <i class="fa-solid fa-location-dot text-white"></i> Erode, Tamil Nadu
             </span>
@@ -355,13 +355,13 @@
 
         <!-- Right: Dark Profile Card -->
         <div class="lg:col-span-6" data-aos="fade-left" data-aos-duration="1000">
-          <div class="dark-card rounded-3xl p-6 sm:p-8 space-y-6 border border-zinc-800 shadow-2xl relative overflow-hidden group">
+          <div class="dark-card rounded-3xl p-6 sm:p-8 space-y-6 border-2 border-zinc-700 shadow-2xl relative overflow-hidden group">
             
             <!-- Top Subtle Accent Line -->
             <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent"></div>
 
             <!-- Card Header -->
-            <div class="flex items-center justify-between border-b border-zinc-800 pb-5">
+            <div class="flex items-center justify-between border-b-2 border-zinc-800 pb-5">
               <div class="flex items-center gap-4">
                 <div class="relative">
                   <div class="w-14 h-14 rounded-2xl bg-white text-black flex items-center justify-center font-black text-xl shadow-lg shadow-white/10">
@@ -374,14 +374,14 @@
                   <p class="text-xs text-zinc-400 font-semibold">BBA Scholar & Innovation Trainee</p>
                 </div>
               </div>
-              <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold font-mono shadow-sm">
+              <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-zinc-900 border-2 border-zinc-700 text-zinc-200 text-xs font-bold font-mono shadow-sm">
                 <i class="fa-solid fa-circle-check text-[11px] text-white"></i> Active
               </span>
             </div>
 
             <!-- Key Metrics 4-Tile Grid -->
             <div class="grid grid-cols-2 gap-3.5">
-              <div class="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-1">
+              <div class="p-4 rounded-2xl bg-zinc-900/80 border-2 border-zinc-800 hover:border-zinc-600 transition-colors space-y-1">
                 <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block font-semibold">Innovation Enrolment</span>
                 <span class="text-base font-bold text-white block">PRICE ProtoSem</span>
                 <span class="text-xs text-zinc-300 font-bold flex items-center gap-1">
@@ -389,7 +389,7 @@
                 </span>
               </div>
 
-              <div class="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-1">
+              <div class="p-4 rounded-2xl bg-zinc-900/80 border-2 border-zinc-800 hover:border-zinc-600 transition-colors space-y-1">
                 <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block font-semibold">Corporate Experience</span>
                 <span class="text-base font-bold text-white block">Summer Intern</span>
                 <span class="text-xs text-zinc-300 font-bold flex items-center gap-1">
@@ -397,13 +397,13 @@
                 </span>
               </div>
 
-              <div class="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-1">
+              <div class="p-4 rounded-2xl bg-zinc-900/80 border-2 border-zinc-800 hover:border-zinc-600 transition-colors space-y-1">
                 <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block font-semibold">Core Domain Focus</span>
                 <span class="text-base font-bold text-white block">Human Resources</span>
                 <span class="text-xs text-zinc-400 font-semibold">Talent & Operations</span>
               </div>
 
-              <div class="p-4 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-1">
+              <div class="p-4 rounded-2xl bg-zinc-900/80 border-2 border-zinc-800 hover:border-zinc-600 transition-colors space-y-1">
                 <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block font-semibold">Personality Profile</span>
                 <span class="text-base font-bold text-white block">Consul (ESFJ-T)</span>
                 <span class="text-xs text-zinc-300 font-bold flex items-center gap-1">
@@ -418,23 +418,23 @@
                 Key Professional Competencies
               </span>
               <div class="flex flex-wrap gap-2">
-                <span class="px-3 py-1 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
+                <span class="px-3 py-1 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
                   <i class="fa-solid fa-users text-white mr-1 text-[11px]"></i> HR Strategy
                 </span>
-                <span class="px-3 py-1 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
+                <span class="px-3 py-1 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
                   <i class="fa-solid fa-cart-shopping text-white mr-1 text-[11px]"></i> Phygital Retail
                 </span>
-                <span class="px-3 py-1 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
+                <span class="px-3 py-1 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
                   <i class="fa-solid fa-comments text-white mr-1 text-[11px]"></i> Communication
                 </span>
-                <span class="px-3 py-1 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
+                <span class="px-3 py-1 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-zinc-200 text-xs font-bold hover:border-white transition-colors shadow-sm">
                   <i class="fa-solid fa-cubes text-white mr-1 text-[11px]"></i> Prototyping
                 </span>
               </div>
             </div>
 
             <!-- Card Footer Indicator -->
-            <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-400 font-medium">
+            <div class="pt-3 border-t-2 border-zinc-800 flex items-center justify-between text-xs text-zinc-400 font-medium">
               <span class="flex items-center gap-1.5 text-zinc-200 font-bold">
                 <i class="fa-solid fa-shield-halved text-xs text-white"></i> Verified Academic Record
               </span>
@@ -478,15 +478,15 @@
           </p>
 
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5 pt-2">
-            <div class="p-3.5 rounded-2xl bg-zinc-900/80 border border-zinc-800">
+            <div class="p-3.5 rounded-2xl bg-zinc-900/80 border-2 border-zinc-800">
               <span class="text-[11px] text-zinc-500 font-mono block font-semibold">Primary Domain</span>
               <span class="text-sm font-bold text-white">Human Resources</span>
             </div>
-            <div class="p-3.5 rounded-2xl bg-zinc-900/80 border border-zinc-800">
+            <div class="p-3.5 rounded-2xl bg-zinc-900/80 border-2 border-zinc-800">
               <span class="text-[11px] text-zinc-500 font-mono block font-semibold">Languages</span>
               <span class="text-sm font-bold text-white">English & Tamil</span>
             </div>
-            <div class="p-3.5 rounded-2xl bg-zinc-900/80 border border-zinc-800 col-span-2 sm:col-span-1">
+            <div class="p-3.5 rounded-2xl bg-zinc-900/80 border-2 border-zinc-800 col-span-2 sm:col-span-1">
               <span class="text-[11px] text-zinc-500 font-mono block font-semibold">Location</span>
               <span class="text-sm font-bold text-white">Erode, Tamil Nadu</span>
             </div>
@@ -496,7 +496,7 @@
         <!-- Career Objective Highlight -->
         <div class="dark-card-hover rounded-3xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
           <div class="space-y-4">
-            <div class="w-12 h-12 rounded-2xl bg-zinc-800 border border-zinc-700 flex items-center justify-center text-white text-xl shadow-sm">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-800 border-2 border-zinc-700 flex items-center justify-center text-white text-xl shadow-sm">
               <i class="fa-solid fa-bullseye"></i>
             </div>
             <h3 class="text-xl font-bold text-white font-display">Career Objective</h3>
@@ -505,7 +505,7 @@
             </blockquote>
           </div>
 
-          <div class="pt-4 border-t border-zinc-800">
+          <div class="pt-4 border-t-2 border-zinc-800">
             <div class="flex items-center gap-2 text-xs text-zinc-200 font-bold">
               <i class="fa-solid fa-circle-check text-white text-sm"></i>
               <span>Open to Corporate Projects & Internships</span>
@@ -524,10 +524,10 @@
         </h2>
       </div>
 
-      <div class="dark-card rounded-3xl p-6 sm:p-8 space-y-6 border border-zinc-800 shadow-xl">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-zinc-800">
+      <div class="dark-card rounded-3xl p-6 sm:p-8 space-y-6 border-2 border-zinc-700 shadow-xl">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b-2 border-zinc-800">
           <div class="flex items-start sm:items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-md">
+            <div class="w-14 h-14 rounded-2xl bg-zinc-900 border-2 border-zinc-700 flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-md">
               <i class="fa-solid fa-building-columns"></i>
             </div>
             <div>
@@ -535,7 +535,7 @@
               <p class="text-zinc-400 font-bold text-sm sm:text-base">V Thangavel and Sons Pvt. Ltd.</p>
             </div>
           </div>
-          <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold self-start sm:self-auto font-mono shadow-sm">
+          <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-zinc-900 border-2 border-zinc-700 text-zinc-200 text-xs font-bold self-start sm:self-auto font-mono shadow-sm">
             <i class="fa-regular fa-calendar text-white"></i> Summer Internship Completed
           </span>
         </div>
@@ -546,7 +546,7 @@
           </h4>
           
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="p-5 rounded-2xl bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-2.5">
+            <div class="p-5 rounded-2xl bg-zinc-900/70 border-2 border-zinc-800 hover:border-zinc-600 transition-colors space-y-2.5">
               <div class="w-9 h-9 rounded-xl bg-zinc-800 text-white flex items-center justify-center text-base">
                 <i class="fa-solid fa-building"></i>
               </div>
@@ -556,7 +556,7 @@
               </p>
             </div>
 
-            <div class="p-5 rounded-2xl bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-2.5">
+            <div class="p-5 rounded-2xl bg-zinc-900/70 border-2 border-zinc-800 hover:border-zinc-600 transition-colors space-y-2.5">
               <div class="w-9 h-9 rounded-xl bg-zinc-800 text-white flex items-center justify-center text-base">
                 <i class="fa-solid fa-comments"></i>
               </div>
@@ -566,7 +566,7 @@
               </p>
             </div>
 
-            <div class="p-5 rounded-2xl bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 transition-colors space-y-2.5">
+            <div class="p-5 rounded-2xl bg-zinc-900/70 border-2 border-zinc-800 hover:border-zinc-600 transition-colors space-y-2.5">
               <div class="w-9 h-9 rounded-xl bg-zinc-800 text-white flex items-center justify-center text-base">
                 <i class="fa-solid fa-award"></i>
               </div>
@@ -592,9 +592,9 @@
         <div class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-white to-transparent"></div>
 
         <!-- Section Header -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-zinc-800 pb-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b-2 border-zinc-800 pb-6">
           <div>
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-extrabold uppercase tracking-widest mb-3 shadow-sm">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-zinc-900 border-2 border-zinc-700 text-zinc-200 text-xs font-extrabold uppercase tracking-widest mb-3 shadow-sm">
               <i class="fa-solid fa-compass text-white"></i> PRICE PROTOSEM
             </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight font-display">
@@ -605,7 +605,7 @@
             </p>
           </div>
 
-          <div class="flex items-center gap-2 text-xs font-mono text-zinc-200 bg-zinc-900 border border-zinc-700 px-4 py-2 rounded-2xl self-start md:self-auto shadow-md">
+          <div class="flex items-center gap-2 text-xs font-mono text-zinc-200 bg-zinc-900 border-2 border-zinc-700 px-4 py-2 rounded-2xl self-start md:self-auto shadow-md">
             <i class="fa-solid fa-cubes-stacked text-white"></i>
             <span>WEEK 00 + 4 PHASES (20 WEEKS)</span>
           </div>
@@ -617,10 +617,10 @@
           <!-- Pillar 0: Orientation -->
           <div onclick="filterProtoPhase(0)" class="vault-phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
             <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              <span class="w-8 h-8 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
                 🌟
               </span>
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border border-zinc-700">W00</span>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border-2 border-zinc-700">W00</span>
             </div>
             <div>
               <h4 class="text-xs font-bold text-white group-hover:text-zinc-300 transition-colors">Orientation</h4>
@@ -634,10 +634,10 @@
           <!-- Pillar 1: Phase 01 -->
           <div onclick="filterProtoPhase(1)" class="vault-phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
             <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              <span class="w-8 h-8 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
                 🔍
               </span>
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border border-zinc-700">W01–05</span>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border-2 border-zinc-700">W01–05</span>
             </div>
             <div>
               <h4 class="text-xs font-bold text-white group-hover:text-zinc-300 transition-colors">Phase 01: Discovery</h4>
@@ -651,10 +651,10 @@
           <!-- Pillar 2: Phase 02 -->
           <div onclick="filterProtoPhase(2)" class="vault-phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
             <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              <span class="w-8 h-8 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
                 💡
               </span>
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border border-zinc-700">W06–10</span>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border-2 border-zinc-700">W06–10</span>
             </div>
             <div>
               <h4 class="text-xs font-bold text-white group-hover:text-zinc-300 transition-colors">Phase 02: Ideation</h4>
@@ -666,10 +666,10 @@
           <!-- Pillar 3: Phase 03 -->
           <div onclick="filterProtoPhase(3)" class="vault-phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group">
             <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              <span class="w-8 h-8 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
                 🛠️
               </span>
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border border-zinc-700">W11–15</span>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border-2 border-zinc-700">W11–15</span>
             </div>
             <div>
               <h4 class="text-xs font-bold text-white group-hover:text-zinc-300 transition-colors">Phase 03: Prototype</h4>
@@ -681,10 +681,10 @@
           <!-- Pillar 4: Phase 04 -->
           <div onclick="filterProtoPhase(4)" class="vault-phase-pillar rounded-2xl p-4 cursor-pointer shadow-sm flex flex-col justify-between space-y-2 group col-span-2 sm:col-span-1">
             <div class="flex items-center justify-between">
-              <span class="w-8 h-8 rounded-xl bg-zinc-900 border border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
+              <span class="w-8 h-8 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-white flex items-center justify-center text-sm font-bold group-hover:scale-110 transition-transform">
                 🚀
               </span>
-              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border border-zinc-700">W16–20</span>
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-zinc-900 text-zinc-300 border-2 border-zinc-700">W16–20</span>
             </div>
             <div>
               <h4 class="text-xs font-bold text-white group-hover:text-zinc-300 transition-colors">Phase 04: Launch</h4>
@@ -696,7 +696,7 @@
         </div>
 
         <!-- PROGRESSION TIMELINE TRACK -->
-        <div class="rounded-2xl p-4 sm:p-5 bg-zinc-900/80 border border-zinc-800 shadow-inner">
+        <div class="rounded-2xl p-4 sm:p-5 bg-zinc-900/80 border-2 border-zinc-800 shadow-inner">
           <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-3">
               <span class="text-xs font-mono font-bold text-zinc-400 uppercase">Interactive Track:</span>
@@ -705,13 +705,13 @@
                 <span class="text-zinc-500 font-bold">━━━━</span>
                 <button onclick="filterProtoPhase(1)" class="px-2.5 py-0.5 rounded-lg bg-white border border-white text-black font-bold shadow-sm hover:scale-105 transition-transform">01</button>
                 <span class="text-zinc-500 font-bold">━━━━</span>
-                <button onclick="filterProtoPhase(1)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">05</button>
+                <button onclick="filterProtoPhase(1)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border-2 border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">05</button>
                 <span class="text-zinc-700 font-bold">━━━━</span>
-                <button onclick="filterProtoPhase(2)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">10</button>
+                <button onclick="filterProtoPhase(2)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border-2 border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">10</button>
                 <span class="text-zinc-700 font-bold">━━━━</span>
-                <button onclick="filterProtoPhase(3)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">15</button>
+                <button onclick="filterProtoPhase(3)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border-2 border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">15</button>
                 <span class="text-zinc-700 font-bold">━━━━</span>
-                <button onclick="filterProtoPhase(4)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">20</button>
+                <button onclick="filterProtoPhase(4)" class="px-2.5 py-0.5 rounded-lg bg-zinc-950 border-2 border-zinc-700 text-zinc-400 font-semibold hover:border-white hover:text-white hover:scale-105 transition-all">20</button>
               </div>
             </div>
             <div class="text-xs text-zinc-400 font-medium flex items-center gap-2">
@@ -733,18 +733,18 @@
                 id="proto-search-input"
                 oninput="handleProtoSearch(this.value)"
                 placeholder="Search weeks, topics, or keywords (e.g. Launch, AI, Prototype)..." 
-                class="w-full pl-9 pr-4 py-2.5 rounded-2xl bg-zinc-900 border border-zinc-700 text-white text-xs sm:text-sm placeholder:text-zinc-500 focus:outline-none focus:border-white shadow-sm transition-all"
+                class="w-full pl-9 pr-4 py-2.5 rounded-2xl bg-zinc-900 border-2 border-zinc-700 text-white text-xs sm:text-sm placeholder:text-zinc-500 focus:outline-none focus:border-white shadow-sm transition-all"
               >
             </div>
 
             <!-- Counter Badge -->
-            <span id="phase-counter-badge" class="text-xs font-mono text-zinc-200 font-bold px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-700 shadow-sm self-start sm:self-auto">
+            <span id="phase-counter-badge" class="text-xs font-mono text-zinc-200 font-bold px-3.5 py-2 rounded-xl bg-zinc-900 border-2 border-zinc-700 shadow-sm self-start sm:self-auto">
               Showing all 21 weeks (Week 00–20)
             </span>
           </div>
 
           <!-- Filter Buttons inside Vault -->
-          <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-zinc-900 border border-zinc-800" role="tablist">
+          <div class="flex flex-wrap items-center gap-2 p-1.5 rounded-2xl bg-zinc-900 border-2 border-zinc-800" role="tablist">
             <button 
               onclick="filterProtoPhase('all')" 
               id="tab-all"
@@ -821,7 +821,7 @@
 
       <div class="dark-card-hover rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
         <div class="flex items-start gap-4">
-          <div class="w-14 h-14 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-md">
+          <div class="w-14 h-14 rounded-2xl bg-zinc-900 border-2 border-zinc-700 flex items-center justify-center text-white text-2xl flex-shrink-0 shadow-md">
             <i class="fa-solid fa-graduation-cap"></i>
           </div>
           <div class="space-y-1.5">
@@ -832,7 +832,7 @@
         </div>
 
         <div class="flex flex-col sm:items-end gap-2">
-          <span class="px-4 py-1.5 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-200 font-bold text-xs font-mono shadow-sm">
+          <span class="px-4 py-1.5 rounded-full bg-zinc-900 border-2 border-zinc-700 text-zinc-200 font-bold text-xs font-mono shadow-sm">
             2025 – 2028 (Ongoing)
           </span>
           <span class="text-zinc-400 text-xs font-semibold">Full-Time Undergraduate Scholar</span>
@@ -853,7 +853,7 @@
         <!-- Card 1 -->
         <div class="dark-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
           <div class="space-y-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border-2 border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-users-gear"></i>
             </div>
             <h3 class="text-lg font-bold text-white font-display">Human Resources</h3>
@@ -861,7 +861,7 @@
               Talent acquisition basics, employee relations, workplace engagement, and organizational support.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t border-zinc-800 flex items-center justify-between">
+          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t-2 border-zinc-800 flex items-center justify-between">
             <span>HR Strategy</span>
             <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
           </span>
@@ -870,7 +870,7 @@
         <!-- Card 2 -->
         <div class="dark-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
           <div class="space-y-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border-2 border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-comments"></i>
             </div>
             <h3 class="text-lg font-bold text-white font-display">Communication</h3>
@@ -878,7 +878,7 @@
               Professional correspondence, presentation etiquette, active listening, and inter-departmental alignment.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t border-zinc-800 flex items-center justify-between">
+          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t-2 border-zinc-800 flex items-center justify-between">
             <span>Business Correspondence</span>
             <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
           </span>
@@ -887,7 +887,7 @@
         <!-- Card 3 -->
         <div class="dark-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
           <div class="space-y-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border-2 border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-handshake"></i>
             </div>
             <h3 class="text-lg font-bold text-white font-display">Team Dynamics</h3>
@@ -895,7 +895,7 @@
               Collaborative mindset, conflict resolution, active participation, and cross-functional leadership.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t border-zinc-800 flex items-center justify-between">
+          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t-2 border-zinc-800 flex items-center justify-between">
             <span>Consul (ESFJ-T)</span>
             <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
           </span>
@@ -904,7 +904,7 @@
         <!-- Card 4 -->
         <div class="dark-card-hover rounded-3xl p-6 space-y-4 flex flex-col justify-between group shadow-lg">
           <div class="space-y-3.5">
-            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-900 border-2 border-zinc-700 flex items-center justify-center text-white text-xl shadow-md group-hover:scale-110 transition-transform">
               <i class="fa-solid fa-chart-line"></i>
             </div>
             <h3 class="text-lg font-bold text-white font-display">Management</h3>
@@ -912,7 +912,7 @@
               Operational planning, task prioritization, structured time management, and execution discipline.
             </p>
           </div>
-          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t border-zinc-800 flex items-center justify-between">
+          <span class="text-[11px] font-mono text-zinc-300 font-bold pt-2.5 border-t-2 border-zinc-800 flex items-center justify-between">
             <span>Operations & Planning</span>
             <i class="fa-solid fa-arrow-right text-[10px] opacity-75"></i>
           </span>
@@ -929,9 +929,9 @@
         </h2>
       </div>
 
-      <div class="dark-card rounded-3xl p-8 sm:p-12 border border-zinc-800 relative overflow-hidden text-center space-y-6 shadow-2xl">
+      <div class="dark-card rounded-3xl p-8 sm:p-12 border-2 border-zinc-700 relative overflow-hidden text-center space-y-6 shadow-2xl">
         <div class="max-w-2xl mx-auto space-y-6">
-          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-700 text-white text-2xl shadow-lg shadow-white/5 animate-float-slow">
+          <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-zinc-900 border-2 border-zinc-700 text-white text-2xl shadow-lg shadow-white/5 animate-float-slow">
             <i class="fa-solid fa-paper-plane"></i>
           </div>
           
@@ -954,7 +954,7 @@
               LinkedIn Profile
             </a>
 
-            <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-2xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-200 font-bold text-sm transition-all flex items-center gap-2.5 shadow-sm">
+            <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-2xl bg-zinc-900 hover:bg-zinc-800 border-2 border-zinc-700 text-zinc-200 font-bold text-sm transition-all flex items-center gap-2.5 shadow-sm">
               <i class="fa-solid fa-file-pdf text-white"></i>
               View ATS Resume
             </a>
@@ -967,16 +967,16 @@
 
   <!-- REUSABLE WEEK MODAL DIALOG (Official Innovation Field Journal) -->
   <div id="week-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden" onclick="closeWeekModal(event)">
-    <div class="bg-zinc-950 max-w-2xl w-full rounded-3xl p-6 sm:p-8 space-y-6 border border-zinc-700 relative shadow-2xl max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+    <div class="bg-zinc-950 max-w-2xl w-full rounded-3xl p-6 sm:p-8 space-y-6 border-2 border-zinc-600 relative shadow-2xl max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
       
       <!-- Close button -->
-      <button onclick="closeWeekModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-zinc-900 text-zinc-400 hover:text-white hover:bg-zinc-800 flex items-center justify-center transition-colors shadow-sm" aria-label="Close modal">
+      <button onclick="closeWeekModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-400 hover:text-white hover:bg-zinc-800 flex items-center justify-center transition-colors shadow-sm" aria-label="Close modal">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
       <!-- Header Tag & Breadcrumbs -->
       <div class="flex items-center gap-3">
-        <span id="modal-phase-tag" class="text-xs font-mono px-3.5 py-1 rounded-lg bg-zinc-900 border border-zinc-700 text-zinc-200 font-bold shadow-sm">
+        <span id="modal-phase-tag" class="text-xs font-mono px-3.5 py-1 rounded-lg bg-zinc-900 border-2 border-zinc-700 text-zinc-200 font-bold shadow-sm">
           WEEK 00 • ORIENTATION & IMMERSION
         </span>
         <span class="text-xs text-zinc-400 font-mono">• Field Notes Log</span>
@@ -998,12 +998,12 @@
       </div>
 
       <!-- Journal Entry Body -->
-      <div class="p-5 sm:p-6 rounded-2xl bg-zinc-900/90 border border-zinc-800 space-y-3 font-sans shadow-inner">
-        <div class="text-xs text-zinc-400 font-mono flex items-center justify-between border-b border-zinc-800 pb-2.5">
+      <div class="p-5 sm:p-6 rounded-2xl bg-zinc-900/90 border-2 border-zinc-700 space-y-3 font-sans shadow-inner">
+        <div class="text-xs text-zinc-400 font-mono flex items-center justify-between border-b-2 border-zinc-800 pb-2.5">
           <span class="flex items-center gap-1.5 text-zinc-200 font-bold">
             <i class="fa-solid fa-pen-nib text-xs text-white"></i> Weekly Story & Reflection
           </span>
-          <span id="modal-status-badge" class="text-white font-mono font-bold px-2.5 py-0.5 rounded-lg bg-zinc-800 border border-zinc-700">
+          <span id="modal-status-badge" class="text-white font-mono font-bold px-2.5 py-0.5 rounded-lg bg-zinc-800 border-2 border-zinc-600">
             Status: Published
           </span>
         </div>
@@ -1018,14 +1018,14 @@
       </div>
 
       <!-- Modal Footer with Next / Prev Navigation -->
-      <div class="flex items-center justify-between pt-2 border-t border-zinc-800">
-        <button id="modal-prev-btn" onclick="navigateModalWeek(-1)" class="px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5">
+      <div class="flex items-center justify-between pt-2 border-t-2 border-zinc-800">
+        <button id="modal-prev-btn" onclick="navigateModalWeek(-1)" class="px-3.5 py-2 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-zinc-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5">
           <i class="fa-solid fa-arrow-left text-[10px]"></i> Previous
         </button>
 
         <span id="modal-route-path" class="text-xs font-mono text-zinc-500 hidden sm:inline">/protosem/week-00</span>
 
-        <button id="modal-next-btn" onclick="navigateModalWeek(1)" class="px-3.5 py-2 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5">
+        <button id="modal-next-btn" onclick="navigateModalWeek(1)" class="px-3.5 py-2 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-zinc-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5">
           Next <i class="fa-solid fa-arrow-right text-[10px]"></i>
         </button>
       </div>
@@ -1033,7 +1033,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="border-t border-zinc-800/80 py-8 px-4 sm:px-8 text-center text-xs text-zinc-500">
+  <footer class="border-t-2 border-zinc-800 py-8 px-4 sm:px-8 text-center text-xs text-zinc-500">
     <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>© 2026 S. Priyadharshni. All rights reserved.</p>
       <p class="flex items-center gap-2">
@@ -1193,7 +1193,7 @@
         "Week 1 Presentation & Reflection"
       ],
       journalNote: `<p class="leading-relaxed">Week 1 of Protosem was filled with learning, teamwork, and practical experiences. We started the week with a session on Design Thinking, where we learned to understand problems from a customer’s perspective and develop practical solutions. As part of the activity, we selected a retail sector and analysed its strengths, weaknesses, opportunities, and threats through a SWOT analysis. We also had an Onam holiday, which gave us a short break before continuing with our activities. During the week, we attended a session on portfolio creation, where we learned how to document our experiences, activities, and learnings effectively. Towards the weekend, we participated in an inspiring motivational session by Ram, followed by guest lectures that provided insights into the agriculture, textile, and retail industries. We concluded the week with our Week 1 presentation, where we presented our work and reflected on our learning.</p>
-      <div class="mt-4 p-4 rounded-xl bg-zinc-900 border border-zinc-700 space-y-2">
+      <div class="mt-4 p-4 rounded-xl bg-zinc-900 border-2 border-zinc-700 space-y-2">
         <h4 class="text-white font-bold text-xs uppercase font-mono flex items-center gap-1.5">
           <i class="fa-solid fa-star text-white"></i> Week 1 Takeaway
         </h4>
@@ -1245,15 +1245,15 @@
       });
     }
 
-    // Render Week Cards into Container (Refined Dark Theme)
+    // Render Week Cards into Container (Refined Dark Theme with Bold Borders)
     function renderWeekCards(weeksToRender) {
       const container = document.getElementById("protosem-cards-container");
       if (!container) return;
 
       if (weeksToRender.length === 0) {
         container.innerHTML = `
-          <div class="col-span-full p-12 text-center rounded-3xl bg-zinc-900/80 border border-zinc-800 space-y-3">
-            <div class="w-12 h-12 rounded-2xl bg-zinc-800 text-white flex items-center justify-center text-xl mx-auto border border-zinc-700">
+          <div class="col-span-full p-12 text-center rounded-3xl bg-zinc-900/80 border-2 border-zinc-800 space-y-3">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-800 text-white flex items-center justify-center text-xl mx-auto border-2 border-zinc-700">
               <i class="fa-solid fa-search"></i>
             </div>
             <h4 class="text-base font-bold text-white">No milestones found</h4>
@@ -1277,7 +1277,7 @@
 
         return `
         <div 
-          class="vault-week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isPublished ? 'border-zinc-500/80 bg-zinc-900/95 ring-2 ring-white/20 shadow-xl shadow-white/5' : ''}"
+          class="vault-week-card rounded-2xl p-5 cursor-pointer relative group flex flex-col justify-between space-y-4 ${w.isPublished ? 'border-2 border-zinc-400 bg-zinc-900/95 ring-2 ring-white/20 shadow-xl shadow-white/5' : 'border-2 border-zinc-800'}"
           onclick="openWeekModal(${w.weekNumber})"
           tabindex="0"
           role="button"
@@ -1286,10 +1286,10 @@
         >
           <!-- Top Row: Phase Tag & Number Badge -->
           <div class="flex items-center justify-between">
-            <span class="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full ${w.isPublished ? 'bg-zinc-800 border border-zinc-600 text-white shadow-sm' : 'bg-zinc-950 border border-zinc-800 text-zinc-400'}">
+            <span class="text-[11px] font-mono font-bold px-2.5 py-0.5 rounded-full ${w.isPublished ? 'bg-zinc-800 border-2 border-zinc-600 text-white shadow-sm' : 'bg-zinc-950 border-2 border-zinc-800 text-zinc-400'}">
               ${w.phaseTag}
             </span>
-            <div class="vault-number-badge w-8 h-8 rounded-xl ${w.isPublished ? 'bg-white border border-white text-black font-extrabold shadow-sm' : 'bg-zinc-950 border border-zinc-800 text-zinc-400'} font-mono text-xs font-bold flex items-center justify-center transition-all">
+            <div class="vault-number-badge w-8 h-8 rounded-xl ${w.isPublished ? 'bg-white border-2 border-white text-black font-extrabold shadow-sm' : 'bg-zinc-950 border-2 border-zinc-800 text-zinc-400'} font-mono text-xs font-bold flex items-center justify-center transition-all">
               ${w.padWeek}
             </div>
           </div>
@@ -1297,7 +1297,7 @@
           <!-- Middle: Icon, Title & Subtitle -->
           <div class="space-y-2 py-1">
             <div class="flex items-center gap-2">
-              <span class="w-7 h-7 rounded-lg ${w.isPublished ? 'bg-zinc-800 text-white border border-zinc-700' : 'bg-zinc-950 text-zinc-400 border border-zinc-800'} flex items-center justify-center text-xs">
+              <span class="w-7 h-7 rounded-lg ${w.isPublished ? 'bg-zinc-800 text-white border-2 border-zinc-700' : 'bg-zinc-950 text-zinc-400 border-2 border-zinc-800'} flex items-center justify-center text-xs">
                 <i class="${w.themeIcon || 'fa-solid fa-cube'}"></i>
               </span>
               <span class="text-[11px] font-mono font-semibold text-zinc-400 uppercase tracking-wider">
@@ -1308,7 +1308,7 @@
             <div>
               <h4 class="text-base font-bold text-white group-hover:text-zinc-300 transition-colors flex items-center gap-1.5">
                 <span>${w.cardTitle}</span>
-                ${w.isPublished ? '<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-white text-black border border-white font-extrabold">Story Ready</span>' : ''}
+                ${w.isPublished ? '<span class="text-[9px] uppercase font-mono px-2 py-0.5 rounded-full bg-white text-black border-2 border-white font-extrabold">Story Ready</span>' : ''}
               </h4>
               <p class="text-xs text-zinc-400 font-medium line-clamp-1 pt-0.5">
                 ${w.cardSubtitle}
@@ -1325,19 +1325,19 @@
                 </span>
                 <span class="text-zinc-400 font-medium">${w.images && w.images.length > 1 ? w.images.length + ' Photos inside' : '1 Photo'}</span>
               </div>
-              <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-2 p-1.5 rounded-2xl bg-zinc-950 border border-zinc-800 shadow-xl group/thumb">
-                <div class="relative ${showSingleCover ? 'h-32 sm:h-36' : 'h-28 sm:h-32'} rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-inner flex items-center justify-center">
+              <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-2 p-1.5 rounded-2xl bg-zinc-950 border-2 border-zinc-700 shadow-xl group/thumb">
+                <div class="relative ${showSingleCover ? 'h-32 sm:h-36' : 'h-28 sm:h-32'} rounded-xl overflow-hidden bg-zinc-900 border-2 border-zinc-700 shadow-inner flex items-center justify-center">
                   <img src="${mainImage.src}" alt="${mainImage.caption || w.title}" class="w-full h-full ${mainImage.src.includes('logo') ? 'object-contain bg-white p-3' : 'object-cover'} group-hover/thumb:scale-108 transition-transform duration-700">
                   <div class="absolute inset-0 ${mainImage.src.includes('logo') ? 'bg-gradient-to-t from-black/15 via-transparent to-transparent' : 'bg-gradient-to-t from-black/80 via-transparent to-transparent'} pointer-events-none"></div>
-                  <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-black bg-white/95 border border-white px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
+                  <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-black bg-white/95 border-2 border-white px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
                     <i class="fa-solid ${mainImage.src.includes('logo') ? 'fa-bolt' : 'fa-camera'} mr-1 text-black"></i> ${mainImage.badge || 'Cover'}
                   </div>
                 </div>
                 ${secondImage ? `
-                  <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 shadow-inner flex items-center justify-center">
+                  <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden bg-zinc-900 border-2 border-zinc-700 shadow-inner flex items-center justify-center">
                     <img src="${secondImage.src}" alt="${secondImage.caption || w.title}" class="w-full h-full ${secondImage.src.includes('logo') ? 'object-contain bg-white p-2.5' : 'object-cover'} group-hover/thumb:scale-108 transition-transform duration-700">
                     <div class="absolute inset-0 ${secondImage.src.includes('logo') ? 'bg-gradient-to-t from-black/20 via-transparent to-transparent' : 'bg-gradient-to-t from-black/80 via-transparent to-transparent'} pointer-events-none"></div>
-                    <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-black bg-white/95 border border-white px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
+                    <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-black bg-white/95 border-2 border-white px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
                       <i class="fa-solid fa-camera mr-1 text-black"></i> ${secondImage.badge || 'Photo'}
                     </div>
                   </div>
@@ -1346,7 +1346,7 @@
             </div>
           ` : (w.isPublished ? `
             <!-- Published Highlights Preview -->
-            <div class="p-3 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-2">
+            <div class="p-3 rounded-2xl bg-zinc-900 border-2 border-zinc-700 space-y-2">
               <div class="flex items-center justify-between text-[10px] font-mono text-zinc-300">
                 <span class="flex items-center gap-1 font-semibold">
                   <i class="fa-solid fa-sparkles text-white"></i> Key Topics & Insights
@@ -1355,7 +1355,7 @@
               </div>
               <div class="flex flex-wrap gap-1">
                 ${(w.highlights || []).slice(0, 3).map(h => `
-                  <span class="text-[10px] px-2 py-0.5 rounded-md bg-zinc-950 text-zinc-200 border border-zinc-700 font-mono truncate max-w-full">
+                  <span class="text-[10px] px-2 py-0.5 rounded-md bg-zinc-950 text-zinc-200 border-2 border-zinc-700 font-mono truncate max-w-full">
                     ${h}
                   </span>
                 `).join("")}
@@ -1363,7 +1363,7 @@
             </div>
           ` : `
             <!-- Upcoming Sprints Progress Bar Pill -->
-            <div class="p-2.5 rounded-xl bg-zinc-950 border border-zinc-800 space-y-1.5">
+            <div class="p-2.5 rounded-xl bg-zinc-950 border-2 border-zinc-800 space-y-1.5">
               <div class="flex items-center justify-between text-[10px] font-mono text-zinc-400">
                 <span>Sprint Progress</span>
                 <span class="text-white font-bold">Upcoming</span>
@@ -1375,7 +1375,7 @@
           `)}
 
           <!-- Bottom: Action Indicator & Arrow -->
-          <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-400">
+          <div class="pt-3 border-t-2 border-zinc-800 flex items-center justify-between text-xs text-zinc-400">
             <span class="text-[11px] font-mono ${w.isPublished ? 'text-zinc-200 font-bold' : 'text-zinc-400'} group-hover:text-white flex items-center gap-1">
               <span class="w-1.5 h-1.5 rounded-full ${w.isPublished ? 'bg-emerald-400 animate-pulse' : 'bg-zinc-600'}"></span>
               ${w.isPublished ? 'Read Story' : 'Milestone Preview'}
@@ -1493,7 +1493,7 @@
         if (week.highlights && week.highlights.length > 0) {
           highlightsContainer.classList.remove("hidden");
           highlightsContainer.innerHTML = week.highlights.map(h => `
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-zinc-900 border border-zinc-700 text-zinc-200 text-xs font-bold">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-zinc-900 border-2 border-zinc-700 text-zinc-200 text-xs font-bold">
               <i class="fa-solid fa-check text-[10px] text-white"></i> ${h}
             </span>
           `).join("");
@@ -1520,16 +1520,16 @@
           if (imageList.length === 1) {
             const img = imageList[0];
             galleryContainer.innerHTML = `
-              <div class="rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl p-2.5">
-                <div class="rounded-xl overflow-hidden relative bg-zinc-950 max-h-80 flex items-center justify-center">
+              <div class="rounded-2xl overflow-hidden border-2 border-zinc-700 bg-zinc-900 shadow-2xl p-2.5">
+                <div class="rounded-xl overflow-hidden relative bg-zinc-950 max-h-80 flex items-center justify-center border-2 border-zinc-800">
                   <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full ${img.src.includes('logo') ? 'object-contain bg-white p-3' : 'object-cover'} hover:scale-105 transition-transform duration-500">
                   ${img.badge ? `
-                    <span class="absolute top-3 left-3 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-black/90 text-white border border-zinc-600 backdrop-blur-md shadow-md">
+                    <span class="absolute top-3 left-3 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-black/90 text-white border-2 border-zinc-600 backdrop-blur-md shadow-md">
                       ✨ ${img.badge}
                     </span>
                   ` : ''}
                 </div>
-                <div class="px-4 py-3 bg-zinc-950 rounded-b-xl text-xs font-mono text-zinc-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1 mt-1.5 border-t border-zinc-800">
+                <div class="px-4 py-3 bg-zinc-950 rounded-b-xl text-xs font-mono text-zinc-300 flex flex-col sm:flex-row sm:items-center justify-between gap-1 mt-1.5 border-t-2 border-zinc-800">
                   <span class="flex items-center gap-2 text-white font-bold">
                     <i class="fa-solid fa-camera text-zinc-400"></i> ${img.caption}
                   </span>
@@ -1543,16 +1543,16 @@
             galleryContainer.innerHTML = `
               <div class="grid grid-cols-1 ${imageList.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3'} gap-3.5">
                 ${imageList.map(img => `
-                  <div class="rounded-2xl overflow-hidden border border-zinc-700 bg-zinc-900 shadow-2xl p-2.5 flex flex-col justify-between group/gallery">
-                    <div class="h-48 sm:h-52 overflow-hidden rounded-xl bg-zinc-950 relative border border-zinc-800 flex items-center justify-center">
+                  <div class="rounded-2xl overflow-hidden border-2 border-zinc-700 bg-zinc-900 shadow-2xl p-2.5 flex flex-col justify-between group/gallery">
+                    <div class="h-48 sm:h-52 overflow-hidden rounded-xl bg-zinc-950 relative border-2 border-zinc-800 flex items-center justify-center">
                       <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full ${img.src.includes('logo') ? 'object-contain bg-white p-3' : 'object-cover'} group-hover/gallery:scale-108 transition-transform duration-700">
                       ${img.badge ? `
-                        <span class="absolute top-2.5 left-2.5 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-black/90 text-white border border-zinc-600 backdrop-blur-md shadow-md">
+                        <span class="absolute top-2.5 left-2.5 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-black/90 text-white border-2 border-zinc-600 backdrop-blur-md shadow-md">
                           ✨ ${img.badge}
                         </span>
                       ` : ''}
                     </div>
-                    <div class="p-3 bg-zinc-950 rounded-b-xl border-t border-zinc-800 text-xs font-mono space-y-1 mt-1.5">
+                    <div class="p-3 bg-zinc-950 rounded-b-xl border-t-2 border-zinc-800 text-xs font-mono space-y-1 mt-1.5">
                       <div class="text-white font-bold text-xs flex items-center gap-1.5 truncate">
                         <i class="fa-solid fa-image text-zinc-400 text-xs"></i> ${img.caption}
                       </div>
