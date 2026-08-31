@@ -1196,7 +1196,22 @@
       status: "Reflection Published",
       badge: "Published",
       isPublished: true,
-      images: [],
+      images: [
+        {
+          src: "assets/protosem-week-01-session.jpg",
+          alt: "ProtoSem Week 1 - Guest Lecture & Industry Insights Session",
+          caption: "Guest Lecture & Industry Insights Session",
+          location: "ProtoSem Innovation Studio, KCLAS",
+          badge: "Guest Lecture"
+        },
+        {
+          src: "assets/protosem-week-01-workspace.jpg",
+          alt: "ProtoSem Week 1 - Design Thinking & Team Workspace",
+          caption: "Design Thinking & Team Collaboration",
+          location: "ProtoSem Innovation Lab",
+          badge: "Design Thinking Lab"
+        }
+      ],
       highlights: [
         "Design Thinking & Customer Perspective",
         "Retail Sector SWOT Analysis",
@@ -1339,7 +1354,7 @@
                   <img src="${mainImage.src}" alt="${mainImage.caption || w.title}" class="w-full h-full object-cover group-hover/thumb:scale-108 transition-transform duration-700">
                   <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent pointer-events-none"></div>
                   <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-pink-200 bg-pink-950/90 border border-pink-400/50 px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
-                    <i class="fa-solid fa-id-card mr-1 text-pink-400"></i> ${mainImage.badge || 'Consul'}
+                    <i class="fa-solid fa-camera mr-1 text-pink-400"></i> ${mainImage.badge || 'Photo'}
                   </div>
                 </div>
                 ${secondImage ? `
@@ -1347,7 +1362,7 @@
                     <img src="${secondImage.src}" alt="${secondImage.caption || w.title}" class="w-full h-full object-cover group-hover/thumb:scale-108 transition-transform duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent pointer-events-none"></div>
                     <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-pink-200 bg-pink-950/90 border border-pink-400/50 px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
-                      <i class="fa-solid fa-camera mr-1 text-pink-400"></i> ${secondImage.badge || 'Launch'}
+                      <i class="fa-solid fa-camera mr-1 text-pink-400"></i> ${secondImage.badge || 'Photo'}
                     </div>
                   </div>
                 ` : ''}
