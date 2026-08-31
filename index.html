@@ -1156,6 +1156,20 @@
       categoryTag: "Kickoff Milestone",
       images: [
         {
+          src: "assets/protosem-logo-cover.jpg",
+          alt: "ProtoSem Innovation Engineers Brand Cover",
+          caption: "ProtoSem Innovation Engineers",
+          location: "PRICE ProtoSem Incubation",
+          badge: "Cover Logo"
+        },
+        {
+          src: "assets/protosem-launch-address.jpg",
+          alt: "ProtoSem Launch Special Address by Mr. Kumar Rajagopalan (CEO, RAI)",
+          caption: "Special Address by Mr. Kumar Rajagopalan (CEO, RAI)",
+          location: "Sarabhai Kalam Theater, Kumaraguru",
+          badge: "Special Address"
+        },
+        {
           src: "assets/personality-consul.jpg",
           alt: "Personality Assessment Result: Consul (ESFJ-T)",
           caption: "Personality Type: Consul (ESFJ-T)",
@@ -1340,20 +1354,20 @@
                 <span class="flex items-center gap-1 font-semibold">
                   <i class="fa-solid fa-photo-film text-pink-400"></i> Visual Artifacts
                 </span>
-                <span class="text-slate-400 font-medium">${secondImage ? '2 Photos' : '1 Photo'}</span>
+                <span class="text-slate-400 font-medium">${w.images && w.images.length > 1 ? w.images.length + ' Photos' : '1 Photo'}</span>
               </div>
               <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-2 p-1.5 rounded-2xl bg-gradient-to-tr from-pink-950/90 via-slate-900/90 to-purple-950/80 border border-pink-500/40 shadow-xl group/thumb">
-                <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden bg-slate-950 border border-pink-500/25 shadow-inner">
-                  <img src="${mainImage.src}" alt="${mainImage.caption || w.title}" class="w-full h-full object-cover group-hover/thumb:scale-108 transition-transform duration-700">
-                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent pointer-events-none"></div>
+                <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden bg-slate-950 border border-pink-500/25 shadow-inner flex items-center justify-center">
+                  <img src="${mainImage.src}" alt="${mainImage.caption || w.title}" class="w-full h-full ${mainImage.src.includes('logo') ? 'object-contain bg-white p-2.5' : 'object-cover'} group-hover/thumb:scale-108 transition-transform duration-700">
+                  <div class="absolute inset-0 ${mainImage.src.includes('logo') ? 'bg-gradient-to-t from-black/20 via-transparent to-transparent' : 'bg-gradient-to-t from-slate-950/85 via-transparent to-transparent'} pointer-events-none"></div>
                   <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-pink-200 bg-pink-950/90 border border-pink-400/50 px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
-                    <i class="fa-solid fa-camera mr-1 text-pink-400"></i> ${mainImage.badge || 'Photo'}
+                    <i class="fa-solid fa-camera mr-1 text-pink-400"></i> ${mainImage.badge || 'Cover'}
                   </div>
                 </div>
                 ${secondImage ? `
-                  <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden bg-slate-950 border border-pink-500/25 shadow-inner">
-                    <img src="${secondImage.src}" alt="${secondImage.caption || w.title}" class="w-full h-full object-cover group-hover/thumb:scale-108 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent pointer-events-none"></div>
+                  <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden bg-slate-950 border border-pink-500/25 shadow-inner flex items-center justify-center">
+                    <img src="${secondImage.src}" alt="${secondImage.caption || w.title}" class="w-full h-full ${secondImage.src.includes('logo') ? 'object-contain bg-white p-2.5' : 'object-cover'} group-hover/thumb:scale-108 transition-transform duration-700">
+                    <div class="absolute inset-0 ${secondImage.src.includes('logo') ? 'bg-gradient-to-t from-black/20 via-transparent to-transparent' : 'bg-gradient-to-t from-slate-950/85 via-transparent to-transparent'} pointer-events-none"></div>
                     <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-pink-200 bg-pink-950/90 border border-pink-400/50 px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
                       <i class="fa-solid fa-camera mr-1 text-pink-400"></i> ${secondImage.badge || 'Photo'}
                     </div>
@@ -1558,11 +1572,11 @@
             `;
           } else {
             galleryContainer.innerHTML = `
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="grid grid-cols-1 ${imageList.length === 2 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3'} gap-3.5">
                 ${imageList.map(img => `
                   <div class="rounded-2xl overflow-hidden border border-pink-500/40 bg-gradient-to-b from-slate-900 to-slate-950 shadow-2xl p-2.5 flex flex-col justify-between group/gallery">
-                    <div class="h-52 sm:h-56 overflow-hidden rounded-xl bg-slate-950 relative border border-slate-800">
-                      <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full object-cover group-hover/gallery:scale-108 transition-transform duration-700">
+                    <div class="h-48 sm:h-52 overflow-hidden rounded-xl bg-slate-950 relative border border-slate-800 flex items-center justify-center">
+                      <img src="${img.src}" alt="${img.alt || week.title}" class="w-full h-full ${img.src.includes('logo') ? 'object-contain bg-white p-3' : 'object-cover'} group-hover/gallery:scale-108 transition-transform duration-700">
                       ${img.badge ? `
                         <span class="absolute top-2.5 left-2.5 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg bg-pink-950/90 text-pink-200 border border-pink-400/50 backdrop-blur-md shadow-md">
                           ✨ ${img.badge}
