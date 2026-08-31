@@ -1303,9 +1303,11 @@
 
       container.innerHTML = weeksToRender.map(w => {
         const hasImages = w.images && w.images.length > 0;
-        const mainImage = hasImages ? w.images[0] : null;
-        // Only show single cover for Week 0 on the outside card
-        const showSingleCover = w.weekNumber === 0;
+        // For Week 0: show 1st image (ProtoSem logo). For Week 1: show 2nd image (Workspace lab photo).
+        const coverIdx = w.weekNumber === 1 ? 1 : 0;
+        const mainImage = hasImages ? (w.images[coverIdx] || w.images[0]) : null;
+        // Single cover display on outside cards for Week 0 and Week 1
+        const showSingleCover = w.weekNumber === 0 || w.weekNumber === 1;
         const secondImage = !showSingleCover && hasImages && w.images.length > 1 ? w.images[1] : null;
 
         return `
@@ -1354,16 +1356,16 @@
             <div class="space-y-1.5 pt-1">
               <div class="flex items-center justify-between text-[10px] font-mono text-pink-300 px-1">
                 <span class="flex items-center gap-1 font-semibold">
-                  <i class="fa-solid fa-photo-film text-pink-400"></i> ${w.weekNumber === 0 ? 'Cover Image' : 'Visual Artifacts'}
+                  <i class="fa-solid fa-photo-film text-pink-400"></i> ${showSingleCover ? 'Featured Cover' : 'Visual Artifacts'}
                 </span>
-                <span class="text-slate-400 font-medium">${w.weekNumber === 0 ? '3 Photos inside' : (w.images && w.images.length > 1 ? w.images.length + ' Photos' : '1 Photo')}</span>
+                <span class="text-slate-400 font-medium">${w.images && w.images.length > 1 ? w.images.length + ' Photos inside' : '1 Photo'}</span>
               </div>
               <div class="grid ${secondImage ? 'grid-cols-2' : 'grid-cols-1'} gap-2 p-1.5 rounded-2xl bg-gradient-to-tr from-pink-950/90 via-slate-900/90 to-purple-950/80 border border-pink-500/40 shadow-xl group/thumb">
-                <div class="relative ${w.weekNumber === 0 ? 'h-32 sm:h-36' : 'h-28 sm:h-32'} rounded-xl overflow-hidden bg-slate-950 border border-pink-500/25 shadow-inner flex items-center justify-center">
+                <div class="relative ${showSingleCover ? 'h-32 sm:h-36' : 'h-28 sm:h-32'} rounded-xl overflow-hidden bg-slate-950 border border-pink-500/25 shadow-inner flex items-center justify-center">
                   <img src="${mainImage.src}" alt="${mainImage.caption || w.title}" class="w-full h-full ${mainImage.src.includes('logo') ? 'object-contain bg-white p-3' : 'object-cover'} group-hover/thumb:scale-108 transition-transform duration-700">
                   <div class="absolute inset-0 ${mainImage.src.includes('logo') ? 'bg-gradient-to-t from-black/15 via-transparent to-transparent' : 'bg-gradient-to-t from-slate-950/85 via-transparent to-transparent'} pointer-events-none"></div>
                   <div class="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold text-pink-200 bg-pink-950/90 border border-pink-400/50 px-2 py-0.5 rounded-md backdrop-blur-md shadow-sm">
-                    <i class="fa-solid fa-bolt mr-1 text-pink-400"></i> ${mainImage.badge || 'Cover'}
+                    <i class="fa-solid ${mainImage.src.includes('logo') ? 'fa-bolt' : 'fa-camera'} mr-1 text-pink-400"></i> ${mainImage.badge || 'Cover'}
                   </div>
                 </div>
                 ${secondImage ? `
